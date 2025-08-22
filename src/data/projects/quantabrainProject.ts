@@ -45,6 +45,7 @@ export const quantabrainProject: PortfolioProject = {
     "WebGL",
     "Three.js",
     "Material-UI",
+    "GCL",
   ],
   icon: "🧠",
   color: "from-purple-500 to-purple-600",
