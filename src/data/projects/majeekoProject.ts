@@ -49,6 +49,7 @@ export const majeekoProject: PortfolioProject = {
   `,
 
   tech: [
+    "Figma",
     "React",
     "Node.js",
     "MongoDB",

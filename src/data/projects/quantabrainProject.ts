@@ -36,6 +36,7 @@ export const quantabrainProject: PortfolioProject = {
   `,
 
   tech: [
+    "Figma",
     "React",
     "TypeScript",
     "D3.js",
