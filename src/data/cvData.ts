@@ -1,8 +1,9 @@
 export const cvData = {
   personal_info: {
     name: "Roberto Leonarduzzi",
-    title:
-      "UX/UI & Digital Product Lead | Senior Designer with Project Management Expertise",
+    // title:
+    //   "UX/UI & Digital Product Lead | Senior Designer with Project Management Expertise",
+    title: "UX/UI engineer",
     contact: {
       address: "Via di Portonaccio 191, Roma, Italy",
       mobile: "+39 393 3330784",
@@ -10,8 +11,12 @@ export const cvData = {
       vat: "17641141001",
     },
   },
+  // profile:
+  //   "Senior UX/UI Designer and Digital Product Lead with 15+ years of experience bridging design, front-end development, and project management. Strong in aligning user experience with business strategy, leading multidisciplinary teams, and delivering scalable digital solutions.",
   profile:
-    "Senior UX/UI Designer and Digital Product Lead with 15+ years of experience bridging design, front-end development, and project management. Strong in aligning user experience with business strategy, leading multidisciplinary teams, and delivering scalable digital solutions.",
+    "Digital Project Manager with 15+ years of experience in design, front-end development, and digital product leadership. I combine creative vision, technical expertise, and strategic thinking to define goals, optimize resources, and align stakeholders in agile environments. I have led multidisciplinary teams and delivered data-driven solutions across healthcare, publishing, SaaS, and corporate identity.",
+  approch:
+    "My approach as a UX Engineer integrates research and design with technical implementation. I start from analyzing user needs and business goals, translating them into wireframes, prototypes, and scalable design systems. I then bring these solutions to life through front-end development (React, Next.js, Angular), ensuring full consistency between design and the actual product. This methodology accelerates processes, reduces gaps between designers and developers, and delivers seamless, measurable user experiences.",
   experience: [
     {
       role: "Front-end & UX/UI Lead",

@@ -25,7 +25,7 @@ const Curriculum: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-5 gap-8">
         {/* Left Column - Main Content (2/3 o 3/5) */}
         <div className="lg:col-span-2 xl:col-span-3 space-y-8">
-          <ProfileSection profile={cvData.profile} />
+          <ProfileSection profile={cvData.profile} approch={cvData.approch} />
           <ExperienceSection experiences={cvData.experience} />
         </div>
 
