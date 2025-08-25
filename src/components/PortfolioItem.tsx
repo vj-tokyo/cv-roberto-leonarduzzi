@@ -50,7 +50,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
 
       {/* Tech Stack */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {project.tech.map((tech, techIndex) => (
+        {project.tech.map((tech: string, techIndex: number) => (
           <span
             key={techIndex}
             className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
@@ -65,7 +65,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
         onClick={handleExploreClick}
         className={`w-full py-3 bg-gradient-to-r ${project.color} text-white font-semibold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200`}
       >
-        Esplora Progetto →
+        View case study →
       </button>
     </div>
   );

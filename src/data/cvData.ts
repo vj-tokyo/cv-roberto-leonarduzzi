@@ -88,6 +88,12 @@ export const cvData = {
       achievement:
         "Winner – designed and prototyped a financial digital solution in 48 hours.",
     },
+    {
+      title: "BNP Paribas International Hackathon",
+      year: "2017",
+      achievement:
+        "Winner – designed and prototyped a financial digital solution in 48 hours.",
+    },
   ],
   languages: [
     { language: "Italian", level: "Native" },

@@ -33,3 +33,9 @@ export interface PortfolioProject {
   solutions?: string[];
   results?: string[];
 }
+
+// Props interface for PortfolioItem component
+export interface PortfolioItemProps {
+  project: PortfolioProject;
+  onExploreClick?: (project: PortfolioProject) => void;
+}

@@ -39,7 +39,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         /\*\*(.*?)\*\*/g,
         '<strong class="font-semibold text-gray-900">$1</strong>'
       )
-      .replace(/â€¢/g, "•")
+      .replace(/â‚¬â/g, "•")
       .split("\n\n")
       .map((paragraph) => paragraph.trim())
       .filter((paragraph) => paragraph.length > 0)
@@ -80,10 +80,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       onClick={handleBackdropClick}
     >
       <div className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden">
-        {/* Close Button */}
+        {/* Close Button - Z-INDEX AUMENTATO */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+          className="absolute top-6 right-6 z-30 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
         >
           <svg
             className="w-6 h-6 text-gray-600"
@@ -121,9 +121,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
           {/* Content */}
           <div className="p-8">
-            {/* Project Cover Image */}
+            {/* Project Cover Image - Z-INDEX RIDOTTO */}
             {project.cover && (
-              <div className="mb-8 -mt-16 relative z-10">
+              <div className="mb-8 -mt-16 relative z-5">
                 <img
                   src={project.cover}
                   alt={`${project.title} preview`}
