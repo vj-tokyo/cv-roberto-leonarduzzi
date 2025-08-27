@@ -1,6 +1,7 @@
 import React from "react";
 import type { PortfolioProject } from "../types/portfolio";
 import { cvData } from "../data/cvData";
+import { usePortfolioContent } from "../hooks/useFormattedContent";
 
 interface ProjectContentProps {
   project: PortfolioProject;
@@ -11,37 +12,10 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
   project,
   onClose,
 }) => {
-  // Funzione per formattare la extendedDescription
-  const formatExtendedDescription = (text: string) => {
-    return text
-      .replace(
-        /\*\*(.*?)\*\*/g,
-        '<h2 class="font-semibold text-gray-900">$1</h2>'
-      )
-      .replace(/ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢/g, "â€¢")
-      .split("\n\n")
-      .map((paragraph) => paragraph.trim())
-      .filter((paragraph) => paragraph.length > 0)
-      .map((paragraph, index) => {
-        // Gestisci i titoli (linee che iniziano con **)
-        if (paragraph.includes("<strong>") && paragraph.trim().length < 100) {
-          return `<h4 key="${index}" class="text-lg font-bold text-gray-900 mt-6 mb-3">${paragraph}</h4>`;
-        }
-        // Gestisci le liste con bullet points
-        if (paragraph.includes("â€¢")) {
-          const items = paragraph
-            .split("â€¢")
-            .filter((item) => item.trim().length > 0);
-          const listItems = items
-            .map((item) => `<li class="mb-2">${item.trim()}</li>`)
-            .join("");
-          return `<ul key="${index}" class="list-disc list-inside mb-4 text-gray-700 leading-relaxed">${listItems}</ul>`;
-        }
-        // Paragrafi normali
-        return `<p key="${index}" class="mb-4 text-gray-700 leading-relaxed">${paragraph}</p>`;
-      })
-      .join("");
-  };
+  // Usa l'hook per formattare il contenuto esteso
+  const formattedExtendedDescription = usePortfolioContent(
+    project.extendedDescription
+  );
 
   return (
     <div className="overflow-y-auto max-h-[80vh]">
@@ -57,7 +31,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
             <h2 className="text-3xl font-bold">{project.title}</h2>
             <div className="flex items-center text-white/80 text-lg">
               <span className="font-medium">{project.company}</span>
-              <span className="mx-3">â€¢</span>
+              <span className="mx-3">•</span>
               <span>{project.year}</span>
             </div>
           </div>
@@ -93,7 +67,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
             <div
               className="prose prose-lg max-w-none"
               dangerouslySetInnerHTML={{
-                __html: formatExtendedDescription(project.extendedDescription),
+                __html: formattedExtendedDescription,
               }}
             />
           ) : (
@@ -199,7 +173,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
           </div>
         )}
 
-        {/* Gallery (se disponibile) */}
+        {/* Gallery (se disponibili) */}
         {project.gallery && project.gallery.length > 0 && (
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -271,11 +245,15 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
                 Chiamami
               </a>
             </div>
+
+            <p className="text-sm text-gray-500 mt-4">
+              Risposta garantita entro 24 ore
+            </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200 mt-6">
+        <div className="flex flex-col sm:flex-row gap-4 pt-6 mt-6 border-t border-gray-200">
           {project.link && (
             <a
               href={project.link}

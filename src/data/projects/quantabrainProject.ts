@@ -93,7 +93,7 @@ export const quantabrainProject: PortfolioProject = {
     
     Come Frontend Lead ho trasformato l'analisi neurologica per 200+ medici, riducendo del 40% i tempi di diagnosi attraverso interfacce AI-powered intuitive e performanti.
     
-    <img class="my-8" src="./public/images/qb/figma.png" alt="Research Process - Interviste e shadowing in ambiente ospedaliero" class="img-center" />
+    <img class="my-8" src="./public/images/qb/figma_full.png" alt="Research Process - Interviste e shadowing in ambiente ospedaliero" class="img-center" />
     
     **⚡ RISULTATI CHIAVE**
     
@@ -156,6 +156,11 @@ export const quantabrainProject: PortfolioProject = {
     3. **Performance-First**: ogni millisecondo conta in emergenze
     4. **Error Prevention**: validazioni multiple per safety
     5. **Accessibility**: WCAG 2.1 AAA per diverse abilità
+
+    <div class="my-8 grid grid-cols-2 gap-4">
+      <img src="./public/images/qb/dashboard.png" alt="Design System - Componenti medici standardizzati" />
+      <img src="./public/images/qb/detail.png" alt="Accessibility - Contrasti e usabilità ottimizzate" />
+    </div>
     
     <div  class="my-8 grid grid-cols-3 gap-4">
       <img class="my-8" src="./public/images/qb/upload_1_1.png" alt="Co-design Session - Workshop con neurologi" />
@@ -190,11 +195,6 @@ export const quantabrainProject: PortfolioProject = {
     • **Large Touch Targets**: utilizzo con guanti chirurgici
     • **Color-Blind Safe**: palette accessibile per tutti
     • **Error States Explicit**: feedback chiaro per situazioni critiche
-    
-    <div class="my-8 grid grid-cols-2 gap-4">
-      <img src="./public/images/qb/cover.png" alt="Design System - Componenti medici standardizzati" />
-      <img src="./public/images/qb/cover.png" alt="Accessibility - Contrasti e usabilità ottimizzate" />
-    </div>
     
     **Component Library Medica:**
     • **Scan Viewer**: visualizzatore 3D con AI overlays
@@ -263,6 +263,9 @@ export const quantabrainProject: PortfolioProject = {
     • **GDPR Compliance**: privacy pazienti garantita
     • **ISO 27001**: security standards ospedalieri
     • **FDA Guidelines**: preparazione per approval internazionale
+
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
     **🎯 LEARNINGS & FUTURE EVOLUTION**
     

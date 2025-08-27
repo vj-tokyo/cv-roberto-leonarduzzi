@@ -3,47 +3,60 @@ import Navigation from "./components/Navigation";
 import CurriculumPage from "./pages/CurriculumPage";
 import PortfolioPage from "./pages/PortfolioPage";
 
-// Hook personalizzato per gestire il hash routing
-const useHashRouter = () => {
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
+// Hook personalizzato per gestire URLSearchParams
+const useSearchParamsRouter = () => {
+  const [, forceUpdate] = useState({});
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
+    const handleURLChange = () => {
+      forceUpdate({});
     };
 
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleURLChange);
+    return () => window.removeEventListener("popstate", handleURLChange);
   }, []);
 
-  const navigateTo = (page: string) => {
-    const hash = page === "curriculum" ? "" : `#${page}`;
-    window.location.hash = hash;
-  };
+  // Usa useCallback per rendere navigateTo stabile
+  const navigateTo = React.useCallback((page: string) => {
+    const params = new URLSearchParams(window.location.search);
+
+    // Imposta sempre il parametro page
+    params.set("page", page);
+
+    // Pulisci parametri specifici quando cambi pagina
+    if (page === "curriculum") {
+      params.delete("project"); // Rimuovi project se vai a curriculum
+    } else if (page === "projects") {
+      params.delete("project"); // Pulisci eventuali progetti quando vai alla lista
+    }
+
+    window.history.pushState(null, "", `?${params.toString()}`);
+    forceUpdate({});
+  }, []);
 
   const getCurrentPage = () => {
-    const hash = currentHash.replace("#", "");
-    switch (hash) {
-      case "":
-      case "curriculum":
-        return "curriculum";
-      case "portfolio":
-        return "portfolio";
-      default:
-        return "curriculum";
-    }
+    const params = new URLSearchParams(window.location.search);
+    return params.get("page") || "curriculum";
   };
 
   return {
     currentPage: getCurrentPage(),
     navigateTo,
-    currentHash,
   };
 };
 
 // Main App Component with Navigation
 const App: React.FC = () => {
-  const { currentPage, navigateTo } = useHashRouter();
+  const { currentPage, navigateTo } = useSearchParamsRouter();
+
+  // Imposta il parametro page al primo caricamento se non presente
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (!params.get("page")) {
+      // Se non c'è il parametro page, imposta curriculum come default
+      navigateTo("curriculum");
+    }
+  }, [navigateTo]); // Ora navigateTo è stabile grazie a useCallback
 
   const handlePageChange = (page: string) => {
     navigateTo(page);
@@ -53,7 +66,7 @@ const App: React.FC = () => {
     switch (currentPage) {
       case "curriculum":
         return <CurriculumPage />;
-      case "portfolio":
+      case "projects":
         return <PortfolioPage />;
       default:
         return <CurriculumPage />;

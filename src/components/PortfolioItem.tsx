@@ -84,7 +84,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       )}
 
       {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2 mb-6">
+      {/* <div className="flex flex-wrap gap-2 mb-6">
         {project.tech.slice(0, 6).map((tech: string, techIndex: number) => (
           <span
             key={techIndex}
@@ -98,7 +98,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
             +{project.tech.length - 6} more
           </span>
         )}
-      </div>
+      </div> */}
 
       {/* Action Button - ora è visual indicator */}
       <div
