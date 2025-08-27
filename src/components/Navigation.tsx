@@ -14,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   const menuItems = [
     { id: "curriculum", label: "Curriculum", icon: "📄" },
-    { id: "portfolio", label: "Portfolio", icon: "🎨" },
+    { id: "projects", label: "Projects", icon: "🎨" },
   ];
 
   return (

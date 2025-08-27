@@ -12,7 +12,7 @@ export const citynewsProject: PortfolioProject = {
     
     Citynews è la più grande rete di informazione locale in Italia, con oltre 50 testate che coprono tutte le principali città italiane. Come Head of UX/UI, ho guidato una trasformazione digitale senza precedenti.
     
-    <img src="./images/cn/network-map.png" alt="Mappa della rete Citynews in Italia" class="img-full" />
+    <img class="my-8" src="./public/images/qb/cover.png" alt="Mappa della rete Citynews in Italia" class="img-full" />
     
     **La Sfida della Scala**
     
