@@ -101,8 +101,18 @@ Nel 2015 abbiamo utilizzato tecnologie all'avanguardia quando erano ancora emerg
 
 ### Social-First Approach
 - **Automatic Content Sync**: primi ad automatizzare sync bidirezionale social→web
+- **One-Click Site Generation**: creazione istantanea con branding automatico
+- **Smart Color Extraction**: palette automatica da logo/immagine profilo  
+- **Content Auto-Mapping**: popolamento intelligente sezioni da Facebook API
 - **Template Engine**: temi nativamente progettati per contenuti social
 - **Unified Analytics**: metriche social e web in dashboard unica
+- **Remarketing Dinamico**: targeting personalizzato basato su user behavior
+
+### Business Model Innovation
+- **Reseller Network**: piattaforma dedicata per agenzie e professionisti
+- **White-Label Solutions**: partnership con major telco (TIM, Italiaonline, Cosmote)
+- **Catalogue Advertising**: sistema di remarketing avanzato per ogni sito generato
+- **Margini Ottimizzati**: pricing structure che consente profitti significativi ai reseller
 
 ### UX Pioneering
 - **Drag-and-Drop Builder**: interfaccia intuitiva per non-tecnici
@@ -182,7 +192,6 @@ Questo progetto rappresenta il perfetto esempio di come **design thinking, techn
     duration: "3 anni (2015-2018)",
   },
 
-  // status: "exited",
   industry: "Social Commerce / Website Builder",
 
   challenges: [

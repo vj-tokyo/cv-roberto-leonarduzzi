@@ -9,6 +9,7 @@ export interface PortfolioProject {
   icon: string;
   color: string;
   cover: string;
+  role?: string; // ✅ NUOVO CAMPO ROLE
   category?: string;
   featured?: boolean;
   link?: string;

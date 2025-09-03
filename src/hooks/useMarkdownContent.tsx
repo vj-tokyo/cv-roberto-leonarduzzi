@@ -3,6 +3,29 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
+import { defaultSchema } from "hast-util-sanitize";
+
+// Schema personalizzato per rehypeSanitize che permette attributi class
+const sanitizeSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    "*": [...(defaultSchema.attributes?.["*"] || []), "className", "class"],
+    div: ["className", "class"],
+    img: ["src", "alt", "className", "class", "loading"],
+    iframe: [
+      "src",
+      "width",
+      "height",
+      "frameBorder",
+      "allow",
+      "allowFullScreen",
+      "title",
+      "style",
+    ],
+  },
+  tagNames: [...(defaultSchema.tagNames || []), "div", "iframe"],
+};
 
 // Componenti custom per gli elementi markdown
 const MarkdownComponents = {
@@ -68,16 +91,55 @@ const MarkdownComponents = {
     </li>
   ),
 
-  // Immagini responsive
-  img: ({ src, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <img
-      src={src}
-      alt={alt}
-      className="my-8 w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-      loading="lazy"
-      {...props}
-    />
+  // Immagini responsive con caption visibile
+  img: ({
+    src,
+    alt,
+    className,
+    ...props
+  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <figure className={`my-8 ${className || ""}`}>
+      <img
+        src={src}
+        alt={alt}
+        className="w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+        loading="lazy"
+        {...props}
+      />
+      {alt && (
+        <figcaption className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
+          {alt}
+        </figcaption>
+      )}
+    </figure>
   ),
+
+  // Div con supporto per grid e classi custom
+  div: ({
+    children,
+    className,
+    ...props
+  }: React.HTMLAttributes<HTMLDivElement>) => {
+    // Mappatura di classi comuni
+    const classMap: Record<string, string> = {
+      "my-8 grid grid-cols-2 gap-4":
+        "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
+      "my-8 grid grid-cols-3 gap-4":
+        "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+      "img-grid-2": "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
+      "img-grid-3": "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+      "img-full": "my-8 w-full",
+      "img-center": "my-8 mx-auto max-w-4xl",
+    };
+
+    const mappedClassName = className ? classMap[className] || className : "";
+
+    return (
+      <div className={mappedClassName} {...props}>
+        {children}
+      </div>
+    );
+  },
 
   // Strong/Bold
   strong: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
@@ -148,6 +210,29 @@ const MarkdownComponents = {
     <hr className="my-8 border-gray-200" {...props} />
   ),
 
+  // Iframe per video e embed
+  iframe: ({
+    src,
+    width,
+    height,
+    title,
+    className,
+    ...props
+  }: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
+    <div className="my-8">
+      <iframe
+        src={src}
+        width={width}
+        height={height}
+        title={title}
+        className={`w-full rounded-lg ${className || ""}`}
+        style={{ aspectRatio: width && height ? `${width}/${height}` : "16/9" }}
+        allowFullScreen
+        {...props}
+      />
+    </div>
+  ),
+
   // Tabelle (se usi remark-gfm)
   table: ({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="overflow-x-auto my-6">
@@ -194,14 +279,24 @@ const MarkdownComponents = {
 export const useMarkdownContent = (content: string | undefined) => {
   if (!content) return null;
 
+  // Pre-process del contenuto per gestire commenti e convertire class in className
+  const processedContent = content
+    // Rimuovi righe commentate con //
+    .split("\n")
+    .filter((line) => !line.trim().startsWith("//"))
+    .join("\n")
+    // Converti class in className per React
+    .replace(/class="/g, 'className="')
+    .replace(/class='/g, "className='");
+
   return (
     <div className="prose prose-lg max-w-none">
       <ReactMarkdown
         components={MarkdownComponents}
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   );
@@ -211,14 +306,24 @@ export const useMarkdownContent = (content: string | undefined) => {
 export const usePortfolioMarkdown = (content: string | undefined) => {
   if (!content) return null;
 
+  // Pre-process del contenuto per gestire commenti e convertire class in className
+  const processedContent = content
+    // Rimuovi righe commentate con //
+    .split("\n")
+    .filter((line) => !line.trim().startsWith("//"))
+    .join("\n")
+    // Converti class in className per React
+    .replace(/class="/g, 'className="')
+    .replace(/class='/g, "className='");
+
   return (
     <div className="prose prose-lg max-w-none">
       <ReactMarkdown
         components={MarkdownComponents}
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   );

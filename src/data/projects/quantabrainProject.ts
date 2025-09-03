@@ -60,12 +60,10 @@ I neurologi e neuroscienziati perdevano ore preziose analizzando manualmente sca
   <img src="./images/qb/detail.png" alt="Visualizzazione Risultati - Heatmap e confidence scores" />
 </div>
     
-<div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./images/qb/detail_analysis.png" alt="Workflow Precedente - Processo manuale complesso" />
-  <img src="./images/qb/upload_workflow.png" alt="Workflow Ottimizzato - AI-assisted step-by-step" />
-</div>
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/17M5IgRPfsZZ5nOkD2FTme/quantabrain---UI--Copy-?page-id=230%3A64&node-id=513-11815&p=f&viewport=121%2C63%2C0.04&scaling=scale-down&content-scaling=fixed&starting-point-node-id=602%3A36469&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+// <div class="my-8 grid grid-cols-3 gap-4">
+//   <img src="./images/qb/detail_analysis.png" alt="Workflow Precedente - Processo manuale complesso" />
+//   <img src="./images/qb/upload_workflow.png" alt="Workflow Ottimizzato - AI-assisted step-by-step" />
+// </div>
     
 ## 🏗️ ARCHITETTURA TECNICA AVANZATA
     
