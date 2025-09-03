@@ -2,18 +2,17 @@ import type { PortfolioProject } from "../../types/portfolio";
 
 export const quantabrainProject: PortfolioProject = {
   title: "AI Platform che Riduce del 40% i Tempi di Diagnosi Neurologica",
-  company: "Quantabrain",
+  company: "QuantaBrain",
   year: "2024",
   description:
     "Sviluppo di interfacce AI-powered per analisi neuroimaging che hanno rivoluzionato il workflow di 200+ medici, riducendo i tempi di diagnosi del 40% e garantendo 99.8% di uptime per casi critici.",
 
-  // ✅ CONVERTITO A MARKDOWN STANDARD
   extendedDescription: `
 # 🎯 HERO STATEMENT
     
-Come Frontend Lead ho trasformato l'analisi neurologica per 200+ medici, riducendo del 40% i tempi di diagnosi attraverso interfacce AI-powered intuitive e performanti.
+Come Frontend Lead ho trasformato l'analisi neurologica per 200+ medici, riducendo del 40% i tempi di diagnosi attraverso interfacce AI-powered intuitive e performanti per l'analisi quantitativa del cervello.
     
-<img class="my-8" src="./public/images/qb/figma_full.png" alt="Research Process - Interviste e shadowing in ambiente ospedaliero" />
+<img class="my-8" src="./images/qb/figma_full.png" alt="QuantaBrain Platform - Sistema completo per analisi fMRI" />
     
 ## ⚡ RISULTATI CHIAVE
     
@@ -22,202 +21,215 @@ Come Frontend Lead ho trasformato l'analisi neurologica per 200+ medici, riducen
 - **99.8% uptime** garantito per diagnosi critiche
 - **95% satisfaction score** dai neurologi utenti
 - **€2M+ risparmi** annui in costi ospedalieri
-    
-## 🎯 IL PROBLEMA CRITICO
-    
-I neurologi perdevano ore preziose analizzando manualmente scansioni cerebrali, causando:
-    
-- **Ritardi diagnostici**: 45+ minuti per singola scansione
-- **Workflow frammentati**: dati sparsi su 5+ sistemi diversi
-- **Interface obsolete**: sistemi DICOM legacy poco intuitivi
-- **Errori umani**: 15% interpretazioni imprecise sotto pressione
-- **Inefficienza operativa**: 60% tempo speso in task non-medici
-    
-<div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./public/images/qb/detail.png" alt="Workflow Precedente - Sistema frammentato e lento" />
-  <img src="./public/images/qb/detail_analysis.png" alt="Workflow Ottimizzato - AI-assisted e unificato" />
-</div>
+- **90% completamento** onboarding al primo accesso
+- **3 minuti** tempo medio dal caricamento al report
 
-## 🎯 Obiettivo UI/UX
-Consentire ai neuroscienziati di caricare, analizzare e visualizzare dati fMRI tramite un'interfaccia web chiara, minimale e funzionale, ottimizzata per flussi di lavoro scientifici.
+## 🎯 Obiettivo Principale
+Consentire ai neuroscienziati di caricare, analizzare e visualizzare dati fMRI tramite un'interfaccia web chiara, minimale e funzionale, ottimizzata per flussi di lavoro scientifici, senza richiedere background tecnico avanzato.
     
 ## 💥 TARGET UTENTI SPECIALIZZATI
     
 - **Neurologi Senior**: diagnosi complesse, decisioni rapide
+- **Neuroscienziati**: ricerca clinica e analisi quantitative
 - **Resident Doctors**: supporto formativo, guided analysis  
 - **Tecnici Radiologi**: workflow ottimizzati, quality control
 - **Ricercatori Medici**: dataset analysis, pattern recognition
-- **Amministratori**: patient management, resource allocation
-    
-## 🔬 RICERCA MEDICA APPROFONDITA
-    
-### User Research Intensivo:
-- **50+ ore shadowing** in reparti neurologia di 3 ospedali
-- **25+ interviste** con neurologi, residenti, tecnici
-- **Workflow mapping** completo di 8 diversi processi diagnostici
-- **Pain point analysis** con prioritizzazione clinical impact
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/17M5IgRPfsZZ5nOkD2FTme/quantabrain---UI--Copy-?page-id=230%3A64&node-id=513-11815&p=f&viewport=121%2C63%2C0.04&scaling=scale-down&content-scaling=fixed&starting-point-node-id=602%3A36469&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+## 🎯 IL PROBLEMA CRITICO
     
-<img class="my-8" src="./public/images/qb/cover.png" alt="Research Process - Interviste e shadowing in ambiente ospedaliero" />
+I neurologi e neuroscienziati perdevano ore preziose analizzando manualmente scansioni cerebrali fMRI, causando:
     
-### Key Research Insights:
-- 70% tempo speso navigando tra sistemi diversi
-- 85% medici vuole AI suggestions, non AI replacement
-- 90% preferisce visualizzazioni 3D per diagnosi complesse  
-- Critical: zero tolerance per false positives
-    
+- **Ritardi diagnostici**: 45+ minuti per singola scansione
+- **Workflow frammentati**: dati sparsi su sistemi diversi
+- **Complessità tecnica**: barriere all'accesso per non-tecnici
+- **Interpretazione manuale**: processo soggetto a errori
+- **Mancanza di standardizzazione**: risultati non comparabili
+
 ## 🚀 LA MIA STRATEGIA HUMAN-CENTERED
     
 ### Approccio Medical UX Design:
     
-1. **Co-design Sessions**: workshop settimanali con neurologi
+1. **Co-design Sessions**: workshop con neuroscienziati e neurologi
 2. **Iterative Prototyping**: testato in contesto clinico reale
 3. **Performance-First**: ogni millisecondo conta in emergenze
-4. **Error Prevention**: validazioni multiple per safety
-5. **Accessibility**: WCAG 2.1 AAA per diverse abilità
+4. **Simplicity-First**: nascondere complessità tecnica dietro interfacce intuitive
+5. **Accessibility**: WCAG 2.1 AAA per diverse abilità 
 
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./public/images/qb/dashboard.png" alt="Design System - Componenti medici standardizzati" />
-  <img src="./public/images/qb/detail.png" alt="Accessibility - Contrasti e usabilità ottimizzate" />
+  <img src="./images/qb/dashboard.png" alt="Dashboard Principale - Gestione analisi e risultati" />
+  <img src="./images/qb/detail.png" alt="Visualizzazione Risultati - Heatmap e confidence scores" />
 </div>
     
-<div class="my-8 grid grid-cols-3 gap-4">
-  <img src="./public/images/qb/upload_1_1.png" alt="Co-design Session - Workshop con neurologi" />
-  <img src="./public/images/qb/upload_2.png" alt="Prototype Testing - Validazione in ambiente clinico" />
-  <img src="./public/images/qb/upload_3.png" alt="Final Interface - Design system medico ottimizzato" />
+<div class="my-8 grid grid-cols-2 gap-4">
+  <img src="./images/qb/detail_analysis.png" alt="Workflow Precedente - Processo manuale complesso" />
+  <img src="./images/qb/upload_workflow.png" alt="Workflow Ottimizzato - AI-assisted step-by-step" />
 </div>
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/17M5IgRPfsZZ5nOkD2FTme/quantabrain---UI--Copy-?page-id=230%3A64&node-id=513-11815&p=f&viewport=121%2C63%2C0.04&scaling=scale-down&content-scaling=fixed&starting-point-node-id=602%3A36469&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
     
-## ⚙️ ARCHITETTURA TECNICA AVANZATA
+## 🏗️ ARCHITETTURA TECNICA AVANZATA
     
-### Frontend Stack Ottimizzato:
+### Stack Tecnologico Ottimizzato:
     
-- **React + TypeScript**: component architecture scalabile
-- **WebGL + Three.js**: rendering 3D neuroimmagini real-time
-- **D3.js**: data visualization per analisi quantitative
-- **Web Workers**: background processing senza blocking UI
-- **Service Workers**: offline capability per continuità servizio
+- **Next.js 14** con App Router per performance e SSR
+- **TypeScript** per type safety e sviluppo scalabile
+- **React + Hooks** component architecture modulare
+- **WebGL + Three.js** rendering 3D neuroimmagini real-time
+- **Framer Motion** per animazioni fluide e transizioni
+- **SWR** per data fetching intelligente e caching
+- **WebSocket** per notifiche e aggiornamenti real-time
+- **Tailwind CSS + ShadCN** design system consistente
+
+<img class="my-8" src="./images/qb/architecture.png" alt="Architettura Tecnica - Stack moderno per performance medicali" />
     
-<img class="my-8" src="./public/images/qb/cover.png" alt="Architettura Tecnica - Stack moderno per performance medicali" />
-    
+### Funzionalità Core:
+- **Sistema Autenticazione**: JWT con refresh automatico ogni 5 minuti
+- **Layout Responsivo**: sidebar animata e design adattivo
+- **Upload Intelligente**: supporto file .nii, .gz, .zip con validazione
+- **Analisi Real-time**: WebSocket per progress e risultati live
+- **Sistema Quote**: limiti giornalieri/mensili per gestione risorse
+- **Admin Panel**: gestione utenti e permessi granulari
+
 ### Performance Optimization:
 - **<2s loading** per qualsiasi dataset neuroimaging
 - **60fps** rendering 3D brain scans
-- **Lazy loading** intelligente per immagini multi-MB
-- **Memory management** ottimizzato per sessioni 8+ ore
-    
+- **Lazy loading** componenti pesanti (viewer 3D)
+- **Debouncing** per ottimizzazioni input utente
+- **PWA support** per funzionalità offline
+
 ## 🎨 DESIGN SYSTEM MEDICO
     
 ### Medical UI Principles:
     
-- **Critical-First Hierarchy**: info vitali sempre in primo piano
-- **High Contrast**: leggibilità in ambienti ospedalieri illuminati
-- **Large Touch Targets**: utilizzo con guanti chirurgici
-- **Color-Blind Safe**: palette accessibile per tutti
-- **Error States Explicit**: feedback chiaro per situazioni critiche
+- **Workflow Step-by-Step**: caricamento → selezione → analisi → risultati
+- **Progressive Disclosure**: risultati aggregati prima dei dettagli
+- **High Contrast**: leggibilità in ambienti ospedalieri
+- **Error Prevention**: validazioni multiple per safety
+- **Onboarding Ritardato**: modale introduttiva con delay per non sovraccaricare
+
+<div class="my-8 grid grid-cols-3 gap-4">
+  <img src="./images/qb/upload_1_1.png" alt="Step 1 - Upload File fMRI" />
+  <img src="./images/qb/upload_2.png" alt="Step 2 - Selezione Parametri" />
+  <img src="./images/qb/upload_3.png" alt="Step 3 - Visualizzazione Risultati" />
+</div>
     
 ### Component Library Medica:
-- **Scan Viewer**: visualizzatore 3D con AI overlays
-- **Diagnosis Panel**: structured reporting tools
-- **Patient Timeline**: cronologia medica integrata
-- **Collaboration Tools**: multi-medico review system
-- **Export Engine**: reports PDF per cartelle cliniche
-    
+- **fMRI Viewer**: visualizzatore 3D con overlay AI
+- **Analysis Dashboard**: lista e gestione analisi
+- **Results Panel**: heatmap e confidence scores interattivi
+- **Progress Tracker**: stato analisi real-time
+- **Help System**: tooltip e documentazione in-app
+
 ## 🤖 INNOVAZIONI AI-POWERED
     
 ### Machine Learning Integration:
     
-- **Real-time Analysis**: algoritmi ML integrati nell'interfaccia
-- **Smart Annotations**: AI suggestions per anomalie detected
-- **Confidence Scoring**: livelli probabilità per ogni diagnosi
-- **Pattern Recognition**: correlazioni automatiche con historical data
-- **Predictive Insights**: early warning per condizioni progressive
-    
-<img class="my-8" src="./public/images/qb/cover.png" alt="AI Integration - Machine learning integrato nell'interfaccia utente" />
+- **Analisi Automatica**: algoritmi per rilevamento pattern cerebrali
+- **Confidence Scoring**: livelli probabilità per ogni risultato
+- **Visualizzazione Intelligente**: heatmap automatiche zone attivate
+- **Overlay 3D**: regioni cerebrali evidenziate in tempo reale
+- **Interpretazione Guidata**: risultati presentati in linguaggio comprensibile
+
+<img class="my-8" src="./images/qb/ai_results.png" alt="AI Integration - Risultati analisi con confidence scores" />
     
 ### UX per AI Transparency:
-- **Explainable AI**: visualizzazione decision process algorithms
-- **Confidence Indicators**: medici sempre consapevoli AI limitations  
-- **Human Override**: controllo totale medico su AI suggestions
-- **Audit Trail**: tracking decisioni per compliance e learning
-    
-## 📱 MULTI-PLATFORM EXPERIENCE
+- **Explainable Results**: visualizzazione chiara decision process
+- **Confidence Indicators**: utenti sempre consapevoli dei limiti AI  
+- **Manual Override**: controllo totale ricercatore su parametri
+- **Progress Feedback**: stato analisi con WebSocket real-time
+
+## 📱 ESPERIENZA MULTI-DEVICE
     
 ### Responsive Medical Interface:
-- **Workstation Primary**: 4K displays per dettaglio massimo
-- **Tablet Secondary**: consultazioni e second opinions
-- **Mobile Emergency**: quick review per on-call situations
+- **Desktop Primary**: workstation per analisi dettagliate
+- **Tablet Secondary**: review rapidi e consultazioni
+- **Mobile Support**: monitoraggio progress in mobilità
 - **Cross-Device Sync**: sessioni continuano seamlessly
-    
+
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./public/images/qb/cover.png" alt="Workstation View - Interfaccia primaria per diagnosi dettagliate" />
-  <img src="./public/images/qb/cover.png" alt="Mobile View - Quick review per situazioni emergency" />
+  <img src="./images/qb/desktop_view.png" alt="Desktop View - Interfaccia completa per analisi" />
+  <img src="./images/qb/mobile_view.png" alt="Mobile View - Monitoraggio e notifiche" />
 </div>
     
-## 💥 RISULTATI MISURATI E VALIDATI
+## 📊 RISULTATI MISURATI E VALIDATI
     
 ### Clinical Efficiency:
 - **40% riduzione** tempo medio diagnosi (45min → 27min)
-- **99.8% diagnostic accuracy** mantenuta con AI assistance
-- **60% riduzione** errori interpretazione sotto stress
-- **30% aumento** patient throughput per neurologo
-    
+- **99.8% uptime** garantito per affidabilità clinical-grade
+- **90% completamento** onboarding al primo accesso
+- **3 minuti** tempo medio dal caricamento al report
+
 ### User Adoption & Satisfaction:
-- **200+ neurologi** attivi daily across 5 major hospitals
-- **95% user satisfaction** score (vs 65% sistema precedente)
-- **89% retention** rate dopo 6 mesi utilizzo
-- **2.3 minutes** average learning curve per new users
-    
+- **200+ neurologi/neuroscienziati** attivi daily
+- **95% user satisfaction** score 
+- **Interfaccia percepita** come "semplice nonostante la complessità"
+- **Zero necessità** di manuali esterni per il 90% degli utenti
+
 ### Business Impact Tangibile:
-- **€2M+ annual savings** in operational hospital costs
-- **35% reduction** in unnecessary follow-up scans
-- **25% improvement** in patient satisfaction scores
-- **Partnership expansion** con 8+ ospedali italiani
+- **€2M+ annual savings** in operational costs
+- **Partnership expansion** con centri di ricerca italiani
+- **Standardizzazione workflow** across multiple institutions
+- **Integrazione** con dataset pubblici (ABIDE, ADHD-200)
+
+<img class="my-8" src="./images/qb/results_dashboard.png" alt="Results Dashboard - Metriche performance e impact" />
     
-<img class="my-8" src="./images/qb/results-dashboard.png" alt="Results Dashboard - Metriche di performance e impatto clinical" />
-    
-## 💥 COMPLIANCE E SICUREZZA
+## 🔒 SICUREZZA E COMPLIANCE
     
 ### Medical Standards:
-- **DICOM Integration**: compatibilità nativa standard medici
+- **OAuth2 Integration**: autenticazione sicura e scalabile
 - **GDPR Compliance**: privacy pazienti garantita
-- **ISO 27001**: security standards ospedalieri
-- **FDA Guidelines**: preparazione per approval internazionale
+- **Token Management**: refresh automatico con retry logic
+- **Middleware Protection**: route protette e validation layers
+- **Security Headers**: protezione CSRF e policy-based access
 
-## 💥 GUARDA IL VIDEO INTRODUTTIVO DELLA PIATTAFORMA BETA
+## 🎥 DEMO INTERATTIVA
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="QuantaBrain Platform Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
-## 💥 LEARNINGS & FUTURE EVOLUTION
+## 💡 LEARNINGS & INNOVATION
     
-### Key Learnings:
-- **Medical UX ≠ Consumer UX**: stakes infinitely higher
-- **Performance is Patient Safety**: ogni lag può costare vite
-- **AI Augmentation > AI Replacement**: medici want enhancement, not substitution
-- **Change Management**: clinical adoption requires trust building
-    
-### Next Phase Innovation:
-- **Voice Commands**: hands-free diagnosis per sterile environments
-- **AR Visualization**: mixed reality per neurochirurgia planning
-- **Predictive Analytics**: early detection progressive diseases
-- **Global Expansion**: multi-language, multi-regulatory compliance
+### Key Learnings UX:
+- **Neuroscienziati preferiscono** risultati aggregati prima dei dettagli
+- **Modali ritardati** riducono sensazione di overload informativo
+- **Documentazione in-app** più efficace di manuali PDF esterni
+- **Medical UX ≠ Consumer UX**: precisione e affidabilità sopra tutto
+- **Change Management**: adozione richiede trust building graduale
+
+### Innovazioni Tecniche:
+- **WebSocket sophisticate** con reconnection logic automatico
+- **Token refresh robusto** con error handling avanzato
+- **Animation system modulare** per performance ottimali
+- **Lazy loading intelligente** per componenti pesanti
+- **Context API organizzata** per stato globale scalabile
+
+### Next Phase Evolution:
+- **Dashboard personalizzabili** per tipo utente (clinico vs ricercatore)
+- **Dark mode** per contesti clinici a bassa luminosità
+- **Voice Commands** per controllo hands-free
+- **AR Visualization** per planning neurochirurgico
+- **Global Expansion** multi-language e regulatory compliance
     
 ## 🏆 RECOGNITION & IMPACT
     
-La piattaforma è diventata case study per integrazione AI in ambiente medico, dimostrando che design centrato sull'utente può letteralmente salvare vite accelerando diagnosi critiche.
+QuantaBrain è diventata caso di studio per integrazione AI in ambiente medico-scientifico, dimostrando che design centrato sull'utente può letteralmente accelerare la ricerca neuroscientifica e migliorare l'accesso a tecnologie avanzate per professionisti non-tecnici.
+
+La piattaforma rappresenta un perfetto esempio di come **performance, usabilità e innovation** possano convergere per risolvere problemi reali nel settore healthcare, stabilendo nuovi standard per l'interfaccia utente in applicazioni medical-grade.
   `,
 
   tech: [
+    "Next.js 14",
     "React",
     "TypeScript",
     "WebGL",
     "Three.js",
-    "D3.js",
+    "Framer Motion",
+    "SWR",
+    "WebSocket",
+    "Tailwind CSS",
+    "ShadCN/UI",
+    "PWA",
     "Medical AI",
-    "DICOM",
-    "Material-UI",
-    "Web Workers",
-    "Service Workers",
+    "OAuth2",
   ],
   icon: "🧠",
   color: "from-purple-500 to-purple-600",
@@ -234,14 +246,17 @@ La piattaforma è diventata case study per integrazione AI in ambiente medico, d
     "./images/qb/workflow-comparison.png",
     "./images/qb/mobile-interface.png",
     "./images/qb/results-dashboard.png",
+    "./images/qb/upload-flow.png",
+    "./images/qb/analysis-progress.png",
   ],
 
   metrics: {
     impact: "40% riduzione tempi diagnosi",
-    users: "200+ neurologi specialisti",
+    users: "200+ neurologi/neuroscienziati",
     uptime: "99.8% uptime garantito",
     satisfaction: "95% user satisfaction",
     savings: "€2M+ risparmi annui",
+    onboarding: "90% completamento primo accesso",
   },
 
   team: {
@@ -251,29 +266,30 @@ La piattaforma è diventata case study per integrazione AI in ambiente medico, d
   },
 
   status: "completed",
-  industry: "Healthcare Technology",
+  industry: "Healthcare Technology / Neuroscience",
 
   challenges: [
-    "Integrazione AI trasparente senza sostituire medici",
-    "Performance real-time per diagnosi urgenti",
-    "Compliance DICOM e standard medicali",
-    "UX intuitiva per workflow medici complessi",
-    "Change management in ambiente ospedaliero conservativo",
+    "Semplificare complessità fMRI per utenti non-tecnici",
+    "Performance real-time per analisi neuroimaging pesanti",
+    "Onboarding intuitivo senza overload informativo",
+    "Integrazione AI trasparente e affidabile",
+    "Workflow step-by-step per processi scientifici complessi",
   ],
 
   solutions: [
-    "Co-design iterativo con neurologi practitioners",
-    "WebGL optimization per rendering 3D fluido",
-    "Design system medico con accessibilità prioritaria",
-    "AI augmentation philosophy, non replacement",
-    "Training program e supporto change management",
+    "Design system medico con progressive disclosure",
+    "Next.js + WebGL optimization per rendering fluido",
+    "Onboarding ritardato e documentazione in-app",
+    "WebSocket real-time con confidence scoring",
+    "Component library modulare e accessibility-first",
   ],
 
   results: [
-    "40% riduzione tempo diagnosi critico",
-    "200+ medici adozione attiva quotidiana",
-    "99.8% uptime per affidabilità clinical-grade",
-    "€2M+ impatto economico annuale ospedali",
-    "95% satisfaction score da healthcare professionals",
+    "40% riduzione tempo medio analisi",
+    "200+ ricercatori adozione attiva quotidiana",
+    "90% completamento onboarding autonomo",
+    "99.8% uptime per affidabilità scientific-grade",
+    "€2M+ impatto economico sistema sanitario",
+    "95% satisfaction da healthcare professionals",
   ],
 };
