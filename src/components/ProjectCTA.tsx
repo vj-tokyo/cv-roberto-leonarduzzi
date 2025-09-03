@@ -3,7 +3,7 @@ import type { PortfolioProject } from "../types/portfolio";
 import { cvData } from "../data/cvData";
 
 interface ProjectCTAProps {
-  project?: PortfolioProject; // Opzionale
+  project?: PortfolioProject;
   variant?: "default" | "compact" | "minimal";
   className?: string;
 }
@@ -13,6 +13,15 @@ const ProjectCTA: React.FC<ProjectCTAProps> = ({
   variant = "default",
   className = "",
 }) => {
+  const getInitials = (fullName: string) => {
+    return fullName
+      .split(" ")
+      .map((word) => word[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
   const handleEmailClick = () => {
     const subject = project
       ? `Interessato al progetto: ${project.title}`
@@ -42,6 +51,13 @@ Grazie,
 
   const handlePhoneClick = () => {
     window.location.href = `tel:${cvData.personal_info.contact.mobile}`;
+  };
+
+  // Avatar sizes per variant
+  const avatarSizes = {
+    default: "w-20 h-20 text-xl",
+    compact: "w-16 h-16 text-lg",
+    minimal: "w-12 h-12 text-sm",
   };
 
   // Variant configurations
@@ -89,6 +105,17 @@ Grazie,
   return (
     <div className={`${styles.container} ${className}`}>
       <div className="text-center">
+        {/* Avatar */}
+        <div className="flex justify-center mb-4">
+          <div
+            className={`${avatarSizes[variant]} rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-lg ring-4 ring-white hover:scale-110 transition-transform duration-200`}
+          >
+            <span className="text-white font-bold">
+              {getInitials(cvData.personal_info.name)}
+            </span>
+          </div>
+        </div>
+
         <h3 className={styles.title}>Interessato a collaborare?</h3>
 
         <p className={styles.description}>

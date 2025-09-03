@@ -1,7 +1,7 @@
 import React from "react";
 import { cvData } from "../data/cvData";
 import ProfileSection from "../components/ProfileSection";
-import EducationSection from "../components/EducationSection";
+// import EducationSection from "../components/EducationSection";
 import SkillsSection from "../components/SkillsSection";
 import AwardsSection from "../components/AwardsSection";
 import LanguagesSection from "../components/LanguagesSection";
@@ -22,7 +22,7 @@ const CurriculumPage: React.FC = () => {
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-1 xl:col-span-2 space-y-6">
             <SkillsSection skills={cvData.skills} />
-            <EducationSection education={cvData.education} />
+            {/* <EducationSection education={cvData.education} /> */}
             <div className="space-y-6">
               <AwardsSection awards={cvData.awards} />
               <LanguagesSection languages={cvData.languages} />

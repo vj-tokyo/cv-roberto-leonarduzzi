@@ -57,14 +57,6 @@ export const cvData = {
       ],
     },
   ],
-  education: [
-    {
-      degree: "Master’s Degree",
-      field: "Communication Sciences",
-      institution: "Sapienza University of Rome",
-      years: "2000 – 2005",
-    },
-  ],
   skills: {
     hard_skills: [
       "UX Research",
