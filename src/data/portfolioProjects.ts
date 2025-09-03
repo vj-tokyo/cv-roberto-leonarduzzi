@@ -16,7 +16,7 @@ export const portfolioProjects = [
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",
     color: "from-[#8B5CF6] to-[#7C3AED]", // Purple gradient custom per HealthTech/AI
-    cover: "./public/images/qb/cover.png",
+    cover: "./images/qb/cover.png",
   },
   {
     title: "Digital Publishing Subsctiption UX",
@@ -29,7 +29,7 @@ export const portfolioProjects = [
     tech: ["html5", "css3", "Vanilla js", "Figma"],
     icon: "📰",
     color: "from-[#EC4899] to-[#BE185D]", // Pink gradient custom per Publishing/Media
-    cover: "./public/images/cn/cover.png",
+    cover: "./images/cn/cover.png",
   },
   {
     title: "Enterprise KPI Dashboard",
@@ -42,7 +42,7 @@ export const portfolioProjects = [
     tech: ["IBM Carbon", "Figma"],
     icon: "📊",
     color: "from-[#10B981] to-[#047857]", // Green gradient custom per Enterprise/Business
-    cover: "./public/images/ibm/cover.png",
+    cover: "./images/ibm/cover.png",
   },
   {
     title: "Social-First Site Builder",
@@ -63,6 +63,6 @@ export const portfolioProjects = [
     ],
     icon: "🚀",
     color: "from-[#3B82F6] to-[#1D4ED8]", // Blue gradient custom per Startup/Innovation
-    cover: "./public/images/mj/cover.png",
+    cover: "./images/mj/cover.png",
   },
 ];
