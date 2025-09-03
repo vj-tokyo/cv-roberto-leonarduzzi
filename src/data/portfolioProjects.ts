@@ -11,7 +11,7 @@ export const portfolioProjects = [
     year: "2024-2025",
     description:
       "Piattaforma AI di analisi neuroimaging per diagnosi mediche qualitative di neurodivergenza in ambito psichiatrico.",
-    role: "Frontend Lead Developer & Medical UX Designer", // ✅ NUOVO CAMPO
+    role: "Frontend Developer & UX Designer", // ✅ NUOVO CAMPO
     extendedDescription: quantabrainProject.extendedDescription,
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",

@@ -17,7 +17,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
 
   return (
     <ErrorBoundary>
-      <div className="overflow-y-auto max-h-[80vh]">
+      <div className="overflow-y-auto max-h-[90vh]">
         {/* Header con gradient */}
         <header
           className={`bg-gradient-to-r ${project.color} p-8 text-white rounded-t-lg`}
