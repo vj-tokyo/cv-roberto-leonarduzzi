@@ -10,6 +10,11 @@ export const citynewsProject: PortfolioProject = {
   extendedDescription: `
 # 📰 Publishing Revolution - Citynews
 
+<div class="my-8 grid grid-cols-2 gap-4">
+  <img class="my-8" src="./images/qb/analises.png" alt="Figma dashboard mokup" />
+  <img class="my-8" src="./images/qb/mokup.png" alt="Figma detail mokup" />
+</div>
+
 ## Il Gigante del Local News
 
 Citynews è la più grande rete di informazione locale in Italia, con oltre 50 testate che coprono tutte le principali città italiane. Come Head of UX/UI, ho guidato una trasformazione digitale senza precedenti.

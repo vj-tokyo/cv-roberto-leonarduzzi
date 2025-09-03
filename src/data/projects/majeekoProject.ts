@@ -10,6 +10,10 @@ export const majeekoProject: PortfolioProject = {
   extendedDescription: `
 # 🚀 Social-First Site Builder - Majeeko
 
+
+## 🎥 Demo video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aSrKm0t9XJY?si=72LEzelRpDHYioiL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## La Vision Pioneering
 
 Nel 2015, insieme al mio co-founder, abbiamo identificato un gap nel mercato: i piccoli business spendevano troppo tempo a gestire separatamente siti web e social media. Abbiamo immaginato una soluzione che unificasse tutto in un'unica piattaforma intelligente.

@@ -1,35 +1,35 @@
 import type { PortfolioProject } from "../../types/portfolio";
 
 export const quantabrainProject: PortfolioProject = {
-  title: "AI Platform che Riduce del 40% i Tempi di Diagnosi Neurologica",
+  title: "AI Platform that Reduces Neurological Diagnosis Time by 40%",
   company: "QuantaBrain",
   year: "2024",
   description:
-    "Sviluppo di interfacce AI-powered per analisi neuroimaging che hanno rivoluzionato il workflow di 200+ medici, riducendo i tempi di diagnosi del 40% e garantendo 99.8% di uptime per casi critici.",
+    "Development of AI-powered interfaces for neuroimaging analysis that revolutionized the workflow of 200+ doctors, reducing diagnosis time by 40% and ensuring 99.8% uptime for critical cases.",
 
   extendedDescription: `
 
-  Come Frontend Developer sono stato responsabile della progettazione e implementazione del servizio front end della piattaforma.
+  As Frontend Developer, I was responsible for designing and implementing the front-end service of the platform.
 
-  ## Obiettivo Principale
-Consentire ai neuroscienziati di caricare, analizzare e visualizzare dati fMRI tramite un'interfaccia web chiara, minimale e funzionale, ottimizzata per flussi di lavoro scientifici, senza richiedere background tecnico avanzato.
+  ## Main Objective
+Enable neuroscientists to upload, analyze, and visualize fMRI data through a clear, minimal, and functional web interface, optimized for scientific workflows, without requiring advanced technical background.
 
-// ## LA MIA STRATEGIA HUMAN-CENTERED
+// ## MY HUMAN-CENTERED STRATEGY
     
-### Approccio User centred UX Design:
+### User-Centered UX Design Approach:
 
-l mio metodo di lavoro si fonda sulla collaborazione continua con gli stakeholder, grazie a co-design sessions che favoriscono il confronto e l’allineamento degli obiettivi. Attraverso un processo di iterative prototyping, le interfacce vengono testate e validate direttamente, così da assicurare soluzioni concrete ed efficaci. Tutto questo si traduce in un principio chiave: la semplicità prima di tutto. La complessità tecnica viene nascosta dietro interfacce chiare e intuitive, capaci di garantire un utilizzo immediato anche in situazioni ad alta pressione.
+My working method is based on continuous collaboration with stakeholders, through co-design sessions that foster discussion and alignment of objectives. Through an iterative prototyping process, interfaces are tested and validated directly, ensuring concrete and effective solutions. This translates into a key principle: simplicity first. Technical complexity is hidden behind clear and intuitive interfaces, capable of ensuring immediate use even in high-pressure situations.
     
-1. **Co-design Sessions**: workshop con stackholders
-2. **Iterative Prototyping**: testato in contesto clinico reale
-// 3. **Performance-First**: ogni millisecondo conta in emergenze
-4. **Simplicity-First**: nascondere complessità tecnica dietro interfacce intuitive
-// 5. **Accessibility**: WCAG 2.1 AAA per diverse abilità 
+1. **Co-design Sessions**: workshops with stakeholders
+2. **Iterative Prototyping**: tested in real clinical context
+// 3. **Performance-First**: every millisecond counts in emergencies
+4. **Simplicity-First**: hide technical complexity behind intuitive interfaces
+// 5. **Accessibility**: WCAG 2.1 AAA for different abilities 
 
-## Targhet users
+## Target Users
 
-Il design delle interfacce è stato guidato dall’analisi delle esigenze di diversi profili professionali che interagiscono quotidianamente con dati complessi e strumenti avanzati di neuroimaging. 
-// Ogni categoria di utenti richiede flussi di lavoro ottimizzati e soluzioni specifiche per il proprio contesto operativo:
+The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. 
+// Each user category requires optimized workflows and specific solutions for their operational context:
 
 <div class="my-8 grid grid-cols-3 gap-4">
   <img src="./images/qb/personas/Radiologist.jpg" alt="Radiologist" />
@@ -37,30 +37,30 @@ Il design delle interfacce è stato guidato dall’analisi delle esigenze di div
   <img src="./images/qb/personas/Patient.jpg" alt="Patient" />
 </div>
     
-// // - **Neurologi Senior**: diagnosi complesse, decisioni rapide
-// - **Neuroscienziati**:
-//  ricerca clinica e analisi quantitative
-// // - **Resident Doctors**: supporto formativo, guided analysis  
-// - **Tecnici Radiologi**: workflow ottimizzati, quality control
-// - **Ricercatori Medici**: dataset analysis, pattern recognition
+// // - **Senior Neurologists**: complex diagnoses, rapid decisions
+// - **Neuroscientists**:
+//  clinical research and quantitative analysis
+// // - **Resident Doctors**: educational support, guided analysis  
+// - **Radiology Technicians**: optimized workflows, quality control
+// - **Medical Researchers**: dataset analysis, pattern recognition
 
 // # HERO STATEMENT
     
-// Come Frontend Lead ho trasformato l'analisi neurologica per 200+ medici, riducendo del 40% i tempi di diagnosi attraverso interfacce AI-powered intuitive e performanti per l'analisi quantitativa del cervello.
+// As Frontend Lead, I transformed neurological analysis for 200+ doctors, reducing diagnosis time by 40% through intuitive and performant AI-powered interfaces for quantitative brain analysis.
     
 
-# UI design
+# UI Design
 
-Dedign delle viste principali dell'applicazione.
+Design of the main application views.
 
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img class="my-8" src="./images/qb/analises.png" alt="Figma dashboard mokup" />
-    <img class="my-8" src="./images/qb/mokup.png" alt="Figma detail mokup" />
+  <img class="my-8" src="./images/qb/analises.png" alt="Figma dashboard mockup" />
+    <img class="my-8" src="./images/qb/mokup.png" alt="Figma detail mockup" />
 </div>
 
-# Validazione prototipo
+# Prototype Validation
 
-Dopo la validazione delle sigole schermate ho realizzato un prototipo basilare per validare i flussi.
+After validating individual screens, I created a basic prototype to validate the flows.
 
 <div class="my-8 grid grid-cols-1 gap-4">
    <img class="my-8" src="./images/qb/figma_full.png" alt="Figma interactive prototype" />
@@ -69,239 +69,250 @@ Dopo la validazione delle sigole schermate ho realizzato un prototipo basilare p
 
 ### Header
 
-<img class="my-8" src="./images/qb/header.png" alt="QuantaBrain Platform - Sistema completo per analisi fMRI" />
+<img class="my-8" src="./images/qb/header.png" alt="QuantaBrain Platform - Complete system for fMRI analysis" />
 
-### Upload flow
+### Upload Flow
+
+The flow supports uploading single files and folders and can be activated by clicking the button in the header or dragging a file or folder into the upload area.
+File validation is performed before upload.
 
 <div class="my-8 grid grid-cols-4 gap-4">
-  <img src="./images/qb/upload_1_1.png" alt="Step 1 - Upload File fMRI" />
-  <img src="./images/qb/upload_2.png" alt="Step 2 - Selezione Parametri" />
-  <img src="./images/qb/upload_3.png" alt="Step 3 - Upload immagini FMRI" />
-  <img src="./images/qb/upload_3.png" alt="Step 3 - Visualizzazione risultati" />
+  <img src="./images/qb/upload_1_1.png" alt="Step 1 - Upload fMRI File" />
+  <img src="./images/qb/upload_2.png" alt="Step 2 - Parameter Selection" />
+  <img src="./images/qb/upload_3.png" alt="Step 3 - Upload FMRI images" />
+  <img src="./images/qb/upload_3.png" alt="Step 3 - Results visualization" />
 </div>
 
 ### Notifications
-Il sistema di notifiche segnala il cambio di stato delle analisi per mezzo di un badge con elenco e notifiche sonore per completamento effettuato ed errore in una analisi. Utile in caso di analisi di grandi volumi di dati.
+The notification system is based on websockets and signals analysis status changes through a badge with list and sound notifications for completion and error in an analysis. Useful for large data volume analysis.
 
 <div class="my-8 grid grid-cols-1 gap-4">
   <img src="./images/qb/notifications.png" alt="Notifications dropdown list" />
 </div>
 
-### Discovery flow
+### Discovery Flow
 
-Il dettaglio della analisi si apre cliccando su una analisi della lista. Il dettaglio può essere visualizzato in due modi distinti accessibili dalla tab superiore, i risultati possono essere filtrati tramite le checkboxes che gestiscono i dati in modo granulare.
+The analysis detail opens by clicking on an analysis in the list. The detail can be viewed in two distinct ways accessible from the top tab, results can be filtered through checkboxes that manage data granularly.
 
-- Visualizzazione tabellare
-- Visualizzazione aggregata grafica (next feature)
+- Tabular visualization
+- Aggregated graphical visualization (next feature)
 
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./images/qb/detail.png" alt="Workflow Precedente - Processo manuale complesso" />
-  <img src="./images/qb/detail_analysis.png" alt="Workflow Ottimizzato - AI-assisted step-by-step" />
+  <img src="./images/qb/detail.png" alt="Previous Workflow - Complex manual process" />
+  <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow - AI-assisted step-by-step" />
 </div>
 
-### Azioni dettaglio analisi
+#### Tabella
 
-- Visualizzazione metadati analisi - Toggle view per metadati
-- Modifica metadati analisi - Modifica titolo e descrizione analisi
-- Dounload analisi - in formato csv
-- Eliminazione analisi - con doppia conferma
+scarica glassbrain
+
+<div class="my-8 grid grid-cols-1 gap-4">
+   <img class="my-8" src="./images/qb/glassbrain_asd_report2_light_2025-07-22T19-13-28.png" alt="Figma interactive prototype" />
+</div>
+
+### Analysis Detail Actions
+
+- Analysis metadata visualization - Toggle view for metadata
+- Analysis metadata editing - Edit analysis title and description
+- Analysis download - in CSV format
+- Analysis deletion - with double confirmation
 
     
 
-### Guide
+### Guides
 
-La guida accessibile dall'icona nell'header si apre come sidebar sulla destra per rimanere fruibile senza uscire dalla piattaforma. E possibile navigare la guida per mezzo di un indice navigabile e frecce direzionali.
+The guide accessible from the header icon opens as a sidebar on the right to remain usable without leaving the platform. It's possible to navigate the guide through a navigable index and directional arrows.
 
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./images/qb/dasbboard_guide.png" alt="Dashbord guide opened" />
+  <img src="./images/qb/dasbboard_guide.png" alt="Dashboard guide opened" />
   <img src="./images/qb/detail_guide.png" alt="Detail guide opened" />
 </div>
 
 
-### Settings applicazione
+### Application Settings
 
-L'interfaccia delle preferenze della applicazione permette di gestire in modo granulare i 
+The application preferences interface allows granular management of:
 
-- dati accesso utente
-- interfaccia grafica
-- preferenze privacy
+- user access data
+- graphical interface
+- privacy preferences
 
 <div class="my-8 grid grid-cols-2 gap-4">
-  <img src="./images/qb/dasbboard_guide.png" alt="Dashbord guide opened" />
+  <img src="./images/qb/dasbboard_guide.png" alt="Dashboard guide opened" />
   <img src="./images/qb/detail_guide.png" alt="Detail guide opened" />
 </div>
 
-// ## IL PROBLEMA CRITICO
+// ## THE CRITICAL PROBLEM
     
-// I neurologi e neuroscienziati perdevano ore preziose analizzando manualmente scansioni cerebrali fMRI, causando:
+// Neurologists and neuroscientists were losing precious hours manually analyzing fMRI brain scans, causing:
     
-// - **Ritardi diagnostici**: 45+ minuti per singola scansione
-// - **Workflow frammentati**: dati sparsi su sistemi diversi
-// - **Complessità tecnica**: barriere all'accesso per non-tecnici
-// - **Interpretazione manuale**: processo soggetto a errori
-// - **Mancanza di standardizzazione**: risultati non comparabili
+// - **Diagnostic delays**: 45+ minutes per single scan
+// - **Fragmented workflows**: data scattered across different systems
+// - **Technical complexity**: access barriers for non-technical users
+// - **Manual interpretation**: process subject to errors
+// - **Lack of standardization**: non-comparable results
 
 
 // <div class="my-8 grid grid-cols-2 gap-4">
-//   <img src="./images/qb/dashboard.png" alt="Dashboard Principale - Gestione analisi e risultati" />
-//   <img src="./images/qb/detail.png" alt="Visualizzazione Risultati - Heatmap e confidence scores" />
+//   <img src="./images/qb/dashboard.png" alt="Main Dashboard - Analysis and results management" />
+//   <img src="./images/qb/detail.png" alt="Results Visualization - Heatmap and confidence scores" />
 // </div>
     
 
 
-## 🎥 Demo video
+## 🎥 Demo Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="QuantaBrain Platform Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
-## ARCHITETTURA TECNICA AVANZATA
+## ADVANCED TECHNICAL ARCHITECTURE
     
-### Stack Tecnologico Ottimizzato:
+### Optimized Technology Stack:
     
-- **Next.js 14** con App Router per performance e SSR
-- **TypeScript** per type safety e sviluppo scalabile
-- **React + Hooks** component architecture modulare
-- **WebGL + Three.js** rendering 3D neuroimmagini real-time
-- **Framer Motion** per animazioni fluide e transizioni
-- **SWR** per data fetching intelligente e caching
-- **WebSocket** per notifiche e aggiornamenti real-time
-- **Tailwind CSS + ShadCN** design system consistente
+- **Next.js 14** with App Router for performance and SSR
+- **TypeScript** for type safety and scalable development
+- **React + Hooks** modular component architecture
+- **WebGL + Three.js** real-time 3D neuroimaging rendering
+- **Framer Motion** for fluid animations and transitions
+- **SWR** for intelligent data fetching and caching
+- **WebSocket** for real-time notifications and updates
+- **Tailwind CSS + ShadCN** consistent design system
 
-// <img class="my-8" src="./images/qb/architecture.png" alt="Architettura Tecnica - Stack moderno per performance medicali" />
+// <img class="my-8" src="./images/qb/architecture.png" alt="Technical Architecture - Modern stack for medical performance" />
     
-### Funzionalità Core:
-- **Sistema Autenticazione**: JWT con refresh automatico ogni 5 minuti
-- **Layout Responsivo**: sidebar animata e design adattivo
-- **Upload Intelligente**: supporto file .nii, .gz, .zip con validazione
-- **Analisi Real-time**: WebSocket per progress e risultati live
-- **Sistema Quote**: limiti giornalieri/mensili per gestione risorse
-- **Admin Panel**: gestione utenti e permessi granulari
+### Core Features:
+- **Authentication System**: JWT with automatic refresh every 5 minutes
+- **Responsive Layout**: animated sidebar and adaptive design
+- **Intelligent Upload**: support for .nii, .gz, .zip files with validation
+- **Real-time Analysis**: WebSocket for live progress and results
+- **Quota System**: daily/monthly limits for resource management
+- **Admin Panel**: granular user and permission management
 
 ### Performance Optimization:
-- **<2s loading** per qualsiasi dataset neuroimaging
-- **60fps** rendering 3D brain scans
-- **Lazy loading** componenti pesanti (viewer 3D)
-- **Debouncing** per ottimizzazioni input utente
-- **PWA support** per funzionalità offline
+- **<2s loading** for any neuroimaging dataset
+- **60fps** 3D brain scan rendering
+- **Lazy loading** heavy components (3D viewer)
+- **Debouncing** for user input optimizations
+- **PWA support** for offline functionality
 
-## DESIGN SYSTEM MEDICO
+## MEDICAL DESIGN SYSTEM
     
 ### Medical UI Principles:
     
-- **Workflow Step-by-Step**: caricamento → selezione → analisi → risultati
-- **Progressive Disclosure**: risultati aggregati prima dei dettagli
-- **High Contrast**: leggibilità in ambienti ospedalieri
-- **Error Prevention**: validazioni multiple per safety
-- **Onboarding Ritardato**: modale introduttiva con delay per non sovraccaricare
+- **Step-by-Step Workflow**: upload → selection → analysis → results
+- **Progressive Disclosure**: aggregated results before details
+- **High Contrast**: readability in hospital environments
+- **Error Prevention**: multiple validations for safety
+- **Delayed Onboarding**: introductory modal with delay to avoid overload
 
 
     
 ### Component Library:
-- **fMRI Viewer**: visualizzatore 3D con overlay AI
-- **Analysis Dashboard**: lista e gestione analisi
-- **Results Panel**: heatmap e confidence scores interattivi
-- **Progress Tracker**: stato analisi real-time
-- **Help System**: tooltip e documentazione in-app
+- **fMRI Viewer**: 3D visualizer with AI overlay
+- **Analysis Dashboard**: analysis list and management
+- **Results Panel**: interactive heatmap and confidence scores
+- **Progress Tracker**: real-time analysis status
+- **Help System**: tooltips and in-app documentation
 
-// ## INNOVAZIONI AI-POWERED
+// ## AI-POWERED INNOVATIONS
     
 // ### Machine Learning Integration:
     
-// - **Analisi Automatica**: algoritmi per rilevamento pattern cerebrali
-// - **Confidence Scoring**: livelli probabilità per ogni risultato
-// - **Visualizzazione Intelligente**: heatmap automatiche zone attivate
-// - **Overlay 3D**: regioni cerebrali evidenziate in tempo reale
-// - **Interpretazione Guidata**: risultati presentati in linguaggio comprensibile
+// - **Automatic Analysis**: algorithms for brain pattern detection
+// - **Confidence Scoring**: probability levels for each result
+// - **Intelligent Visualization**: automatic heatmaps of activated zones
+// - **3D Overlay**: brain regions highlighted in real-time
+// - **Guided Interpretation**: results presented in understandable language
 
-// <img class="my-8" src="./images/qb/ai_results.png" alt="AI Integration - Risultati analisi con confidence scores" />
+// <img class="my-8" src="./images/qb/ai_results.png" alt="AI Integration - Analysis results with confidence scores" />
     
-// ### UX per AI Transparency:
-// - **Explainable Results**: visualizzazione chiara decision process
-// - **Confidence Indicators**: utenti sempre consapevoli dei limiti AI  
-// - **Manual Override**: controllo totale ricercatore su parametri
-// - **Progress Feedback**: stato analisi con WebSocket real-time
+// ### UX for AI Transparency:
+// - **Explainable Results**: clear visualization of decision process
+// - **Confidence Indicators**: users always aware of AI limits  
+// - **Manual Override**: researcher total control over parameters
+// - **Progress Feedback**: analysis status with real-time WebSocket
 
-// ## ESPERIENZA MULTI-DEVICE
+// ## MULTI-DEVICE EXPERIENCE
     
 // ### Responsive Medical Interface:
-// - **Desktop Primary**: workstation per analisi dettagliate
-// - **Tablet Secondary**: review rapidi e consultazioni
-// - **Mobile Support**: monitoraggio progress in mobilità
-// - **Cross-Device Sync**: sessioni continuano seamlessly
+// - **Desktop Primary**: workstation for detailed analysis
+// - **Tablet Secondary**: quick reviews and consultations
+// - **Mobile Support**: progress monitoring on the go
+// - **Cross-Device Sync**: sessions continue seamlessly
 
 // <div class="my-8 grid grid-cols-2 gap-4">
-//   <img src="./images/qb/desktop_view.png" alt="Desktop View - Interfaccia completa per analisi" />
-//   <img src="./images/qb/mobile_view.png" alt="Mobile View - Monitoraggio e notifiche" />
+//   <img src="./images/qb/desktop_view.png" alt="Desktop View - Complete interface for analysis" />
+//   <img src="./images/qb/mobile_view.png" alt="Mobile View - Monitoring and notifications" />
 // </div>
     
-// ## RISULTATI MISURATI E VALIDATI
+// ## MEASURED AND VALIDATED RESULTS
     
 // ### Clinical Efficiency:
-// - **40% riduzione** tempo medio diagnosi (45min → 27min)
-// - **99.8% uptime** garantito per affidabilità clinical-grade
-// - **90% completamento** onboarding al primo accesso
-// - **3 minuti** tempo medio dal caricamento al report
+// - **40% reduction** in average diagnosis time (45min → 27min)
+// - **99.8% uptime** guaranteed for clinical-grade reliability
+// - **90% completion** onboarding on first access
+// - **3 minutes** average time from upload to report
 
 // ### User Adoption & Satisfaction:
-// - **200+ neurologi/neuroscienziati** attivi daily
+// - **200+ neurologists/neuroscientists** active daily
 // - **95% user satisfaction** score 
-// - **Interfaccia percepita** come "semplice nonostante la complessità"
-// - **Zero necessità** di manuali esterni per il 90% degli utenti
+// - **Interface perceived** as "simple despite complexity"
+// - **Zero need** for external manuals for 90% of users
 
-// ### Business Impact Tangibile:
+// ### Tangible Business Impact:
 // - **€2M+ annual savings** in operational costs
-// - **Partnership expansion** con centri di ricerca italiani
-// - **Standardizzazione workflow** across multiple institutions
-// - **Integrazione** con dataset pubblici (ABIDE, ADHD-200)
+// - **Partnership expansion** with Italian research centers
+// - **Workflow standardization** across multiple institutions
+// - **Integration** with public datasets (ABIDE, ADHD-200)
 
-// <img class="my-8" src="./images/qb/results_dashboard.png" alt="Results Dashboard - Metriche performance e impact" />
+// <img class="my-8" src="./images/qb/results_dashboard.png" alt="Results Dashboard - Performance metrics and impact" />
     
-## 🔒 SICUREZZA E COMPLIANCE
+## 🔒 SECURITY AND COMPLIANCE
     
 ### Medical Standards:
-- **OAuth2 Integration**: autenticazione sicura e scalabile
-- **GDPR Compliance**: privacy pazienti garantita
-- **Token Management**: refresh automatico con retry logic
-- **Middleware Protection**: route protette e validation layers
-- **Security Headers**: protezione CSRF e policy-based access
+- **OAuth2 Integration**: secure and scalable authentication
+- **GDPR Compliance**: guaranteed patient privacy
+- **Token Management**: automatic refresh with retry logic
+- **Middleware Protection**: protected routes and validation layers
+- **Security Headers**: CSRF protection and policy-based access
     
 // ## 💡 LEARNINGS & INNOVATION
     
-// ### Key Learnings UX:
-// - **Neuroscienziati preferiscono** risultati aggregati prima dei dettagli
-// - **Modali ritardati** riducono sensazione di overload informativo
-// - **Documentazione in-app** più efficace di manuali PDF esterni
-// - **Medical UX ≠ Consumer UX**: precisione e affidabilità sopra tutto
-// - **Change Management**: adozione richiede trust building graduale
+// ### Key UX Learnings:
+// - **Neuroscientists prefer** aggregated results before details
+// - **Delayed modals** reduce sense of information overload
+// - **In-app documentation** more effective than external PDF manuals
+// - **Medical UX ≠ Consumer UX**: precision and reliability above all
+// - **Change Management**: adoption requires gradual trust building
 
-// ### Innovazioni Tecniche:
-// - **WebSocket sophisticate** con reconnection logic automatico
-// - **Token refresh robusto** con error handling avanzato
-// - **Animation system modulare** per performance ottimali
-// - **Lazy loading intelligente** per componenti pesanti
-// - **Context API organizzata** per stato globale scalabile
+// ### Technical Innovations:
+// - **Sophisticated WebSocket** with automatic reconnection logic
+// - **Robust token refresh** with advanced error handling
+// - **Modular animation system** for optimal performance
+// - **Intelligent lazy loading** for heavy components
+// - **Organized Context API** for scalable global state
 
 // ### Next Phase Evolution:
-// - **Dashboard personalizzabili** per tipo utente (clinico vs ricercatore)
-// - **Dark mode** per contesti clinici a bassa luminosità
-// - **Voice Commands** per controllo hands-free
-// - **AR Visualization** per planning neurochirurgico
-// - **Global Expansion** multi-language e regulatory compliance
+// - **Customizable dashboards** by user type (clinical vs researcher)
+// - **Dark mode** for low-light clinical contexts
+// - **Voice Commands** for hands-free control
+// - **AR Visualization** for neurosurgical planning
+// - **Global Expansion** multi-language and regulatory compliance
 
-## ⚡ RISULTATI CHIAVE
+## ⚡ KEY RESULTS
     
-- **40% riduzione** tempo diagnosi (da 45min a 27min)
-- **200+ medici specialisti** utilizzano quotidianamente la piattaforma  
-- **99.8% uptime** garantito per diagnosi critiche
-- **95% satisfaction score** dai neurologi utenti
-- **€2M+ risparmi** annui in costi ospedalieri
-- **90% completamento** onboarding al primo accesso
-- **3 minuti** tempo medio dal caricamento al report
+- **40% reduction** in diagnosis time (from 45min to 27min)
+- **200+ specialist doctors** use the platform daily  
+- **99.8% uptime** guaranteed for critical diagnoses
+- **95% satisfaction score** from neurologist users
+- **€2M+ savings** annually in hospital costs
+- **90% completion** onboarding on first access
+- **3 minutes** average time from upload to report
     
 ## RECOGNITION & IMPACT
     
-QuantaBrain è diventata caso di studio per integrazione AI in ambiente medico-scientifico, dimostrando che design centrato sull'utente può letteralmente accelerare la ricerca neuroscientifica e migliorare l'accesso a tecnologie avanzate per professionisti non-tecnici.
+QuantaBrain became a case study for AI integration in medical-scientific environments, demonstrating that user-centered design can literally accelerate neuroscientific research and improve access to advanced technologies for non-technical professionals.
 
-La piattaforma rappresenta un perfetto esempio di come **performance, usabilità e innovation** possano convergere per risolvere problemi reali nel settore healthcare, stabilendo nuovi standard per l'interfaccia utente in applicazioni medical-grade.
+The platform represents a perfect example of how **performance, usability, and innovation** can converge to solve real problems in the healthcare sector, establishing new standards for user interface in medical-grade applications.
   `,
 
   tech: [
@@ -339,45 +350,45 @@ La piattaforma rappresenta un perfetto esempio di come **performance, usabilità
   ],
 
   metrics: {
-    impact: "40% riduzione tempi diagnosi",
-    users: "200+ neurologi/neuroscienziati",
-    uptime: "99.8% uptime garantito",
+    impact: "40% reduction in diagnosis time",
+    users: "200+ neurologists/neuroscientists",
+    uptime: "99.8% guaranteed uptime",
     satisfaction: "95% user satisfaction",
-    savings: "€2M+ risparmi annui",
-    onboarding: "90% completamento primo accesso",
+    savings: "€2M+ annual savings",
+    onboarding: "90% first access completion",
   },
 
   team: {
-    size: "8 persone multidisciplinari",
+    size: "8 multidisciplinary people",
     role: "Frontend Lead Developer & Medical UX Designer",
-    duration: "10 mesi intensivi",
+    duration: "10 intensive months",
   },
 
   status: "completed",
   industry: "Healthcare Technology / Neuroscience",
 
   challenges: [
-    "Semplificare complessità fMRI per utenti non-tecnici",
-    "Performance real-time per analisi neuroimaging pesanti",
-    "Onboarding intuitivo senza overload informativo",
-    "Integrazione AI trasparente e affidabile",
-    "Workflow step-by-step per processi scientifici complessi",
+    "Simplify fMRI complexity for non-technical users",
+    "Real-time performance for heavy neuroimaging analysis",
+    "Intuitive onboarding without information overload",
+    "Transparent and reliable AI integration",
+    "Step-by-step workflow for complex scientific processes",
   ],
 
   solutions: [
-    "Design system medico con progressive disclosure",
-    "Next.js + WebGL optimization per rendering fluido",
-    "Onboarding ritardato e documentazione in-app",
-    "WebSocket real-time con confidence scoring",
-    "Component library modulare e accessibility-first",
+    "Medical design system with progressive disclosure",
+    "Next.js + WebGL optimization for fluid rendering",
+    "Delayed onboarding and in-app documentation",
+    "Real-time WebSocket with confidence scoring",
+    "Modular component library and accessibility-first",
   ],
 
   results: [
-    "40% riduzione tempo medio analisi",
-    "200+ ricercatori adozione attiva quotidiana",
-    "90% completamento onboarding autonomo",
-    "99.8% uptime per affidabilità scientific-grade",
-    "€2M+ impatto economico sistema sanitario",
-    "95% satisfaction da healthcare professionals",
+    "40% reduction in average analysis time",
+    "200+ researchers active daily adoption",
+    "90% autonomous onboarding completion",
+    "99.8% uptime for scientific-grade reliability",
+    "€2M+ economic impact on healthcare system",
+    "95% satisfaction from healthcare professionals",
   ],
 };

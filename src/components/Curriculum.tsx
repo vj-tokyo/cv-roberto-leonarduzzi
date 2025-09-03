@@ -3,7 +3,7 @@ import { cvData } from "../data/cvData";
 import Header from "./Header";
 import ProfileSection from "./ProfileSection";
 import ExperienceSection from "./ExperienceSection";
-import EducationSection from "./EducationSection";
+// import EducationSection from "./EducationSection";
 import SkillsSection from "./SkillsSection";
 import AwardsSection from "./AwardsSection";
 import LanguagesSection from "./LanguagesSection";
@@ -35,7 +35,7 @@ const Curriculum: React.FC = () => {
           <SkillsSection skills={cvData.skills} />
 
           {/* Education */}
-          <EducationSection education={cvData.education} />
+          {/* <EducationSection education={cvData.education} /> */}
 
           {/* Awards e Languages insieme */}
           <div className="space-y-6">
