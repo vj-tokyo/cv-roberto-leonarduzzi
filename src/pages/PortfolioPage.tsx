@@ -4,7 +4,14 @@ import PortfolioItem from "../components/PortfolioItem";
 import ProjectDialog from "../components/ProjectDialog";
 import type { PortfolioProject } from "../types/portfolio";
 
-const PortfolioPage: React.FC = () => {
+// Props interface corretta per la pagina portfolio
+interface PortfolioPageProps {
+  // La pagina portfolio non ha bisogno di props specifici
+  // potrebbe avere filtri o ordering in futuro
+  className?: string;
+}
+
+const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
   const [selectedProject, setSelectedProject] =
     useState<PortfolioProject | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -73,7 +80,23 @@ const PortfolioPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16">
+    <div
+      className={`min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16 ${className}`}
+    >
+      {/* Page Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            I Miei Progetti
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Una selezione dei progetti più significativi che ho sviluppato negli
+            ultimi anni, dalle piattaforme mediche AI alle trasformazioni
+            digitali enterprise.
+          </p>
+        </div>
+      </div>
+
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -4,27 +4,27 @@ interface FormattingOptions {
   enableTitles?: boolean;
   enableLists?: boolean;
   enableImages?: boolean;
-  enableIframes?: boolean; // Nuova opzione per iframe
+  enableIframes?: boolean;
   titleClass?: string;
   listClass?: string;
   paragraphClass?: string;
   imageClass?: string;
-  iframeClass?: string; // Nuova classe per iframe
+  iframeClass?: string;
 }
 
 const defaultOptions: FormattingOptions = {
   enableTitles: true,
   enableLists: true,
   enableImages: true,
-  enableIframes: true, // Abilitata di default
+  enableIframes: true,
   titleClass: "text-lg font-bold text-gray-900 mt-6 mb-3",
   listClass: "list-disc list-inside mb-4 text-gray-700 leading-relaxed",
   paragraphClass: "mb-4 text-gray-700 leading-relaxed",
   imageClass: "my-8 rounded-xl shadow-md",
-  iframeClass: "w-full my-8 rounded-xl shadow-lg", // Classe responsive per iframe
+  iframeClass: "w-full my-8 rounded-xl shadow-lg",
 };
 
-// Helper functions - definite PRIMA dell'hook per evitare errori di hoisting
+// Helper functions
 const isImageParagraph = (paragraph: string): boolean => {
   return paragraph.includes("<img") || paragraph.includes("![");
 };
@@ -33,108 +33,135 @@ const isIframeParagraph = (paragraph: string): boolean => {
   return paragraph.includes("<iframe");
 };
 
+// Riconoscimento titoli più accurato
 const isHeadingParagraph = (paragraph: string): boolean => {
   const trimmed = paragraph.trim();
+
+  // Deve iniziare e finire con **
+  if (!trimmed.startsWith("**") || !trimmed.endsWith("**")) {
+    return false;
+  }
+
+  // Rimuovi i ** per analizzare il contenuto
+  const content = trimmed.slice(2, -2).trim();
+
+  // Controlla che sia un titolo valido
   return (
-    trimmed.startsWith("**") &&
-    trimmed.endsWith("**") &&
-    trimmed.length < 150 &&
-    !trimmed.includes("\n") &&
-    !trimmed.includes("<img") &&
-    !trimmed.includes("â€¢")
+    content.length > 2 && // Almeno qualche carattere
+    content.length < 200 && // Non troppo lungo
+    !content.includes("\n") && // Non multiriga
+    !content.includes("<img") && // Non immagine
+    !content.includes("•") && // Non lista
+    !content.includes("Ã¢â‚¬Â¢") && // Non lista codificata male
+    !content.includes("</") && // Non HTML
+    // Caratteristiche tipiche di un titolo
+    (content.includes("🎯") ||
+      content.includes("⚡") ||
+      content.includes("🚀") ||
+      content.includes("⚙️") ||
+      content.includes("🎨") ||
+      content.includes("🤖") ||
+      content.includes("📱") ||
+      content.includes("🏆") ||
+      content.includes("🔬") ||
+      content.includes("💥") ||
+      /^[A-Z\s]+$/.test(content) || // Tutto maiuscolo
+      /HERO|RISULTATI|PROBLEMA|STRATEGIA|INNOVAZIONI|TECNOLOGIE|ARCHITETTURA|DESIGN|COMPLIANCE|RECOGNITION|IMPACT|SFIDA|OBIETTIVO|TARGET|RICERCA|PLATFORM|SYSTEM/i.test(
+        content
+      ) ||
+      content.split(" ").length <= 8) // Poche parole = probabilmente titolo
   );
 };
 
+// Fallback per titoli che potrebbero essere sfuggiti
 const isLikelyTitle = (paragraph: string): boolean => {
   const trimmed = paragraph.trim();
 
-  const titlePatterns = [
-    /^\*\*.*\*\*$/,
-    /Il Gigante|La Sfida|Strategia|Innovazioni|Risultati|Tecnologie|Vision|HERO/i,
-  ];
+  // Solo paragrafi che iniziano e finiscono con **
+  if (!trimmed.startsWith("**") || !trimmed.endsWith("**")) {
+    return false;
+  }
+
+  const content = trimmed.slice(2, -2).trim();
 
   return (
-    trimmed.length > 5 &&
-    trimmed.length < 150 &&
-    titlePatterns.some((pattern) => pattern.test(trimmed)) &&
-    !trimmed.includes("â€¢") &&
-    !trimmed.includes("<img") &&
-    !trimmed.includes("<iframe")
+    content.length > 2 &&
+    content.length < 150 &&
+    !content.includes("\n") &&
+    !content.includes("<img") &&
+    !content.includes("•") &&
+    !content.includes("Ã¢â‚¬Â¢") &&
+    content.split(" ").length <= 10 // Massimo 10 parole per un titolo
   );
 };
 
+// Determina automaticamente il livello del titolo
 const formatHeading = (paragraph: string, index: number): string => {
   const trimmed = paragraph.trim();
   const headingText = trimmed.replace(/^\*\*|\*\*$/g, "").trim();
 
-  let headingLevel = 2;
+  let headingLevel = 2; // Default h2
 
+  // H1 - Titoli principali/HERO
   if (
-    headingText.includes("Gigante") ||
     headingText.includes("HERO") ||
-    headingText.includes("Vision")
+    headingText.includes("🎯 HERO") ||
+    (headingText.length < 30 &&
+      (headingText.includes("GIGANTE") ||
+        headingText.includes("VISION") ||
+        /^[A-Z\s]{5,25}$/.test(headingText)))
   ) {
     headingLevel = 1;
-  } else if (
-    headingText.includes("Sfida") ||
-    headingText.includes("Strategia") ||
-    headingText.includes("Innovazioni") ||
-    headingText.includes("Risultati") ||
-    headingText.includes("Tecnologie")
+  }
+  // H2 - Sezioni principali
+  else if (
+    headingText.includes("🎯") ||
+    headingText.includes("⚡") ||
+    headingText.includes("🚀") ||
+    headingText.includes("⚙️") ||
+    headingText.includes("🎨") ||
+    headingText.includes("🤖") ||
+    headingText.includes("📱") ||
+    headingText.includes("🏆") ||
+    headingText.includes("🔬") ||
+    headingText.includes("💥") ||
+    /RISULTATI|PROBLEMA|STRATEGIA|INNOVAZIONI|TECNOLOGIE|ARCHITETTURA|DESIGN|COMPLIANCE|RECOGNITION|IMPACT|SFIDA/i.test(
+      headingText
+    )
   ) {
     headingLevel = 2;
-  } else if (headingText.length < 50) {
+  }
+  // H3 - Sottosezioni
+  else if (
+    headingText.length < 80 &&
+    (/Obiettivo|Target|Ricerca|Approccio|Stack|Principles|Library|Integration|Experience|Standards|Learnings|Phase/i.test(
+      headingText
+    ) ||
+      headingText.split(" ").length <= 5)
+  ) {
     headingLevel = 3;
+  }
+  // H4 - Dettagli specifici
+  else if (headingText.length < 50) {
+    headingLevel = 4;
   }
 
   const headingClasses = {
     1: "text-3xl font-bold text-gray-900 mt-12 mb-6",
     2: "text-2xl font-bold text-gray-900 mt-10 mb-5",
     3: "text-xl font-bold text-gray-900 mt-8 mb-4",
+    4: "text-lg font-bold text-gray-900 mt-6 mb-3",
   };
 
-  const className = headingClasses[headingLevel as keyof typeof headingClasses];
-
-  return `<h${headingLevel} key="${index}" class="${className}">${headingText}</h${headingLevel}>`;
-};
-
-const formatLikelyTitle = (paragraph: string, index: number): string => {
-  const trimmed = paragraph.trim();
-  const headingText = trimmed.replace(/^\*\*|\*\*$/g, "").trim();
-
-  let headingLevel = 2;
-
-  if (
-    headingText.includes("Gigante") ||
-    headingText.includes("HERO") ||
-    headingText.includes("Vision")
-  ) {
-    headingLevel = 1;
-  } else if (
-    headingText.includes("Sfida") ||
-    headingText.includes("Strategia") ||
-    headingText.includes("Innovazioni") ||
-    headingText.includes("Risultati") ||
-    headingText.includes("Tecnologie")
-  ) {
-    headingLevel = 2;
-  } else if (headingText.length < 50) {
-    headingLevel = 3;
-  }
-
-  const headingClasses = {
-    1: "text-3xl font-bold text-gray-900 mt-12 mb-6",
-    2: "text-2xl font-bold text-gray-900 mt-10 mb-5",
-    3: "text-xl font-bold text-gray-900 mt-8 mb-4",
-  };
-
-  const className = headingClasses[headingLevel as keyof typeof headingClasses];
+  const className =
+    headingClasses[headingLevel as keyof typeof headingClasses] ||
+    headingClasses[2];
 
   return `<h${headingLevel} key="${index}" class="${className}">${headingText}</h${headingLevel}>`;
 };
 
 const isBulletListParagraph = (paragraph: string): boolean => {
-  return paragraph.includes("â€¢");
+  return paragraph.includes("Ã¢â‚¬Â¢") || paragraph.includes("•");
 };
 
 const isGridParagraph = (paragraph: string): boolean => {
@@ -163,65 +190,83 @@ const formatImageParagraph = (
   );
 };
 
-// NUOVA FUNZIONE: Gestione iframe responsive
-// const formatIframeParagraph = (
-//   paragraph: string,
-//   iframeClass: string,
-//   index: number
-// ): string => {
-//   // Rimuovi attributi width e height fissi per renderlo responsive
-//   const responsiveIframe = paragraph
-//     .replace(/width="[^"]*"/g, '') // Rimuovi width fissa
-//     .replace(/height="[^"]*"/g, '') // Rimuovi height fissa
-//     .replace(/style="[^"]*"/g, '') // Rimuovi style inline esistenti
-//     .replace(/<iframe/g, `<iframe key="${index}"`);
+const formatIframeParagraph = (
+  paragraph: string,
+  iframeClass: string,
+  index: number
+): string => {
+  // Rimuovi attributi width e height fissi per renderlo responsive
+  const responsiveIframe = paragraph
+    .replace(/width="[^"]*"/g, "")
+    .replace(/height="[^"]*"/g, "")
+    .replace(/style="[^"]*"/g, "")
+    .replace(/<iframe/g, `<iframe key="${index}"`);
 
-//   // Determina il tipo di iframe e applica sizing appropriato
-//   const isYouTube = paragraph.includes("youtube.com") || paragraph.includes("youtu.be");
-//   const isFigma = paragraph.includes("figma.com");
+  // Determina il tipo di iframe
+  const isYouTube =
+    paragraph.includes("youtube.com") || paragraph.includes("youtu.be");
+  const isFigma = paragraph.includes("figma.com");
+  const isVimeo = paragraph.includes("vimeo.com");
 
-//   if (isYouTube) {
-//     // YouTube: aspect ratio 16:9
-//     return `
-//       <div key="${index}" class="${iframeClass}">
-//         <div class="relative w-full h-0 pb-[56.25%]">
-//           ${responsiveIframe.replace('<iframe', '<iframe class="absolute top-0 left-0 w-full h-full"')}
-//         </div>
-//       </div>
-//     `.trim();
-//   } else if (isFigma) {
-//     // Figma: aspect ratio più custom, altezza fissa ma width responsive
-//     return `
-//       <div key="${index}" class="${iframeClass}">
-//         <div class="relative w-full" style="height: 600px;">
-//           ${responsiveIframe.replace('<iframe', '<iframe class="absolute top-0 left-0 w-full h-full"')}
-//         </div>
-//       </div>
-//     `.trim();
-//   } else {
-//     // Generic iframe: aspect ratio 16:9 di default
-//     return `
-//       <div key="${index}" class="${iframeClass}">
-//         <div class="relative w-full h-0 pb-[56.25%]">
-//           ${responsiveIframe.replace('<iframe', '<iframe class="absolute top-0 left-0 w-full h-full"')}
-//         </div>
-//       </div>
-//     `.trim();
-//   }
-// };
+  if (isYouTube || isVimeo) {
+    // YouTube/Vimeo: aspect ratio 16:9
+    return `
+      <div key="${index}" class="${iframeClass}">
+        <div class="relative w-full h-0 pb-[56.25%] bg-gray-100 rounded-2xl overflow-hidden">
+          ${responsiveIframe.replace(
+            "<iframe",
+            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
+          )}
+        </div>
+      </div>
+    `.trim();
+  } else if (isFigma) {
+    // Figma: altezza maggiore per interfacce
+    return `
+      <div key="${index}" class="${iframeClass}">
+        <div class="relative w-full bg-gray-50 rounded-2xl overflow-hidden" style="height: min(70vh, 600px);">
+          ${responsiveIframe.replace(
+            "<iframe",
+            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
+          )}
+        </div>
+      </div>
+    `.trim();
+  } else {
+    // Generic iframe: aspect ratio 4:3
+    return `
+      <div key="${index}" class="${iframeClass}">
+        <div class="relative w-full h-0 pb-[75%] bg-gray-100 rounded-2xl overflow-hidden">
+          ${responsiveIframe.replace(
+            "<iframe",
+            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
+          )}
+        </div>
+      </div>
+    `.trim();
+  }
+};
 
 const formatBulletList = (
   paragraph: string,
   listClass: string,
   index: number
 ): string => {
-  const items = paragraph
-    .split("â€¢")
-    .filter((item) => item.trim().length > 0)
-    .map((item) => `<li class="mb-2">${item.trim()}</li>`)
-    .join("");
+  // Gestisci sia bullet codificati male che normali
+  const bullets = ["Ã¢â‚¬Â¢", "•"];
+  let items: string[] = [];
 
-  return `<ul key="${index}" class="${listClass}">${items}</ul>`;
+  for (const bullet of bullets) {
+    if (paragraph.includes(bullet)) {
+      items = paragraph
+        .split(bullet)
+        .filter((item) => item.trim().length > 0)
+        .map((item) => `<li class="mb-2">${item.trim()}</li>`);
+      break;
+    }
+  }
+
+  return `<ul key="${index}" class="${listClass}">${items.join("")}</ul>`;
 };
 
 const formatGridParagraph = (paragraph: string, index: number): string => {
@@ -249,18 +294,10 @@ export const useFormattedContent = (
     // Fix encoding issues
     const cleanText = text
       .replace(
-        /ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢/g,
-        "â€¢"
+        /ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬ 'ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã¢â‚¬ 'ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬ 'ÃƒÆ'Ã†'Ãƒâ€ 'ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã†'ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢/g,
+        "•"
       )
-      .replace(
-        /ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢/g,
-        "â€¢"
-      )
-      .replace(
-        /ÃƒÆ'Ã†'Ãƒâ€šÃ‚Â¢ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ'Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬/g,
-        "â€¢"
-      )
-      .replace(/ÃƒÆ'Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¢/g, "â€¢");
+      .replace(/Ã¢â‚¬Â¢/g, "•");
 
     const paragraphs = cleanText
       .split("\n\n")
@@ -269,43 +306,43 @@ export const useFormattedContent = (
 
     return paragraphs
       .map((paragraph, index) => {
-        // Handle iframe PRIMA delle immagini (priorità)
+        // PRIORITÀ 1: Handle iframe PRIMA di tutto
         if (config.enableIframes && isIframeParagraph(paragraph)) {
           return formatIframeParagraph(paragraph, config.iframeClass!, index);
         }
 
-        // Handle images
+        // PRIORITÀ 2: Handle images
         if (config.enableImages && isImageParagraph(paragraph)) {
           return formatImageParagraph(paragraph, config.imageClass!, index);
         }
 
-        // Handle perfect headings first
+        // PRIORITÀ 3: Handle headings PRIMA di processare bold text
         if (config.enableTitles && isHeadingParagraph(paragraph)) {
           return formatHeading(paragraph, index);
         }
 
-        // Fallback for likely titles
+        // PRIORITÀ 4: Fallback per titoli che potrebbero essere sfuggiti
         if (config.enableTitles && isLikelyTitle(paragraph)) {
-          return formatLikelyTitle(paragraph, index);
+          return formatHeading(paragraph, index);
         }
 
-        // Process bold text for inline emphasis
+        // PRIORITÀ 5: Handle bullet lists PRIMA di processare bold text
+        if (config.enableLists && isBulletListParagraph(paragraph)) {
+          return formatBulletList(paragraph, config.listClass!, index);
+        }
+
+        // PRIORITÀ 6: Handle grid layouts
+        if (config.enableImages && isGridParagraph(paragraph)) {
+          return formatGridParagraph(paragraph, index);
+        }
+
+        // PRIORITÀ 7: Process bold text SOLO per paragrafi normali
         const processedParagraph = paragraph.replace(
           /\*\*(.*?)\*\*/g,
           `<strong class="font-semibold text-gray-900">$1</strong>`
         );
 
-        // Handle bullet lists
-        if (config.enableLists && isBulletListParagraph(processedParagraph)) {
-          return formatBulletList(processedParagraph, config.listClass!, index);
-        }
-
-        // Handle grid layouts
-        if (config.enableImages && isGridParagraph(processedParagraph)) {
-          return formatGridParagraph(processedParagraph, index);
-        }
-
-        // Regular paragraphs
+        // PRIORITÀ 8: Regular paragraphs
         return `<p key="${index}" class="${config.paragraphClass}">${processedParagraph}</p>`;
       })
       .join("");
@@ -322,64 +359,6 @@ export const usePortfolioContent = (text: string | undefined) => {
     paragraphClass: "mb-6 text-gray-700 leading-relaxed",
     imageClass:
       "my-8 w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300",
-    iframeClass: "w-full my-8 rounded-2xl shadow-lg overflow-hidden", // Full width responsive
+    iframeClass: "w-full my-8 rounded-2xl shadow-lg overflow-hidden",
   });
-};
-
-// NUOVA FUNZIONE: Formato iframe responsive
-const formatIframeParagraph = (
-  paragraph: string,
-  iframeClass: string,
-  index: number
-): string => {
-  // Rimuovi attributi width e height fissi per renderlo responsive
-  const responsiveIframe = paragraph
-    .replace(/width="[^"]*"/g, "") // Rimuovi width fissa
-    .replace(/height="[^"]*"/g, "") // Rimuovi height fissa
-    .replace(/style="[^"]*"/g, "") // Rimuovi style inline esistenti
-    .replace(/<iframe/g, `<iframe key="${index}"`);
-
-  // Determina il tipo di iframe e applica sizing appropriato
-  const isYouTube =
-    paragraph.includes("youtube.com") || paragraph.includes("youtu.be");
-  const isFigma = paragraph.includes("figma.com");
-  const isVimeo = paragraph.includes("vimeo.com");
-
-  if (isYouTube || isVimeo) {
-    // YouTube/Vimeo: aspect ratio 16:9 perfetto
-    return `
-      <div key="${index}" class="${iframeClass}">
-        <div class="relative w-full h-0 pb-[56.25%] bg-gray-100 rounded-2xl overflow-hidden">
-          ${responsiveIframe.replace(
-            "<iframe",
-            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
-          )}
-        </div>
-      </div>
-    `.trim();
-  } else if (isFigma) {
-    // Figma: altezza maggiore per interfacce, ma comunque responsive
-    return `
-      <div key="${index}" class="${iframeClass}">
-        <div class="relative w-full bg-gray-50 rounded-2xl overflow-hidden" style="height: min(70vh, 600px);">
-          ${responsiveIframe.replace(
-            "<iframe",
-            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
-          )}
-        </div>
-      </div>
-    `.trim();
-  } else {
-    // Generic iframe: aspect ratio 4:3 più conservativo
-    return `
-      <div key="${index}" class="${iframeClass}">
-        <div class="relative w-full h-0 pb-[75%] bg-gray-100 rounded-2xl overflow-hidden">
-          ${responsiveIframe.replace(
-            "<iframe",
-            '<iframe class="absolute top-0 left-0 w-full h-full border-0"'
-          )}
-        </div>
-      </div>
-    `.trim();
-  }
 };

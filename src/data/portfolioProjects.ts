@@ -23,7 +23,7 @@ export const portfolioProjects = [
     company: "Citynews",
     year: "2021-2023",
     description:
-      "Progettazione UX/UI di un sistema di subscription per importante rete di news locali d'Italia con design system unificati.",
+      "Progettazione UX/UI di un sistema di subscription per importante rete di news locali d'Italia con design system unificati su piattaforma legacy.",
     extendedDescription: citynewsProject.extendedDescription,
     tech: [
       // "Design Systems",
