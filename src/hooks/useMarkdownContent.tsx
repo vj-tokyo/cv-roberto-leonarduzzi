@@ -4,14 +4,20 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import { defaultSchema } from "hast-util-sanitize";
+import { createSlug, extractTextFromChildren } from "../utils/textUtils";
 
-// Schema personalizzato per rehypeSanitize che permette attributi class
+// Schema personalizzato per rehypeSanitize che permette attributi class e id
 const sanitizeSchema = {
   ...defaultSchema,
   attributes: {
     ...defaultSchema.attributes,
-    "*": [...(defaultSchema.attributes?.["*"] || []), "className", "class"],
-    div: ["className", "class"],
+    "*": [
+      ...(defaultSchema.attributes?.["*"] || []),
+      "className",
+      "class",
+      "id",
+    ],
+    div: ["className", "class", "id"],
     img: ["src", "alt", "className", "class", "loading"],
     iframe: [
       "src",
@@ -23,43 +29,103 @@ const sanitizeSchema = {
       "title",
       "style",
     ],
+    h1: ["id", "className", "class"],
+    h2: ["id", "className", "class"],
+    h3: ["id", "className", "class"],
+    h4: ["id", "className", "class"],
+    h5: ["id", "className", "class"],
+    h6: ["id", "className", "class"],
   },
   tagNames: [...(defaultSchema.tagNames || []), "div", "iframe"],
 };
 
 // Componenti custom per gli elementi markdown
 const MarkdownComponents = {
-  // Headings con stili personalizzati
-  h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="text-3xl font-bold text-gray-900 mt-12 mb-6" {...props}>
-      {children}
-    </h1>
-  ),
-  h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-5" {...props}>
-      {children}
-    </h2>
-  ),
-  h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="text-xl font-bold text-gray-900 mt-8 mb-4" {...props}>
-      {children}
-    </h3>
-  ),
-  h4: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className="text-lg font-bold text-gray-900 mt-6 mb-3" {...props}>
-      {children}
-    </h4>
-  ),
-  h5: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h5 className="text-base font-bold text-gray-900 mt-4 mb-2" {...props}>
-      {children}
-    </h5>
-  ),
-  h6: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h6 className="text-sm font-bold text-gray-900 mt-4 mb-2" {...props}>
-      {children}
-    </h6>
-  ),
+  // Headings con stili personalizzati e ID automatici
+  h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h1
+        id={id}
+        className="text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h1>
+    );
+  },
+  h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h2
+        id={id}
+        className="text-2xl font-bold text-gray-900 mt-10 mb-5 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h2>
+    );
+  },
+  h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h3
+        id={id}
+        className="text-xl font-bold text-gray-900 mt-8 mb-4 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h3>
+    );
+  },
+  h4: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h4
+        id={id}
+        className="text-lg font-bold text-gray-900 mt-6 mb-3 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h4>
+    );
+  },
+  h5: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h5
+        id={id}
+        className="text-base font-bold text-gray-900 mt-4 mb-2 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h5>
+    );
+  },
+  h6: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    const text = extractTextFromChildren(children);
+    const id = createSlug(text);
+
+    return (
+      <h6
+        id={id}
+        className="text-sm font-bold text-gray-900 mt-4 mb-2 scroll-mt-20"
+        {...props}
+      >
+        {children}
+      </h6>
+    );
+  },
 
   // Paragrafi
   p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
@@ -126,8 +192,11 @@ const MarkdownComponents = {
         "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
       "my-8 grid grid-cols-3 gap-4":
         "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+      "my-8 grid grid-cols-4 gap-4":
+        "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
       "img-grid-2": "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
       "img-grid-3": "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+      "img-grid-4": "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
       "img-full": "my-8 w-full",
       "img-center": "my-8 mx-auto max-w-4xl",
     };

@@ -52,7 +52,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
           )}
 
           {/* Description */}
-          <section className="mb-8">
+          <section className="mb-8 p-8 px-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               Panoramica del Progetto
             </h2>
@@ -63,7 +63,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
 
           {/* Role Badge */}
           {project.role && (
-            <section className="mb-8">
+            <section className="mb-8 px-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {project.role}
               </h2>
@@ -89,7 +89,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
           )}
 
           {/* Extended Description - con React-Markdown */}
-          <section className="mb-8">
+          <section className="mb-8 px-8">
             {project.extendedDescription ? (
               <div className="prose prose-lg max-w-none">{markdownContent}</div>
             ) : (

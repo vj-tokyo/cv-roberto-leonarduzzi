@@ -21,7 +21,7 @@ export const cvData = {
     {
       role: "Front-end & UX/UI Lead",
       company: "Quantum Brain",
-      years: "2023 – Present",
+      years: "2023 — Present",
       responsibilities: [
         "Led UX/UI design and front-end architecture for neuroimaging research platform.",
         "Defined design system, user flows, and accessibility standards.",
@@ -31,9 +31,9 @@ export const cvData = {
     {
       role: "Head of UX/UI & Digital Strategy",
       company: "Citynews",
-      years: "2018 – 2023",
+      years: "2018 — 2023",
       responsibilities: [
-        "Managed design team for Italy’s largest online newspaper network.",
+        "Managed design team for Italy's largest online newspaper network.",
         "Redesigned mobile apps and digital properties with a user-centric approach.",
         "Aligned product roadmap with business goals and managed stakeholder relations.",
       ],
@@ -41,7 +41,7 @@ export const cvData = {
     {
       role: "Senior UX/UI Designer & Consultant",
       company: "IBM Interactive",
-      years: "2015 – 2018",
+      years: "2015 — 2018",
       responsibilities: [
         "Designed enterprise UX solutions for clients in banking and insurance.",
         "Created design systems and contributed to agile development processes.",
@@ -50,7 +50,7 @@ export const cvData = {
     {
       role: "Digital Project Manager / Designer",
       company: "Freelance & Agencies",
-      years: "2006 – 2015",
+      years: "2006 — 2015",
       responsibilities: [
         "Worked on branding, UX/UI, and digital campaigns for multiple clients.",
         "Provided end-to-end digital project management, from concept to delivery.",
@@ -78,13 +78,15 @@ export const cvData = {
       title: "BNP Paribas International Hackathon",
       year: "2017",
       achievement:
-        "Winner – designed and prototyped a financial digital solution in 48 hours.",
+        "Winner with Almonds team — designed and prototyped a financial digital solution in 48 hours.",
+      image: "./images/almonds/IMG_2068.JPG",
     },
     {
       title: "BNP Paribas International Hackathon",
-      year: "2017",
+      year: "2018",
       achievement:
-        "Winner – designed and prototyped a financial digital solution in 48 hours.",
+        "Winner with Mendua team — designed and prototyped a financial digital solution in 48 hours.",
+      image: "./images/awards/bnp-paribas-hackathon-2017.jpg",
     },
   ],
   languages: [
