@@ -5,109 +5,143 @@ export const citynewsProject: PortfolioProject = {
   company: "Citynews S.p.a.",
   year: "2021-2023",
   description:
-    "Trasformazione digitale della più grande rete di news locali d'Italia con oltre 50 testate. Creazione di design system unificati, implementazione di nuove funzionalità editoriali, e ottimizzazione dell'esperienza utente per lettori e giornalisti.",
+    "Digital transformation of Italy's largest local news network with over 50 publications. Creation of unified design systems, implementation of new editorial features, and user experience optimization for both readers and journalists.",
 
   extendedDescription: `
-# 📰 Publishing Revolution - Citynews
+# 📰 Views - Citynews
 
-<div class="my-8 grid grid-cols-2 gap-4">
-  <img class="my-8" src="./images/qb/analises.png" alt="Figma dashboard mokup" />
-  <img class="my-8" src="./images/qb/mokup.png" alt="Figma detail mokup" />
+## The Local News Giant
+
+Citynews is Italy's largest local news network, with over 50 publications covering all major Italian cities. As Head of UX/UI, I led an unprecedented digital transformation.
+
+![Map of Citynews network in Italy](./images/cn/case_citynews_rl_2022_partial (1)_Page_1_Image_0004.jpg)
+
+# Objective
+Visual characterization of the new "Dossier" post format, the new investigative channel by modifying the user opt-in flow integrating social logins and designing the paid subscription flow for exclusive content.
+The project was co-financed by Google within the editorial digital transformation optimization projects for Italy.
+
+Design:
+
+- Color guides
+- Typography guides
+
+Intervention Areas
+Identification of intervention areas for modifications to characterize a new post and design of article detail views, specialized channel containing all articles of the section and insertion of a preview area of the new format on the homepage and in the standard article news feed.
+
+<div class="my-8 grid grid-cols-3 gap-4">
+  <img class="my-8" src="./images/cn/channel_dossier.jpg" alt="Figma dashboard mockup" />
+  <img class="my-8" src="./images/cn/home_romatoday.jpg" alt="Figma dashboard mockup" />
+  <img class="my-8" src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
 </div>
 
-## Il Gigante del Local News
+# 📰 Subscription - Citynews
 
-Citynews è la più grande rete di informazione locale in Italia, con oltre 50 testate che coprono tutte le principali città italiane. Come Head of UX/UI, ho guidato una trasformazione digitale senza precedenti.
+For the subscription system, a checkout cart and a customizable dynamic paywall system for A/B testing and a landing page with price table and call to action were designed.
 
-![Mappa della rete Citynews in Italia](./images/cn/network-map.png)
-
-## 🎯 La Sfida della Scala
-
-- **50+ Testate Diverse**: Ogni città aveva la propria identità visiva e flussi editoriali
-- **Migliaia di Giornalisti**: Workflow diversi consolidati negli anni
-- **Milioni di Lettori**: Audience con aspettative e comportamenti diversi per città
-- **Legacy Systems**: CMS datati con limitazioni tecniche significative
-
-## 🚀 La Strategia di Unificazione
-
-### Design System Scalabile
-Creazione di un sistema che rispettasse le identità locali mantenendo coerenza
-
-![Homepage desktop - Layout unificato con identità locale](./images/cn/homepage-desktop.png)
-
-![Homepage mobile - Design responsive ottimizzato](./images/cn/homepage-mobile.png)
-
-### Component Library
-Libreria condivisa per accelerare lo sviluppo di nuove feature
-
-![Layout articolo - Tipografia e struttura ottimizzate per la lettura](./images/cn/article-layout.png)
-
-### Altri Pilastri Strategici
-- **Editorial Workflows**: Standardizzazione e ottimizzazione dei processi redazionali
-- **Performance First**: Ottimizzazione per Core Web Vitals e SEO
-
-## 💡 Innovazioni Implementate
+<div class="my-8 grid grid-cols-2 gap-4">
+  <img class="my-8" src="./images/cn/paywall_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+  <img class="my-8" src="./images/cn/checkout_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+</div>
 
 ### Smart Paywall
-Sistema di subscription intelligente basato su comportamento utente
+Intelligent subscription system based on user behavior
 
-![Smart paywall - Sistema di abbonamento intelligente](./images/cn/paywall-popup.png)
+<div class="my-8 grid grid-cols-1 gap-4">
+  <img class="my-8" src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
+</div>
+
+## 📰 User Settings
+
+The user profile management area underwent a complete refactory, dividing the settings into an organized menu allowing modular addition of subscription settings from which it's possible to manage subscription plans to individual network publications.
+
+<div class="my-8 grid grid-cols-1 gap-4">
+  <img class="my-8" src="./images/cn/user_subsriptions_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+</div>
+
+## 🎯 The Scale Challenge
+
+- **50+ Different Publications**: Each city had its own visual identity and editorial workflows
+- **Thousands of Journalists**: Different workflows consolidated over the years
+- **Millions of Readers**: Audience with different expectations and behaviors by city
+- **Legacy Systems**: Outdated CMS with significant technical limitations
+
+## 🚀 The Unification Strategy
+
+### Scalable Design System
+Creation of a system that respected local identities while maintaining coherence
+
+![Desktop homepage - Unified layout with local identity](./images/cn/homepage-desktop.png)
+
+![Mobile homepage - Optimized responsive design](./images/cn/homepage-mobile.png)
+
+### Component Library
+Shared library to accelerate new feature development
+
+![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
+
+### Other Strategic Pillars
+- **Editorial Workflows**: Standardization and optimization of editorial processes
+- **Performance First**: Optimization for Core Web Vitals and SEO
+
+## 💡 Implemented Innovations
+
+![Smart paywall - Intelligent subscription system](./images/cn/paywall-popup.png)
 
 ### Newsletter Automation
-Generazione automatica di newsletter personalizzate per città
+Automatic generation of personalized newsletters by city. I suggested Mailchimp for which customized templates were created
 
 ### Mobile-First Redesign
-Interfacce ottimizzate per mobile (80%+ del traffico)
+Interfaces optimized for mobile (80%+ of traffic)
 
-![Design mobile ottimizzato - Navigazione touch-friendly](./images/cn/mobile-optimized.png)
+![Optimized mobile design - Touch-friendly navigation](./images/cn/mobile-optimized.png)
 
-![Articolo mobile - Lettura ottimizzata per dispositivi mobili](./images/cn/article-mobile.png)
+![Mobile article - Reading optimized for mobile devices](./images/cn/article-mobile.png)
 
-### Real-Time Analytics
-Dashboard per monitoraggio engagement in tempo reale
+// ### Real-Time Analytics
+// Dashboard for real-time engagement monitoring
 
-## 🔄 Gestione del Cambiamento
+// ## 🔄 Change Management
 
-- **Training Program**: Formazione per 200+ giornalisti sui nuovi strumenti
-- **Rollout Graduale**: Implementazione città per città per minimizzare disruption
-- **Feedback Loops**: Sistema di raccolta feedback continuo dai team editoriali
-- **Success Metrics**: KPI chiari per misurare l'adozione e i risultati
+// - **Training Program**: Training for 200+ journalists on new tools
+// - **Gradual Rollout**: City-by-city implementation to minimize disruption
+// - **Feedback Loops**: Continuous feedback collection system from editorial teams
+// - **Success Metrics**: Clear KPIs to measure adoption and results
 
-![Griglia articoli - Organizzazione content per categorie e sezioni](./images/cn/article-grid.png)
+// ![Article grid - Content organization by categories and sections](./images/cn/article-grid.png)
 
-## ⚙️ Tecnologie e Metodologie
+## ⚙️ Technologies and Methodologies
 
-### Architettura Moderna
-- **Headless CMS**: Migrazione verso architettura API-first
-- **Micro-Frontend**: Architettura modulare per gestire la complessità
-- **A/B Testing**: Sperimentazione continua su layout e funzionalità
-- **Performance Monitoring**: Strumenti avanzati per monitoraggio real-time
+### Modern Architecture
+- **Headless CMS**: Migration to API-first architecture
+- **Micro-Frontend**: Modular architecture to manage complexity
+- **A/B Testing**: Continuous experimentation on layouts and features
+- **Performance Monitoring**: Advanced tools for real-time monitoring
 
 ### A/B Testing Results
 
-![Variant A - Layout tradizionale](./images/cn/variant-a.png)
+![Variant A - Traditional layout](./images/cn/variant-a.png)
 
-![Variant B - Layout ottimizzato](./images/cn/variant-b.png)
+![Variant B - Optimized layout](./images/cn/variant-b.png)
 
-![Risultati A/B Test - Performance comparison](./images/cn/ab-results.png)
+![A/B Test Results - Performance comparison](./images/cn/ab-results.png)
 
-## 📊 Risultati Straordinari
+## 📊 Extraordinary Results
 
-La trasformazione ha portato risultati concreti:
+The transformation brought concrete results:
 
-- **40% aumento** del tempo di permanenza
-- **25% crescita** delle subscription
-- **50% riduzione** del tempo di pubblicazione degli articoli
-- **10M+ lettori** mensili raggiunti
-- **50+ testate** unificate con successo
+- **40% increase** in time spent on site
+- **25% growth** in subscriptions
+- **50% reduction** in article publication time
+- **10M+ monthly readers** reached
+- **50+ publications** successfully unified
 
-![Dashboard finale dei risultati - Metriche di performance e engagement](./images/cn/final-dashboard.png)
+![Final results dashboard - Performance and engagement metrics](./images/cn/final-dashboard.png)
 
 ## 🎯 Impact & Recognition
 
-Questo progetto ha stabilito un nuovo standard per l'informazione locale digitale in Italia, dimostrando come un design system ben strutturato possa scalare efficacemente su decine di property diverse mantenendo identità locali distintive.
+This project established a new standard for digital local news in Italy, demonstrating how a well-structured design system can effectively scale across dozens of different properties while maintaining distinctive local identities.
 
-La trasformazione di Citynews è diventata case study nel settore publishing italiano, mostrando come UX/UI design strategico possa guidare crescita sostenibile e engagement duraturo nel competitive landscape del digital news.
+The Citynews transformation became a case study in the Italian publishing sector, showing how strategic UX/UI design can drive sustainable growth and lasting engagement in the competitive digital news landscape.
   `,
 
   tech: [
@@ -139,43 +173,43 @@ La trasformazione di Citynews è diventata case study nel settore publishing ita
   ],
 
   metrics: {
-    testate: "50+ testate unificate",
-    audience: "10M+ lettori mensili",
-    performance: "40% aumento tempo permanenza",
-    subscriptions: "25% crescita subscription",
-    efficiency: "50% riduzione tempo pubblicazione",
+    testate: "50+ unified publications",
+    audience: "10M+ monthly readers",
+    performance: "40% increase in time spent",
+    subscriptions: "25% subscription growth",
+    efficiency: "50% reduction in publication time",
   },
 
   team: {
-    size: "15 persone",
+    size: "15 people",
     role: "Head of UX/UI",
-    duration: "2 anni",
+    duration: "2 years",
   },
 
   status: "completed",
   industry: "Digital Media & Publishing",
 
   challenges: [
-    "Unificare 50+ testate mantenendo identità locali",
-    "Gestire workflow di migliaia di giornalisti",
-    "Ottimizzare performance su scala nazionale",
-    "Implementare paywall intelligente senza perdere lettori",
-    "Change management su organizzazione complessa",
+    "Unify 50+ publications while maintaining local identities",
+    "Manage workflows of thousands of journalists",
+    "Optimize performance at national scale",
+    "Implement intelligent paywall without losing readers",
+    "Change management on complex organization",
   ],
 
   solutions: [
-    "Design system scalabile con variazioni locali",
-    "Training program strutturato per adoption",
-    "Rollout graduale città per città",
-    "A/B testing continuo per ottimizzazioni",
-    "Micro-frontend architecture per modularità",
+    "Scalable design system with local variations",
+    "Structured training program for adoption",
+    "Gradual city-by-city rollout",
+    "Continuous A/B testing for optimizations",
+    "Micro-frontend architecture for modularity",
   ],
 
   results: [
-    "40% aumento tempo di permanenza lettori",
-    "25% crescita subscription e revenue",
-    "50% riduzione tempo pubblicazione articoli",
-    "10M+ lettori mensili network unificato",
-    "200+ giornalisti formati con successo",
+    "40% increase in reader time spent",
+    "25% subscription and revenue growth",
+    "50% reduction in article publication time",
+    "10M+ monthly readers unified network",
+    "200+ journalists successfully trained",
   ],
 };
