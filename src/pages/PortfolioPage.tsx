@@ -87,12 +87,12 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            I Miei Progetti
+            My Projects
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Una selezione dei progetti più significativi che ho sviluppato negli
-            ultimi anni, dalle piattaforme mediche AI alle trasformazioni
-            digitali enterprise.
+            A selection of the most significant projects I have developed in
+            recent years, from AI medical platforms to enterprise digital
+            transformations.
           </p>
         </div>
       </div>

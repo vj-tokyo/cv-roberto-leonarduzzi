@@ -101,7 +101,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       </div> */}
 
       {/* Action Button - ora è visual indicator */}
-      <div
+      {/* <div
         className={`w-full py-3 bg-gradient-to-r ${project.color} text-white font-semibold rounded-xl group-hover:shadow-lg transition-all duration-200 text-center group-hover:scale-[1.02]`}
       >
         <span className="inline-flex items-center">
@@ -120,7 +120,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
             />
           </svg>
         </span>
-      </div>
+      </div> */}
 
       {/* Hover Overlay Effect */}
       <div
