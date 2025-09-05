@@ -24,9 +24,14 @@
     <meta name="author" content="Roberto Leonarduzzi" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="Italian" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
     <meta
       property="og:url"
       content="https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/"
@@ -45,8 +50,17 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Roberto Leonarduzzi - UX/UI Designer Portfolio"
+    />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:site_name" content="Roberto Leonarduzzi CV" />
+
+    <!-- LinkedIn specifici -->
+    <meta property="article:author" content="Roberto Leonarduzzi" />
+    <meta property="profile:first_name" content="Roberto" />
+    <meta property="profile:last_name" content="Leonarduzzi" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -66,6 +80,15 @@
       property="twitter:image"
       content="https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/og-image.jpg"
     />
+    <meta
+      property="twitter:image:alt"
+      content="Roberto Leonarduzzi - UX/UI Designer Portfolio"
+    />
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Roberto Leonarduzzi CV" />
 
     <!-- Additional SEO -->
     <meta name="format-detection" content="telephone=no" />
@@ -75,33 +98,145 @@
       href="https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/"
     />
 
+    <!-- Preconnect per performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon aggiuntivi -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Sitemap Reference -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Roberto Leonarduzzi",
-        "jobTitle": "UX/UI Designer & Digital Project Manager",
-        "description": "Digital Project Manager e UX/UI Designer con 15+ anni di esperienza",
-        "email": "roberto.leonarduzzi@gmail.com",
-        "telephone": "+39 393 3330784",
-        "url": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Via di Portonaccio 191",
-          "addressLocality": "Roma",
-          "addressCountry": "IT"
-        },
-        "sameAs": ["https://linkedin.com/in/robertoleonarduzzi"],
-        "alumniOf": "Sapienza University of Rome",
-        "knowsAbout": [
-          "UX Design",
-          "UI Design",
-          "Project Management",
-          "Frontend Development",
-          "React",
-          "Design Systems",
-          "Agile Methodologies"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/#person",
+            "name": "Roberto Leonarduzzi",
+            "jobTitle": "UX/UI Designer & Digital Project Manager",
+            "description": "Digital Project Manager e UX/UI Designer con 15+ anni di esperienza in design systems, frontend development e leadership di team multidisciplinari.",
+            "email": "roberto.leonarduzzi@gmail.com",
+            "telephone": "+39 393 3330784",
+            "url": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/",
+            "image": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/profile-photo.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Via di Portonaccio 191",
+              "addressLocality": "Roma",
+              "addressRegion": "Lazio",
+              "postalCode": "00159",
+              "addressCountry": "IT"
+            },
+            "sameAs": ["https://linkedin.com/in/robertoleonarduzzi"],
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Sapienza University of Rome",
+              "url": "https://www.uniroma1.it/"
+            },
+            "knowsAbout": [
+              "UX Design",
+              "UI Design",
+              "Project Management",
+              "Frontend Development",
+              "React",
+              "Next.js",
+              "Design Systems",
+              "Agile Methodologies",
+              "User Research",
+              "Prototyping",
+              "JavaScript",
+              "TypeScript",
+              "Figma",
+              "Adobe Creative Suite"
+            ],
+            "knowsLanguage": [
+              {
+                "@type": "Language",
+                "name": "Italian",
+                "proficiencyLevel": "Native"
+              },
+              {
+                "@type": "Language",
+                "name": "English",
+                "proficiencyLevel": "Fluent"
+              }
+            ],
+            "award": [
+              {
+                "@type": "Achievement",
+                "name": "BNP Paribas International Hackathon Winner",
+                "description": "Winner – designed and prototyped a financial digital solution in 48 hours",
+                "dateCreated": "2017"
+              }
+            ],
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Quantum Brain",
+              "description": "Neuroimaging research platform",
+              "url": "https://quantumbrain.com"
+            },
+            "hasOccupation": [
+              {
+                "@type": "Occupation",
+                "name": "Front-end & UX/UI Lead",
+                "description": "Led UX/UI design and front-end architecture for neuroimaging research platform",
+                "occupationLocation": {
+                  "@type": "Organization",
+                  "name": "Quantum Brain"
+                }
+              },
+              {
+                "@type": "Occupation",
+                "name": "Head of UX/UI & Digital Strategy",
+                "description": "Managed design team for Italy's largest online newspaper network",
+                "occupationLocation": {
+                  "@type": "Organization",
+                  "name": "Citynews"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/#webpage",
+            "url": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/",
+            "name": "Roberto Leonarduzzi - UX/UI Designer & Digital Project Manager | CV",
+            "description": "CV di Roberto Leonarduzzi, Digital Project Manager e UX/UI Designer con 15+ anni di esperienza. Specializzato in design systems, frontend development e leadership di team multidisciplinari.",
+            "inLanguage": "it-IT",
+            "mainEntity": {
+              "@id": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/#person"
+            },
+            "datePublished": "2024-01-01",
+            "dateModified": "2024-12-01",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Roberto Leonarduzzi Portfolio",
+              "url": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://roberto-leonarduzzi.github.io/cv-roberto-leonarduzzi/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "CV Roberto Leonarduzzi"
+              }
+            ]
+          }
         ]
       }
     </script>
