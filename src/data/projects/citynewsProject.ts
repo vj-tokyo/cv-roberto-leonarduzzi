@@ -8,6 +8,9 @@ export const citynewsProject: PortfolioProject = {
     "Digital transformation of Italy's largest local news network with over 50 publications. Creation of unified design systems, implementation of new editorial features, and user experience optimization for both readers and journalists.",
 
   extendedDescription: `
+
+
+Led a cross-functional team of 6 people including graphic designers, UX designers, and front-end developers in the design and prototyping of web interfaces, user flows, and advertising formats for web and mobile.  
 # 📰 Views - Citynews
 
 ## The Local News Giant
@@ -19,6 +22,27 @@ Citynews is Italy's largest local news network, with over 50 publications coveri
 # Objective
 Visual characterization of the new "Dossier" post format, the new investigative channel by modifying the user opt-in flow integrating social logins and designing the paid subscription flow for exclusive content.
 The project was co-financed by Google within the editorial digital transformation optimization projects for Italy.
+
+
+## The Challenge
+
+- **50+ Different Publications**: Each city had its own visual identity and editorial workflows
+- **Thousands of Journalists**: Different workflows consolidated over the years
+- **Millions of Readers**: Audience with different expectations and behaviors by city
+- **Legacy Systems**: Outdated CMS and custom Scalable Design System with significant technical limitations
+
+// ### Scalable Design System
+
+// Creation of a system that respected local identities while maintaining coherence
+
+// ![Desktop homepage - Unified layout with local identity](./images/cn/homepage-desktop.png)
+
+// ![Mobile homepage - Optimized responsive design](./images/cn/homepage-mobile.png)
+
+### Component Library
+Shared library to accelerate new feature development
+
+![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
 
 Design:
 
@@ -58,34 +82,16 @@ The user profile management area underwent a complete refactory, dividing the se
   <img class="my-8" src="./images/cn/user_subsriptions_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
 </div>
 
-## 🎯 The Scale Challenge
-
-- **50+ Different Publications**: Each city had its own visual identity and editorial workflows
-- **Thousands of Journalists**: Different workflows consolidated over the years
-- **Millions of Readers**: Audience with different expectations and behaviors by city
-- **Legacy Systems**: Outdated CMS with significant technical limitations
 
 ## 🚀 The Unification Strategy
 
-### Scalable Design System
-Creation of a system that respected local identities while maintaining coherence
+// ### Other Strategic Pillars
+// - **Editorial Workflows**: Standardization and optimization of editorial processes
+// - **Performance First**: Optimization for Core Web Vitals and SEO
 
-![Desktop homepage - Unified layout with local identity](./images/cn/homepage-desktop.png)
+// ## 💡 Implemented Innovations
 
-![Mobile homepage - Optimized responsive design](./images/cn/homepage-mobile.png)
-
-### Component Library
-Shared library to accelerate new feature development
-
-![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
-
-### Other Strategic Pillars
-- **Editorial Workflows**: Standardization and optimization of editorial processes
-- **Performance First**: Optimization for Core Web Vitals and SEO
-
-## 💡 Implemented Innovations
-
-![Smart paywall - Intelligent subscription system](./images/cn/paywall-popup.png)
+// ![Smart paywall - Intelligent subscription system](./images/cn/paywall-popup.png)
 
 ### Newsletter Automation
 Automatic generation of personalized newsletters by city. I suggested Mailchimp for which customized templates were created
