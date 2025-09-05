@@ -79,6 +79,14 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
     window.history.pushState(null, "", `?${params.toString()}`);
   };
 
+  // Separare i progetti in base alla presenza di extendedDescription
+  const projectsWithDetails = portfolioProjects.filter(
+    (project) => project.extendedDescription
+  );
+  const projectsWithoutDetails = portfolioProjects.filter(
+    (project) => !project.extendedDescription
+  );
+
   return (
     <div
       className={`min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16 ${className}`}
@@ -97,18 +105,58 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {portfolioProjects.map((project, index) => (
-            <PortfolioItem
-              key={index}
-              project={project}
-              onExploreClick={handleExploreProject}
-            />
-          ))}
+      {/* Featured Projects Section */}
+      {projectsWithDetails.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Featured Projects
+            </h2>
+            <p className="text-gray-600">
+              Comprehensive case studies with detailed insights and outcomes.
+            </p>
+          </div>
+          <div className="grid grid-cols-12 gap-8">
+            {projectsWithDetails.map((project, index) => (
+              <div
+                key={`featured-${index}`}
+                className="col-span-12 md:col-span-6"
+              >
+                <PortfolioItem
+                  // variant="compact"
+                  project={project}
+                  onExploreClick={handleExploreProject}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Other Projects Section */}
+      {projectsWithoutDetails.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Other Projects
+            </h2>
+            <p className="text-gray-600">
+              Additional projects and collaborations.
+            </p>
+          </div>
+          <div className="grid grid-cols-12 gap-8">
+            {projectsWithoutDetails.map((project, index) => (
+              <div key={`other-${index}`} className="col-span-12 md:col-span-4">
+                <PortfolioItem
+                  variant="compact"
+                  project={project}
+                  onExploreClick={handleExploreProject}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Project Dialog */}
       <ProjectDialog

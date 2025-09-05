@@ -168,7 +168,7 @@ const MarkdownComponents = {
       <img
         src={src}
         alt={alt}
-        className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300"
+        className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200"
         loading="lazy"
         {...props}
       />

@@ -18,7 +18,7 @@ export const majeekoProject: PortfolioProject = {
 
 Nel 2015, insieme al mio co-founder, abbiamo identificato un gap nel mercato: i piccoli business spendevano troppo tempo a gestire separatamente siti web e social media. Abbiamo immaginato una soluzione che unificasse tutto in un'unica piattaforma intelligente.
 
-![Majeeko Platform Overview](./images/mj/cover.png)
+![Majeeko Platform Overview](./images/mj/flusso.png)
 
 ## 💡 Il Prodotto Rivoluzionario
 

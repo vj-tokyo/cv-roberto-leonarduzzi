@@ -11,7 +11,7 @@ export const portfolioProjects = [
     year: "2024-2025",
     description:
       "AI neuroimaging analysis platform for qualitative medical diagnosis of neurodivergence in psychiatric field.",
-    role: "Frontend Developer & UX Designer", // ✅ NEW FIELD
+    role: "Frontend Developer & UX Designer",
     extendedDescription: quantabrainProject.extendedDescription,
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",
@@ -24,7 +24,7 @@ export const portfolioProjects = [
     year: "2021-2023",
     description:
       "UX/UI design of a subscription system for important local news network in Italy with unified design systems on legacy platform.",
-    role: "Head of UX/UI", // ✅ NEW FIELD
+    role: "Head of UX/UI",
     extendedDescription: citynewsProject.extendedDescription,
     tech: ["html5", "css3", "Vanilla js", "Figma"],
     icon: "📰",
@@ -34,10 +34,10 @@ export const portfolioProjects = [
   {
     title: "Enterprise KPI Dashboard",
     company: "IBM",
-    year: "2020-2021",
+    year: "2020",
     description:
       "Business intelligence platform for monitoring and analyzing enterprise metrics.",
-    role: "Senior UX/UI Designer & Frontend Lead", // ✅ NEW FIELD
+    role: "Senior UX/UI Designer & Frontend Lead",
     extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "📊",
@@ -46,11 +46,11 @@ export const portfolioProjects = [
   },
   {
     title: "Social-First Site Builder",
-    company: "Majeeko Startup",
+    company: "Editrice romana",
     year: "2015-2018",
     description:
       "World's first website builder with real-time social media synchronization.",
-    role: "Co-founder & Head of Design", // ✅ NEW FIELD
+    role: "Co-founder & Head of Design",
     extendedDescription: majeekoProject.extendedDescription,
     tech: [
       "Node.js",
@@ -64,5 +64,44 @@ export const portfolioProjects = [
     icon: "🚀",
     color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
     cover: "./images/mj/cover.png",
+  },
+  {
+    title: "Sistema di loyalty per Automobile Club d'Italia",
+    company: "IBM",
+    year: "2018-2021",
+    description:
+      "Business intelligence platform for monitoring and analyzing enterprise metrics.",
+    role: "Senior UX/UI Designer & Frontend Lead",
+    // extendedDescription: ibmProject.extendedDescription,
+    tech: ["IBM Carbon", "Figma"],
+    icon: "📊",
+    color: "from-[#10B981] to-[#047857]", // Custom green gradient for Enterprise/Business
+    cover: "./images/aci/cover.png",
+  },
+  {
+    title: "Edizione borghi più belli d'Italia",
+    company: "Majeeko Startup",
+    year: "2024",
+    description: "Prodotto editoriale ingegnerizzato",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🚀",
+    color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
+    cover: "./images/borghi/cover.png",
+  },
+  {
+    title:
+      "Immagine integrata per un prosciuttificio artigianale del consorzio di San Daniele",
+    company: "La glacere",
+    year: "2024",
+    description:
+      "Immagine coordinata aziendale comprensiva di logo, flyers, packaging, sito web con ecommerce.",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🚀",
+    color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
+    cover: "./images/glacere/cover.png",
   },
 ];
