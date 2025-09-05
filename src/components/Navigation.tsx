@@ -22,14 +22,14 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          {/* <div className="flex items-center">
+          <div className="flex items-center">
             <div className="text-2xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
               {cvData.personal_info.name}
             </div>
             <div className="hidden md:block ml-4 text-sm text-gray-500">
               {cvData.personal_info.title}
             </div>
-          </div> */}
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
