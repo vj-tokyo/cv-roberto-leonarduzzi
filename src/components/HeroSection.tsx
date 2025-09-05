@@ -12,7 +12,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   name,
   title,
   email,
-  mobile,
+  // mobile,
   approch,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,9 +25,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     window.location.href = `mailto:${email}`;
   };
 
-  const handlePhoneClick = () => {
-    window.location.href = `tel:${mobile}`;
-  };
+  // const handlePhoneClick = () => {
+  //   window.location.href = `tel:${mobile}`;
+  // };
 
   const handleLinkedInClick = () => {
     window.open("https://linkedin.com/in/robertoleonarduzzi", "_blank");
@@ -67,7 +67,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         }`}
       >
         {/* Profile Avatar/Icon */}
-        <div className="mb-8 relative">
+        {/* <div className="mb-8 relative">
           <div
             className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-6xl text-white shadow-2xl animate-bounce"
             style={{ animationDuration: "3s" }}
@@ -75,7 +75,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             👨‍💻
           </div>
           <div className="absolute inset-0 w-32 h-32 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full opacity-20 animate-ping mx-auto"></div>
-        </div>
+        </div> */}
+
+        {/* Title */}
+        <h2
+          className={`text-xl lg:text-2xl text-purple-200 mb-8 font-medium max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {title}
+        </h2>
 
         {/* Name */}
         <h1
@@ -88,15 +97,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </span>
         </h1>
 
-        {/* Title */}
-        <h2
-          className={`text-xl lg:text-2xl text-purple-200 mb-8 font-medium max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {title}
-        </h2>
-
         <p
           className={`text-sm lg:text-sm text-purple-200 mb-8 font-medium max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-500 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -106,14 +106,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </p>
 
         {/* Skills Tags */}
-        <div
+        {/* <div
           className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-1000 delay-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           {[
             "UX/UI Design",
-            "React",
+            "Front End Development",
             "Project Management",
             "Team Leadership",
             "Digital Innovation",
@@ -126,7 +126,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {skill}
             </span>
           ))}
-        </div>
+        </div> */}
 
         {/* Contact Actions */}
         <div
@@ -151,7 +151,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </button>
 
           {/* Phone Button */}
-          <button
+          {/* <button
             onClick={handlePhoneClick}
             className="group flex items-center space-x-3 border-2 border-white/30 text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
@@ -163,7 +163,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
             </svg>
             <span>{mobile}</span>
-          </button>
+          </button> */}
 
           {/* LinkedIn Button */}
           <button
@@ -186,7 +186,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Scroll Indicator */}
-        <div
+        {/* <div
           className={`transition-all duration-1000 delay-1100 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
@@ -209,7 +209,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </svg>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Gradient Fade */}
