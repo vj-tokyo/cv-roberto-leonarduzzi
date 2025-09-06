@@ -34,7 +34,7 @@ My working method is based on continuous collaboration with stakeholders, throug
 
 The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. Each user category requires optimized workflows and specific solutions for their operational context.
 
-<div className="my-8 grid grid-cols-3 gap-4">
+<div className="my-6 grid grid-cols-3 gap-4">
   <img src="./images/qb/personas/Radiologist.jpg" alt="Radiologist | Professional specialized in complex diagnoses and rapid decisions - Primary platform user" />
   <img src="./images/qb/personas/Psychiatrist.jpg" alt="Psychiatrist | Specialist in clinical research and quantitative analysis - Focus on behavioral analysis" />
   <img src="./images/qb/personas/Patient.jpg" alt="Patient | Final beneficiary of improved diagnostic process - Indirect but fundamental stakeholder" />
@@ -46,16 +46,21 @@ The interface design was guided by analyzing the needs of different professional
 -	File Upload: Support for .nii, .gz, .zip files
 -	Real-time Notifications: WebSocket-based analysis updates
 -	Quota System: Daily/monthly limits per user
--	Admin Panel: User and permissions management
+-	Admin Panel: User and permissions granular management
 
 ## UI Design and Prototyping
 
 Design of the main application views with focus on usability, performance, and cognitive load reduction.
 
-<div className="my-8 grid grid-cols-2 gap-4">
+<div className="my-6 grid grid-cols-2 gap-4">
   <img src="./images/qb/analises.png" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
   <img src="./images/qb/mokup.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+  <img src="./images/qb/modal_table.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+  <img src="./images/qb/modal_upload.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
 </div>
+
+![Complete Figma Prototype | Interactive wireframe with all connected navigation flows for complete UX validation](./images/qb/inversa.png)
+
 
 ## Interactive Prototype Validation
 
@@ -67,7 +72,7 @@ After validating individual screens through usability testing with real users, I
 
 The interface presents a very minimal design with two main states. We are evaluating my suggestion to eliminate the upload area on the left while maintaining the drag and drop upload functionality directly on the list.
 
-<div className="my-8 grid grid-cols-2 gap-4">
+<div className="my-6 grid grid-cols-2 gap-4">
   <img src="./images/qb/dashboard.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -82,7 +87,7 @@ The header contains main navigation elements, real-time WebSocket-based notifica
 
 The upload system supports single files and multiple folders with automatic validation. It can be activated via click on the header button or direct drag-and-drop into the upload area. File validation (.nii, .gz, .zip) is performed client-side before upload to ensure compatibility and reduce errors.
 
-<div className="my-8 grid grid-cols-4 gap-4">
+<div className="my-6 grid grid-cols-4 gap-4">
   <img src="./images/qb/upload_1_1.png" alt="Step 1 Upload | File upload interface with drag-and-drop and automatic validation" />
   <img src="./images/qb/upload_2.png" alt="Step 2 Parameters | Analysis parameter configuration with intelligent presets and real-time validation" />
   <img src="./images/qb/upload_3.png" alt="Step 3 Processing | Processing interface with real-time progress bar and WebSocket updates" />
@@ -104,7 +109,7 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
 - Tabular visualization with CSV/Excel export
 - Aggregated graphical visualization with interactive charts (future roadmap)
 
-<div className="my-8 grid grid-cols-2 gap-4">
+<div className="my-6 grid grid-cols-2 gap-4">
   <img src="./images/qb/detail.png" alt="Previous Workflow View | Complex traditional manual process with multiple applications and fragmented workflow" />
   <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | New unified AI-assisted process with clear steps and continuous feedback" />
 </div>
@@ -139,7 +144,7 @@ The detail interface offers a complete set of actions for each analysis:
 
 The guide accessible from the header icon opens as a right sidebar to remain usable without leaving the platform. It's possible to navigate the guide through a navigable index and directional arrows.
 
-<div className="my-8 grid grid-cols-2 gap-4">
+<div className="my-6 grid grid-cols-2 gap-4">
   <img src="./images/qb/dasbboard_guide.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail_guide.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -157,7 +162,7 @@ The application preferences interface allows granular management of:
 
 Il pannello di amministrazione consente la creazione ed il management dei permessi degli utenti.
 
-<div className="my-8 grid grid-cols-2 gap-4">
+<div className="my-6 grid grid-cols-2 gap-4">
   <img src="./images/qb/users-list.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
   <img src="./images/qb/add-user.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
 </div>

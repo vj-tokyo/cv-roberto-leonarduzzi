@@ -40,7 +40,8 @@ The project was co-financed by Google within the editorial digital transformatio
 // ![Mobile homepage - Optimized responsive design](./images/cn/homepage-mobile.png)
 
 ### Component Library
-Shared library to accelerate new feature development
+Mantenimento e migrazione component lybrary condivisa da Sketch a figma per permettere l'utilizzo di features collaborative.
+Mantenimento e ampliamento repo 
 
 ![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
 
@@ -115,13 +116,13 @@ Interfaces optimized for mobile (80%+ of traffic)
 
 // ![Article grid - Content organization by categories and sections](./images/cn/article-grid.png)
 
-## ⚙️ Technologies and Methodologies
+// ## ⚙️ Technologies and Methodologies
 
-### Modern Architecture
-- **Headless CMS**: Migration to API-first architecture
-- **Micro-Frontend**: Modular architecture to manage complexity
-- **A/B Testing**: Continuous experimentation on layouts and features
-- **Performance Monitoring**: Advanced tools for real-time monitoring
+// ### Modern Architecture
+// - **Headless CMS**: Migration to API-first architecture
+// - **Micro-Frontend**: Modular architecture to manage complexity
+// - **A/B Testing**: Continuous experimentation on layouts and features
+// - **Performance Monitoring**: Advanced tools for real-time monitoring
 
 ### A/B Testing Results
 
