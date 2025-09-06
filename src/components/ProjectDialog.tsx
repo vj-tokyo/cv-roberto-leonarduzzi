@@ -80,7 +80,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       onClick={handleBackdropClick}
     >
       <div
-        className={`relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ease-out transform ${
+        className={`relative w-full max-w-7xl h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ease-out transform ${
           isAnimating
             ? "opacity-100 scale-100 translate-y-0"
             : "opacity-0 scale-90 translate-y-8"
@@ -89,7 +89,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-30 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl"
+          className="absolute top-6 right-6 z-50 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl"
         >
           <svg
             className="w-6 h-6 text-gray-600"
@@ -106,7 +106,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
           </svg>
         </button>
 
-        {/* Project Content */}
+        {/* Project Content con Layout a Due Colonne */}
         <ProjectContent project={project} onClose={onClose} />
       </div>
     </div>

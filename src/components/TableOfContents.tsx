@@ -1,4 +1,4 @@
-// TableOfContents.tsx - Tailwind Only
+// TableOfContents.tsx - Ottimizzata per Sidebar
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { extractHeadings, type TOCItem } from "../utils/textUtils";
 
@@ -26,34 +26,42 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
   // Calcolo del tempo di lettura stimato
   const readingTime = useMemo(() => {
     const wordCount = content.split(/\s+/).length;
-    const wordsPerMinute = 200; // Velocità media di lettura
+    const wordsPerMinute = 200;
     return Math.ceil(wordCount / wordsPerMinute);
   }, [content]);
 
-  // Throttled scroll progress calculation
+  // Funzione per calcolare il progresso di scroll all'interno del modal
   const updateScrollProgress = useCallback(() => {
-    const scrollTop =
-      document.documentElement.scrollTop || document.body.scrollTop;
+    // Usa l'ID specifico del contenitore scrollabile
+    const scrollContainer = document.getElementById("project-content-scroll");
+    if (!scrollContainer) return;
+
+    const scrollTop = scrollContainer.scrollTop;
     const scrollHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+      scrollContainer.scrollHeight - scrollContainer.clientHeight;
     const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
     setScrollProgress(Math.min(progress, 100));
   }, []);
 
-  // Intersection Observer ottimizzato con throttling
+  // Intersection Observer ottimizzato
   useEffect(() => {
+    const scrollContainer = document.getElementById("project-content-scroll");
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
+        // Ordina per posizione verticale e prendi il primo visibile
+        const sortedEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (sortedEntries.length > 0) {
+          setActiveId(sortedEntries[0].target.id);
+        }
       },
       {
-        rootMargin: "-80px 0% -80% 0%",
-        threshold: [0.1, 0.5, 1.0],
+        root: scrollContainer, // Usa il contenitore del modal come root
+        rootMargin: "-100px 0% -70% 0%", // Aggiustato per l'header sticky
+        threshold: [0, 0.1, 0.5, 1.0],
       }
     );
 
@@ -77,20 +85,31 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", handleScroll, {
+        passive: true,
+      });
+    }
 
     return () => {
       observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+      }
     };
   }, [headings, updateScrollProgress]);
 
   const scrollToHeading = useCallback((id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for sticky header
-      window.scrollTo({
-        top: offsetTop,
+    const scrollContainer = document.getElementById("project-content-scroll");
+
+    if (element && scrollContainer) {
+      // Calcola la posizione tenendo conto dell'header sticky
+      const headerHeight = 120; // Altezza approssimativa dell'header
+      const elementTop = element.offsetTop - headerHeight;
+
+      scrollContainer.scrollTo({
+        top: Math.max(0, elementTop),
         behavior: "smooth",
       });
       setIsOpen(false);
@@ -106,7 +125,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
 
   return (
     <>
-      {/* Mobile Toggle Button - Enhanced */}
+      {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-20 right-4 z-50 group"
@@ -160,26 +179,22 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
         </div>
       </button>
 
-      {/* Enhanced Table of Contents */}
+      {/* Table of Contents - Sidebar per desktop, overlay per mobile */}
       <div
         className={`
           ${className}
-          ${isOpen ? "translate-x-0" : "translate-x-full"}
-          lg:translate-x-0
-          fixed lg:sticky top-4 right-4 lg:right-0
-          w-80 lg:w-72 xl:w-80
-          max-h-[calc(100vh-2rem)] lg:max-h-[calc(100vh-8rem)]
-          bg-white/95 lg:bg-white/90 backdrop-blur-sm
-          border border-gray-200/50 lg:border-gray-300/50
-          rounded-2xl shadow-2xl lg:shadow-lg
-          z-40 lg:z-10
-          transition-all duration-500 ease-out
-          overflow-hidden
+          ${
+            className.includes("lg:hidden")
+              ? `${
+                  isOpen ? "translate-x-0" : "translate-x-full"
+                } lg:translate-x-0 fixed top-4 right-4 w-80 max-h-[calc(100vh-2rem)] z-40 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-2xl transition-all duration-500 ease-out overflow-hidden`
+              : "h-full bg-white border-r border-gray-200 flex flex-col"
+          }
         `}
       >
-        {/* Enhanced Header */}
-        <div className="px-5 py-4 border-b border-gray-200/50 bg-gradient-to-r from-gray-50/80 to-blue-50/40">
-          <div className="flex items-center justify-between">
+        {/* Header */}
+        <div className="px-5 py-4 border-b border-gray-200/50 bg-gradient-to-r from-gray-50/80 to-blue-50/40 flex-shrink-0">
+          {/* <div className="flex items-center justify-between">
             <h3 className="text-sm font-semibold text-gray-900 flex items-center">
               <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
                 <svg
@@ -198,25 +213,27 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
               </div>
               Indice dei Contenuti
             </h3>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="lg:hidden w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {className.includes("lg:hidden") && (
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            )}
+          </div> */}
 
           {/* Reading stats */}
           <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
@@ -238,8 +255,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
           </div>
         </div>
 
-        {/* Enhanced Content */}
-        <nav className="p-4 overflow-y-auto max-h-[calc(100vh-200px)] lg:max-h-full scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
+        {/* Content */}
+        <nav className="flex-1 p-4 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400">
           <ul className="space-y-1">
             {headings.map(({ id, title, level }, index) => {
               const isActive = activeId === id;
@@ -261,11 +278,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
                           ? "text-gray-700 hover:text-gray-900"
                           : "text-gray-500 hover:text-gray-700"
                       }
-                      ${level === 2 ? "ml-0" : ""}
-                      ${level === 3 ? "ml-3" : ""}
-                      ${level === 4 ? "ml-6" : ""}
-                      ${level === 5 ? "ml-9" : ""}
-                      ${level === 6 ? "ml-12" : ""}
                     `}
                     style={{
                       paddingLeft: `${Math.max((level - 2) * 12 + 16, 16)}px`,
@@ -296,8 +308,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
           </ul>
         </nav>
 
-        {/* Enhanced Progress Footer */}
-        <div className="px-5 py-4 border-t border-gray-200/50 bg-gradient-to-r from-gray-50/80 to-blue-50/40">
+        {/* Progress Footer */}
+        <div className="px-5 py-4 border-t border-gray-200/50 bg-gradient-to-r from-gray-50/80 to-blue-50/40 flex-shrink-0">
           {/* Reading progress bar */}
           <div className="mb-3">
             <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
@@ -328,22 +340,25 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
               </svg>
               Sezione {Math.max(activeIndex + 1, 1)} di {headings.length}
             </div>
-            {activeIndex < headings.length - 1 && (
-              <button
-                onClick={() => scrollToHeading(headings[activeIndex + 1]?.id)}
-                className="text-blue-600 hover:text-blue-700 transition-colors"
+            {/* {activeIndex < headings.length - 1 && headings[activeIndex + 1] && (
+              <a
+                href={`#${headings[activeIndex + 1].id}`}
+                onClick={(e) =>
+                  handleLinkClick(e, headings[activeIndex + 1].id)
+                }
+                className="text-blue-600 hover:text-blue-700 transition-colors no-underline"
               >
                 Prossima →
-              </button>
-            )}
+              </a>
+            )} */}
           </div>
         </div>
       </div>
 
-      {/* Enhanced Overlay */}
-      {isOpen && (
+      {/* Overlay per mobile */}
+      {isOpen && className.includes("lg:hidden") && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-30 transition-all duration-300"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 transition-all duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
