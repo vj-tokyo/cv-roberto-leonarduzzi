@@ -7,6 +7,7 @@ import { cvData } from "../data/cvData";
 // import LanguagesSection from "../components/LanguagesSection";
 // import ExperienceSection from "../components/ExperienceSection_copy";
 import HeroSection from "../components/HeroSection";
+// import ClientsSection from "../components/ClientsSection";
 
 const CurriculumPage: React.FC = () => {
   return (
@@ -18,6 +19,8 @@ const CurriculumPage: React.FC = () => {
         mobile={cvData.personal_info.contact.mobile}
         approch={cvData.approch}
       />
+      {/* <ClientsSection clients={cvData.clients} /> */}
+
       <div className="max-w-7xl mx-auto p-8 font-sans">
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-8">
