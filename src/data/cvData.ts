@@ -89,6 +89,56 @@ export const cvData = {
       image: "./images/awards/bnp-paribas-hackathon-2017.jpg",
     },
   ],
+  clients: [
+    {
+      title: "BNP Paribas",
+      image: "./images/clients/bnp-paribas.jpg",
+    },
+    {
+      title: "Citynews",
+      image: "./images/clients/citynews.jpg",
+    },
+    {
+      title: "IBM - Sistemi Informativi",
+      image: "./images/clients/sistemi-informativi-ibm.jpg",
+    },
+    {
+      title: "Quantabrain",
+      image: "./images/clients/quantabrain.jpg",
+    },
+    {
+      title: "Poste Italiane",
+      image: "./images/clients/posteitaliane.jpg",
+    },
+    {
+      title: "Cannizzaro Studio Legale",
+      image: "./images/clients/cannizzaro-studio-legale.jpg",
+    },
+    {
+      title: "Società Editrice Romana",
+      image: "./images/clients/societa-editrice-romana.jpg",
+    },
+    {
+      title: "Le Babe",
+      image: "./images/clients/le-babe.jpg",
+    },
+    {
+      title: "Forma Performing Boots",
+      image: "./images/clients/forma-boots.jpg",
+    },
+    {
+      title: "Majeeko",
+      image: "./images/clients/majeeko.jpg",
+    },
+    {
+      title: "La Glacer",
+      image: "./images/clients/la-glacer.jpg",
+    },
+    {
+      title: "Pugnale",
+      image: "./images/clients/pugnale.jpg",
+    },
+  ],
   languages: [
     { language: "Italian", level: "Native" },
     { language: "English", level: "Fluent" },

@@ -40,23 +40,37 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
     }
   }, [isOpen, isVisible]);
 
-  // Gestione della chiusura con ESC
+  // ✅ MODIFICATO - Gestione della chiusura con ESC e body scroll migliorata
   useEffect(() => {
+    if (!isOpen) return;
+
+    // ✅ SALVA STATO PRECEDENTE
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+
+    // ✅ CALCOLA SCROLLBAR WIDTH per evitare layout shift
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
       }
     };
 
-    if (isOpen) {
-      document.addEventListener("keydown", handleEscapeKey);
-      // Previeni scroll del body quando il modal è aperto
-      document.body.style.overflow = "hidden";
+    // ✅ APPLICA STILI PREVENTIVI
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     }
 
+    document.addEventListener("keydown", handleEscapeKey);
+
+    // ✅ CLEANUP ROBUSTO
     return () => {
       document.removeEventListener("keydown", handleEscapeKey);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
     };
   }, [isOpen, onClose]);
 

@@ -1,4 +1,4 @@
-// ProjectContent.tsx - Layout a due colonne
+// ProjectContent.tsx - Layout a due colonne con fix immediate
 import React from "react";
 import type { PortfolioProject } from "../types/portfolio";
 import { usePortfolioMarkdown } from "../hooks/useMarkdownContent";
@@ -40,15 +40,26 @@ ${
         {/* Sidebar - Table of Contents */}
         <div className="hidden lg:block w-80 xl:w-96 border-r border-gray-200 bg-gray-50/50">
           <div className="sticky top-0 h-full">
-            <TableOfContents content={tocContent} className="h-full" />
+            {/* ✅ AGGIUNTO scrollContainerId */}
+            <TableOfContents
+              content={tocContent}
+              className="h-full"
+              scrollContainerId="main-content"
+            />
           </div>
         </div>
 
         {/* Mobile TOC Toggle - Fuori dalla sidebar per desktop */}
-        <TableOfContents content={tocContent} className="lg:hidden" />
+        {/* ✅ AGGIUNTO scrollContainerId */}
+        <TableOfContents
+          content={tocContent}
+          className="lg:hidden"
+          scrollContainerId="main-content"
+        />
 
         {/* Main Content - Scrollabile */}
-        <div className="flex-1 overflow-y-auto">
+        {/* ✅ AGGIUNTO ID main-content */}
+        <div id="main-content" className="flex-1 overflow-y-auto">
           {/* Header con gradient */}
           <header
             className={`bg-gradient-to-r ${project.color} p-8 text-white`}
