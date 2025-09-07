@@ -77,9 +77,9 @@ ${
             id="header"
           >
             <div className="flex items-center mb-4">
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mr-4 backdrop-blur-sm">
+              {/* <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl mr-4 backdrop-blur-sm">
                 {project.icon}
-              </div>
+              </div> */}
               <div className="flex-1">
                 <h1 className="text-3xl font-bold">{project.title}</h1>
                 <div className="flex items-center text-white/80 text-lg mb-2">

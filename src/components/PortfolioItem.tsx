@@ -34,11 +34,11 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
       >
         {/* Compact Header */}
         <div className="flex items-center mb-4">
-          <div
+          {/* <div
             className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center text-lg text-white mr-3 shadow-md group-hover:scale-110 transition-transform duration-200`}
           >
             {project.icon}
-          </div>
+          </div> */}
 
           <div className="flex-1 min-w-0">
             <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors truncate">
@@ -128,11 +128,11 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
     >
       {/* Project Header */}
       <div className="flex items-center mb-6">
-        <div
+        {/* <div
           className={`w-16 h-16 bg-gradient-to-r ${project.color} rounded-2xl flex items-center justify-center text-2xl text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-200`}
         >
           {project.icon}
-        </div>
+        </div> */}
 
         <div className="flex-1">
           <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors">

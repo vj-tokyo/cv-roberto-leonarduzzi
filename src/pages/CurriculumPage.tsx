@@ -7,7 +7,7 @@ import { cvData } from "../data/cvData";
 // import LanguagesSection from "../components/LanguagesSection";
 // import ExperienceSection from "../components/ExperienceSection_copy";
 import HeroSection from "../components/HeroSection";
-// import ClientsSection from "../components/ClientsSection";
+import ClientsSection from "../components/ClientsSection";
 
 const CurriculumPage: React.FC = () => {
   return (
@@ -19,7 +19,13 @@ const CurriculumPage: React.FC = () => {
         mobile={cvData.personal_info.contact.mobile}
         approch={cvData.approch}
       />
-      {/* <ClientsSection clients={cvData.clients} /> */}
+
+      {/* Clients Section */}
+      <div className="bg-gradient-to-br from-slate-50 to-blue-50 py-16">
+        <div className="max-w-7xl mx-auto px-8">
+          <ClientsSection clients={cvData.clients} />
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto p-8 font-sans">
         {/* Two Column Layout */}
@@ -29,6 +35,7 @@ const CurriculumPage: React.FC = () => {
             <ProfileSection profile={cvData.profile} approch={cvData.approch} />
             <ExperienceSection experiences={cvData.experience} />
           </div> */}
+
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-1 xl:col-span-2 space-y-6">
             {/* <SkillsSection skills={cvData.skills} /> */}

@@ -137,6 +137,9 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
   <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | Aggregated graphical visualization with interactive charts (future roadmap)" />
 </div>
 
+![Data table | Real-time dropdown list with analysis status, progress tracking, and configurable audio notifications](./images/qb/table.png)
+
+
 #### Analysis Detail Actions
 
 - Download analysis results

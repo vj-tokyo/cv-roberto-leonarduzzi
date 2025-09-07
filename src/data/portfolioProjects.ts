@@ -141,4 +141,30 @@ export const portfolioProjects = [
     color: "from-[#D97706] to-[#F59E0B]", // Oro Studio Cannizzaro
     cover: "./images/sc/cover.png",
   },
+  {
+    title: "Ecommerce occhiali artigianali",
+    company: "Pugnale Eyewear",
+    year: "2024",
+    description:
+      "Progettazione ecommerce e brand identity per occhiali artigianali di lusso",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🕶️",
+    color: "from-[#1F2937] to-[#374151]", // Nero/grigio scuro Pugnale
+    cover: "./images/pugnale/cover.png",
+  },
+  {
+    title: "Ecommerce calzature sportive per motociclisti",
+    company: "Forma Boots",
+    year: "2024",
+    description:
+      "Progettazione ecommerce per calzature tecniche da motociclismo ad alte prestazioni",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🏍️",
+    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    cover: "./images/forma/cover.png",
+  },
 ];
