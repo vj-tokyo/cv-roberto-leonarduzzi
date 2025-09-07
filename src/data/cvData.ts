@@ -92,51 +92,51 @@ export const cvData = {
   clients: [
     {
       title: "BNP Paribas",
-      image: "./images/clients/bnp-paribas.png",
+      image: "./clients/bnp-paribas.png",
     },
     {
       title: "Citynews",
-      image: "./images/clients/citynews.png",
+      image: "./clients/citynews.png",
     },
     {
       title: "IBM - Sistemi Informativi",
-      image: "./images/clients/sistemi-informativi-ibm.png",
+      image: "./clients/sistemi-informativi-ibm.png",
     },
     {
       title: "Quantabrain",
-      image: "./images/clients/quantabrain.png",
+      image: "./clients/quantabrain.png",
     },
     {
       title: "Poste Italiane",
-      image: "./images/clients/posteitaliane.png",
+      image: "./clients/posteitaliane.png",
     },
     {
       title: "Cannizzaro Studio Legale",
-      image: "./images/clients/cannizzaro-studio-legale.png",
+      image: "./clients/cannizzaro-studio-legale.png",
     },
     {
       title: "Società Editrice Romana",
-      image: "./images/clients/societa-editrice-romana.png",
+      image: "./clients/societa-editrice-romana.png",
     },
     {
       title: "Le Babe",
-      image: "./images/clients/le-babe.png",
+      image: "./clients/le-babe.png",
     },
     {
       title: "Forma Performing Boots",
-      image: "./images/clients/forma-boots.png",
+      image: "./clients/forma-boots.png",
     },
     {
       title: "Majeeko",
-      image: "./images/clients/Majeeko.png",
+      image: "./clients/Majeeko.png",
     },
     {
       title: "La Glacer",
-      image: "./images/clients/la-glacer.png",
+      image: "./clients/la-glacer.png",
     },
     {
       title: "Pugnale",
-      image: "./images/clients/pugnale.png",
+      image: "./clients/pugnale.png",
     },
   ],
   languages: [
