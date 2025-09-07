@@ -1,13 +1,14 @@
 // utils/performance.ts - Utility functions for performance optimization
 
-// ✅ FIXED - Tipi specifici invece di any
-type VoidFunction = (...args: unknown[]) => void;
+// Type per funzioni generiche - usa never[] per evitare problemi di compatibilità
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyFunction = (...args: any[]) => any;
 
-export function throttle<T extends VoidFunction>(
+export function throttle<T extends AnyFunction>(
   func: T,
   delay: number
 ): (...args: Parameters<T>) => void {
-  let timeoutId: number | null = null; // ✅ FIXED - number invece di NodeJS.Timeout
+  let timeoutId: number | null = null;
   let lastExecTime = 0;
 
   return (...args: Parameters<T>) => {
@@ -19,7 +20,6 @@ export function throttle<T extends VoidFunction>(
     } else {
       if (timeoutId) clearTimeout(timeoutId);
       timeoutId = window.setTimeout(() => {
-        // ✅ FIXED - window.setTimeout per browser
         func(...args);
         lastExecTime = Date.now();
       }, delay - (currentTime - lastExecTime));
@@ -27,19 +27,19 @@ export function throttle<T extends VoidFunction>(
   };
 }
 
-export function debounce<T extends VoidFunction>(
+export function debounce<T extends AnyFunction>(
   func: T,
   delay: number
 ): (...args: Parameters<T>) => void {
-  let timeoutId: number | null = null; // ✅ FIXED - number invece di NodeJS.Timeout
+  let timeoutId: number | null = null;
 
   return (...args: Parameters<T>) => {
     if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = window.setTimeout(() => func(...args), delay); // ✅ FIXED - window.setTimeout
+    timeoutId = window.setTimeout(() => func(...args), delay);
   };
 }
 
-export function rafThrottle<T extends VoidFunction>(
+export function rafThrottle<T extends AnyFunction>(
   func: T
 ): (...args: Parameters<T>) => void {
   let rafId: number | null = null;
@@ -51,5 +51,37 @@ export function rafThrottle<T extends VoidFunction>(
       func(...args);
       rafId = null;
     });
+  };
+}
+
+/**
+ * Utility to measure performance of a function
+ */
+export function measurePerformance<T>(
+  fn: () => T,
+  label: string = "Function"
+): T {
+  const start = performance.now();
+  const result = fn();
+  const end = performance.now();
+  console.log(`${label} took ${(end - start).toFixed(2)}ms`);
+  return result;
+}
+
+/**
+ * Creates a frame rate limiter
+ */
+export function createFPSLimiter(targetFPS: number = 60) {
+  const frameTime = 1000 / targetFPS;
+  let lastTime = 0;
+
+  return (callback: () => void): void => {
+    const currentTime = performance.now();
+    const elapsed = currentTime - lastTime;
+
+    if (elapsed >= frameTime) {
+      callback();
+      lastTime = currentTime - (elapsed % frameTime);
+    }
   };
 }

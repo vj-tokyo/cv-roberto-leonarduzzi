@@ -267,7 +267,7 @@ ${
 
             {/* Action Buttons */}
             <section className="flex flex-col sm:flex-row gap-4 pt-6 mt-6 border-t border-gray-200">
-              {project.link && (
+              {/* {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
@@ -289,7 +289,7 @@ ${
                   </svg>
                   Visualizza Live
                 </a>
-              )}
+              )} */}
 
               {/* {onClose && (
                 <button
