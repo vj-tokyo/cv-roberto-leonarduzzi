@@ -128,7 +128,7 @@ export const cvData = {
     },
     {
       title: "Majeeko",
-      image: "./clients/Majeeko.png",
+      image: "./clients/majeeko.png",
     },
     {
       title: "La Glacer",
