@@ -58,7 +58,7 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
             <img
               src={project.cover}
               alt={`${project.title} preview`}
-              className="w-full h-32 object-cover shadow-sm group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto object-cover shadow-sm group-hover:scale-105 transition-transform duration-300"
             />
           </div>
         )}
