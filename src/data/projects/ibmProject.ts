@@ -120,6 +120,14 @@ Il sistema ha trasformato radicalmente il modo in cui ACI Informatica monitora i
 Questo progetto è diventato il gold standard per dashboard enterprise in ACI Informatica, dimostrando come design thoughtful e architettura scalabile possano trasformare processi business consolidati.
 
 La piattaforma continua ad essere utilizzata quotidianamente da 50+ utenti per monitorare centinaia di progetti, stabilendo un nuovo paradigma per business intelligence nell'organizzazione.
+
+### Team
+// - Roberto Leonarduzzi
+// - Andrea feudi
+// - 
+// -
+// -
+
   `,
 
   tech: [

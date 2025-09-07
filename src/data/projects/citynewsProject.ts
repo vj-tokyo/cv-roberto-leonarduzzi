@@ -67,6 +67,7 @@ Identification of intervention areas for modifications to characterize a new pos
 For the subscription system, a checkout cart and a customizable dynamic paywall system for A/B testing and a landing page with price table and call to action were designed.
 
 <div class="my-4 grid grid-cols-2 gap-4">
+  <img src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
   <img src="./images/cn/paywall_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
   <img src="./images/cn/checkout_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
 </div>
@@ -152,6 +153,14 @@ The transformation brought concrete results:
 This project established a new standard for digital local news in Italy, demonstrating how a well-structured design system can effectively scale across dozens of different properties while maintaining distinctive local identities.
 
 The Citynews transformation became a case study in the Italian publishing sector, showing how strategic UX/UI design can drive sustainable growth and lasting engagement in the competitive digital news landscape.
+
+### Team
+// - Roberto Leonarduzzi
+// - Andrea feudi
+// - 
+// -
+// -
+
   `,
 
   tech: [

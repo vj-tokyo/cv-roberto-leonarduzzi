@@ -169,6 +169,14 @@ Dopo 3 anni intensi, abbiamo venduto la tecnologia e il team a una azienda più 
 Majeeko ha dimostrato che **innovation, execution e market timing** possono creare value duraturo. La nostra vision di unificare presenza web e social è oggi diventata standard, validando la bontà dell'intuizione originale.
 
 Questo progetto rappresenta il perfetto esempio di come **design thinking, technical innovation e business acumen** possano convergere per creare soluzioni che anticipano i bisogni del mercato.
+
+### Team
+// - Roberto Leonarduzzi
+// - Andrea feudi
+// - 
+// -
+// -
+
   `,
 
   tech: [

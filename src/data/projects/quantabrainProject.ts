@@ -20,10 +20,10 @@ Enable neuroscientists to upload, analyze, and visualize fMRI data through a cle
 
 ## The Challenge
 
-- Progettare e costruire un primo MVP in 6 mesi e gradualmente implementare le feature secondarie
-- Capire il neuroimagin
-- Collaborare con sconosciuti
-- Cambiare città
+- Design and build a first MVP in 6 months and gradually implement secondary features
+- Understand neuroimaging
+- Collaborate with unknown team members
+- Relocate to a new city
 
 ## Solution
 
@@ -39,7 +39,7 @@ My working method is based on continuous collaboration with stakeholders, throug
 4. **Performance-First**: every millisecond counts in emergency situations
 5. **Accessibility**: WCAG standards for users with different abilities
 
-### Target Users
+#### Target Users
 
 The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. Each user category requires optimized workflows and specific solutions for their operational context.
 
@@ -49,7 +49,7 @@ The interface design was guided by analyzing the needs of different professional
   <img src="./images/qb/personas/Patient.jpg" alt="Reesearcher | Improved diagnostic process - Indirect but fundamental stakeholder" />
 </div>
 
-### Main Features
+#### Main Features
 
 - **Analysis Dashboard**: Brain analysis listing and management
 -	**File Upload**: Support for .nii, .gz, .zip files
@@ -77,7 +77,7 @@ After validating individual screens through usability testing with real users, I
 
 ![Complete Figma Prototype | Interactive wireframe with all connected navigation flows for complete UX validation](./images/qb/figma_full.png)
 
-## Devellopment
+// ## Development
 
 ### Optimized Technology Stack:
 
@@ -91,7 +91,7 @@ After validating individual screens through usability testing with real users, I
 - **Tailwind CSS + ShadCN** consistent design system
 - **Storybook** for components prototyping
 
-### Main Views
+### UI Architecture
 
 The interface presents a very minimal design with two main states. We are evaluating my suggestion to eliminate the upload area on the left while maintaining the drag and drop upload functionality directly on the list.
 
@@ -146,12 +146,12 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
 - Edit analysis metadata
 - Delete analysis with confirmation
 
-#### Single Report Actions
+##### Single Report Actions
 
 - Toggle disorder filters
 - Download saliency map for each disorder
 
-#### Download Saliency Map
+##### Download Saliency Map
 
 The glassbrain visualization allows exploring fMRI analysis results in interactive three-dimensional mode, with overlays of active brain areas and confidence scoring system for each region identified by the AI.
 
@@ -208,7 +208,7 @@ Demonstration video of the platform's main functionalities in real environment.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="QuantaBrain Platform Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Advanced Technical Architecture
+// ## Advanced Technical Architecture
 
 // ### Core Features:
 
@@ -245,7 +245,7 @@ Demonstration video of the platform's main functionalities in real environment.
 // - **Progress Tracker**: real-time analysis status
 // - **Help System**: tooltips and in-app documentation
 
-## Security and Compliance
+// ## Security and Compliance
 
 ### Medical Standards:
 
@@ -280,6 +280,14 @@ Demonstration video of the platform's main functionalities in real environment.
 QuantaBrain became a case study for AI integration in medical-scientific environments, demonstrating that user-centered design can literally accelerate neuroscientific research and improve access to advanced technologies for non-technical professionals.
 
 The platform represents a perfect example of how **performance, usability, and innovation** can converge to solve real problems in the healthcare sector, establishing new standards for user interface in medical-grade applications.
+
+// ### Team
+// - Roberto Leonarduzzi
+// - Andrea feudi
+// - 
+// -
+// -
+ 
   `,
 
   tech: [
