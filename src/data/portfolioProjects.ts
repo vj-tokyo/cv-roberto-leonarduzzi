@@ -15,7 +15,7 @@ export const portfolioProjects = [
     extendedDescription: quantabrainProject.extendedDescription,
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",
-    color: "from-[#8B5CF6] to-[#7C3AED]", // Custom purple gradient for HealthTech/AI
+    color: "from-[#1E3A8A] to-[#3B82F6]", // Blu scuro QuantaBrain
     cover: "./images/qb/cover.png",
   },
   {
@@ -28,7 +28,7 @@ export const portfolioProjects = [
     extendedDescription: citynewsProject.extendedDescription,
     tech: ["html5", "css3", "Vanilla js", "Figma"],
     icon: "📰",
-    color: "from-[#EC4899] to-[#BE185D]", // Custom pink gradient for Publishing/Media
+    color: "from-[#1E40AF] to-[#F97316]", // Blu e arancione Citynews
     cover: "./images/cn/cover.png",
   },
   {
@@ -41,7 +41,7 @@ export const portfolioProjects = [
     extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "📊",
-    color: "from-[#10B981] to-[#047857]", // Custom green gradient for Enterprise/Business
+    color: "from-[#1E3A8A] to-[#3B82F6]", // Blu IBM
     cover: "./images/ibm/cover.png",
   },
   {
@@ -62,7 +62,7 @@ export const portfolioProjects = [
       "Sketch",
     ],
     icon: "🚀",
-    color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
+    color: "from-[#475569] to-[#64748B]", // Grigio-blu Majeeko
     cover: "./images/mj/cover.png",
   },
   {
@@ -74,8 +74,8 @@ export const portfolioProjects = [
     role: "Senior UX/UI Designer & Frontend Lead",
     // extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
-    icon: "📊",
-    color: "from-[#10B981] to-[#047857]", // Custom green gradient for Enterprise/Business
+    icon: "🏎️",
+    color: "from-[#6B7280] to-[#9CA3AF]", // Grigio argento ACI
     cover: "./images/aci/cover.png",
   },
   {
@@ -86,8 +86,8 @@ export const portfolioProjects = [
     role: "Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
-    icon: "🚀",
-    color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
+    icon: "🏛️",
+    color: "from-[#EC4899] to-[#F472B6]", // Rosa Le Babe
     cover: "./images/borghi/cover.png",
   },
   {
@@ -100,8 +100,45 @@ export const portfolioProjects = [
     role: "Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
-    icon: "🚀",
-    color: "from-[#3B82F6] to-[#1D4ED8]", // Custom blue gradient for Startup/Innovation
+    icon: "🥓",
+    color: "from-[#DC2626] to-[#EF4444]", // Rosso La Glacere
     cover: "./images/glacere/cover.png",
+  },
+  {
+    title: "Packaging kit birra fai da te Mr Malt",
+    company: "Mr Malt",
+    year: "2024",
+    description: "Progettazione grafica packaging per kit birra artigianale",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🍺",
+    color: "from-[#EAB308] to-[#FCD34D]", // Giallo Poste Italiane
+    cover: "./images/mr-malt/cover.png",
+  },
+  {
+    title: "Catalogo rivendita imbarcazioni",
+    company: "Marine Lions Yachting",
+    year: "2024",
+    description: "Catalogo per rivendita imbarcazioni di lusso",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "⛵",
+    color: "from-[#1E40AF] to-[#3B82F6]", // Blu marino Marine Lions
+    cover: "./images/ly/cover.png",
+  },
+  {
+    title: "Sito web per studio legale",
+    company: "Studio Cannizzaro",
+    year: "2024",
+    description:
+      "Progettazione sito web e immagine coordinata per studio legale",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "⚖️",
+    color: "from-[#D97706] to-[#F59E0B]", // Oro Studio Cannizzaro
+    cover: "./images/sc/cover.png",
   },
 ];

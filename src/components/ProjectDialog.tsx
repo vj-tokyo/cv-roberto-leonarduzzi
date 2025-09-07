@@ -17,9 +17,16 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Gestione dell'apertura e chiusura animata
+  // ✅ CORREZIONE: Gestione dell'apertura e chiusura animata migliorata
   useEffect(() => {
-    if (isOpen) {
+    console.log(
+      "ProjectDialog useEffect - isOpen:",
+      isOpen,
+      "project:",
+      project?.title
+    ); // Debug
+
+    if (isOpen && project) {
       // Apertura: prima rendi visibile, poi anima
       setIsVisible(true);
       // Doppio requestAnimationFrame per assicurare che il DOM sia pronto
@@ -28,7 +35,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
           setIsAnimating(true);
         });
       });
-    } else if (isVisible) {
+    } else if (!isOpen && isVisible) {
       // Chiusura: prima anima verso chiuso, poi nascondi
       setIsAnimating(false);
       // Aspetta che l'animazione di chiusura finisca prima di nascondere
@@ -37,12 +44,16 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       }, 300); // Durata dell'animazione di uscita
 
       return () => clearTimeout(timer);
+    } else if (!project) {
+      // Se non c'è progetto, chiudi immediatamente
+      setIsAnimating(false);
+      setIsVisible(false);
     }
-  }, [isOpen, isVisible]);
+  }, [isOpen, project, isVisible]);
 
-  // ✅ MODIFICATO - Gestione della chiusura con ESC e body scroll migliorata
+  // ✅ CORREZIONE - Gestione della chiusura con ESC e body scroll migliorata
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || !project) return;
 
     // ✅ SALVA STATO PRECEDENTE
     const originalOverflow = document.body.style.overflow;
@@ -72,10 +83,18 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       document.body.style.overflow = originalOverflow;
       document.body.style.paddingRight = originalPaddingRight;
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, project]);
 
-  // Non renderizzare se non è visibile o non c'è progetto
-  if (!isVisible || !project) return null;
+  // ✅ CORREZIONE: Condizione di render più precisa
+  if (!isVisible || !project) {
+    console.log(
+      "ProjectDialog not rendering - isVisible:",
+      isVisible,
+      "project:",
+      !!project
+    ); // Debug
+    return null;
+  }
 
   // Gestione click su backdrop
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -83,6 +102,8 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       onClose();
     }
   };
+
+  console.log("ProjectDialog rendering - isAnimating:", isAnimating); // Debug
 
   return (
     <div

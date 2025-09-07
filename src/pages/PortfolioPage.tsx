@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { portfolioProjects } from "../data/portfolioProjects";
 import PortfolioItem from "../components/PortfolioItem";
 import ProjectDialog from "../components/ProjectDialog";
@@ -16,46 +16,68 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
     useState<PortfolioProject | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  // Funzione helper per ottenere il project ID
-  const getProjectId = (project: PortfolioProject): string => {
+  // ✅ CORREZIONE 1: Usa useCallback per stabilizzare la funzione
+  const getProjectId = useCallback((project: PortfolioProject): string => {
     return `${project.company}-${project.title}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-");
-  };
+  }, []);
 
-  // All'avvio e quando cambia l'URL
-  useEffect(() => {
-    // Sposta la funzione dentro useEffect per evitare problemi di dipendenze
-    const checkProjectParam = () => {
-      const params = new URLSearchParams(window.location.search);
-      const projectId = params.get("project");
+  // ✅ CORREZIONE 2: Funzione separata per controllare i parametri URL
+  const checkProjectParam = useCallback(() => {
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("project");
 
-      if (projectId) {
-        const project = portfolioProjects.find(
-          (p) => getProjectId(p) === projectId
-        );
-        if (project) {
-          setSelectedProject(project);
-          setIsDialogOpen(true);
-        } else {
-          setIsDialogOpen(false);
-          setSelectedProject(null);
-        }
+    console.log("Checking project param:", projectId); // Debug
+
+    if (projectId) {
+      const project = portfolioProjects.find(
+        (p) => getProjectId(p) === projectId
+      );
+
+      console.log("Found project:", project); // Debug
+
+      if (project) {
+        setSelectedProject(project);
+        setIsDialogOpen(true);
       } else {
+        console.warn(`Project not found for ID: ${projectId}`); // Debug
         setIsDialogOpen(false);
         setSelectedProject(null);
       }
-    };
+    } else {
+      setIsDialogOpen(false);
+      setSelectedProject(null);
+    }
+  }, [getProjectId]);
 
+  // ✅ CORREZIONE 3: UseEffect con dipendenze corrette
+  useEffect(() => {
     checkProjectParam();
+  }, [checkProjectParam]);
 
+  // ✅ CORREZIONE 4: Gestione separata per popstate
+  useEffect(() => {
     const handlePopState = () => {
+      console.log("PopState triggered"); // Debug
       checkProjectParam();
     };
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
+  }, [checkProjectParam]);
+
+  // ✅ CORREZIONE 5: Debug dei progetti disponibili
+  useEffect(() => {
+    console.log(
+      "Available projects:",
+      portfolioProjects.map((p) => ({
+        id: getProjectId(p),
+        title: p.title,
+        company: p.company,
+      }))
+    );
+  }, [getProjectId]);
 
   const handleExploreProject = (project: PortfolioProject) => {
     setSelectedProject(project);

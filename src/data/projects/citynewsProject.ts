@@ -11,7 +11,7 @@ export const citynewsProject: PortfolioProject = {
 
 
 Led a cross-functional team of 6 people including graphic designers, UX designers, and front-end developers in the design and prototyping of web interfaces, user flows, and advertising formats for web and mobile.  
-# 📰 Views - Citynews
+// # 📰 Views - Citynews
 
 ## The Local News Giant
 
@@ -31,6 +31,9 @@ The project was co-financed by Google within the editorial digital transformatio
 - **Millions of Readers**: Audience with different expectations and behaviors by city
 - **Legacy Systems**: Outdated CMS and custom Scalable Design System with significant technical limitations
 
+
+## Solution
+
 // ### Scalable Design System
 
 // Creation of a system that respected local identities while maintaining coherence
@@ -45,52 +48,52 @@ Mantenimento e ampliamento repo
 
 ![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
 
-Design:
+### Design:
 
 - Color guides
 - Typography guides
 
-Intervention Areas
+I### ntervention Areas
 Identification of intervention areas for modifications to characterize a new post and design of article detail views, specialized channel containing all articles of the section and insertion of a preview area of the new format on the homepage and in the standard article news feed.
 
-<div class="my-8 grid grid-cols-3 gap-4">
-  <img class="my-8" src="./images/cn/channel_dossier.jpg" alt="Figma dashboard mockup" />
-  <img class="my-8" src="./images/cn/home_romatoday.jpg" alt="Figma dashboard mockup" />
-  <img class="my-8" src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
+<div class="my-4 grid grid-cols-3 gap-4">
+  <img src="./images/cn/channel_dossier.jpg" alt="Figma dashboard mockup" />
+  <img src="./images/cn/home_romatoday.jpg" alt="Figma dashboard mockup" />
+  <img src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
 </div>
 
-# 📰 Subscription - Citynews
+### Subscription - Citynews
 
 For the subscription system, a checkout cart and a customizable dynamic paywall system for A/B testing and a landing page with price table and call to action were designed.
 
-<div class="my-8 grid grid-cols-2 gap-4">
-  <img class="my-8" src="./images/cn/paywall_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
-  <img class="my-8" src="./images/cn/checkout_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+<div class="my-4 grid grid-cols-2 gap-4">
+  <img src="./images/cn/paywall_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+  <img src="./images/cn/checkout_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
 </div>
 
 ### Smart Paywall
 Intelligent subscription system based on user behavior
 
-<div class="my-8 grid grid-cols-1 gap-4">
-  <img class="my-8" src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
+<div class="my-4 grid grid-cols-1 gap-4">
+  <img src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
 </div>
 
-## 📰 User Settings
+### User Settings
 
 The user profile management area underwent a complete refactory, dividing the settings into an organized menu allowing modular addition of subscription settings from which it's possible to manage subscription plans to individual network publications.
 
-<div class="my-8 grid grid-cols-1 gap-4">
-  <img class="my-8" src="./images/cn/user_subsriptions_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
+<div class="my-4 grid grid-cols-1 gap-4">
+  <img src="./images/cn/user_subsriptions_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
 </div>
 
 
-## 🚀 The Unification Strategy
+## The Unification Strategy
 
 // ### Other Strategic Pillars
 // - **Editorial Workflows**: Standardization and optimization of editorial processes
 // - **Performance First**: Optimization for Core Web Vitals and SEO
 
-// ## 💡 Implemented Innovations
+// ## Implemented Innovations
 
 // ![Smart paywall - Intelligent subscription system](./images/cn/paywall-popup.png)
 
@@ -107,7 +110,7 @@ Interfaces optimized for mobile (80%+ of traffic)
 // ### Real-Time Analytics
 // Dashboard for real-time engagement monitoring
 
-// ## 🔄 Change Management
+// ## Change Management
 
 // - **Training Program**: Training for 200+ journalists on new tools
 // - **Gradual Rollout**: City-by-city implementation to minimize disruption
@@ -132,7 +135,7 @@ Interfaces optimized for mobile (80%+ of traffic)
 
 ![A/B Test Results - Performance comparison](./images/cn/ab-results.png)
 
-## 📊 Extraordinary Results
+## Extraordinary Results
 
 The transformation brought concrete results:
 
@@ -144,7 +147,7 @@ The transformation brought concrete results:
 
 ![Final results dashboard - Performance and engagement metrics](./images/cn/final-dashboard.png)
 
-## 🎯 Impact & Recognition
+## Impact & Recognition
 
 This project established a new standard for digital local news in Italy, demonstrating how a well-structured design system can effectively scale across dozens of different properties while maintaining distinctive local identities.
 

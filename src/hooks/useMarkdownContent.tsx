@@ -39,313 +39,356 @@ const sanitizeSchema = {
   tagNames: [...(defaultSchema.tagNames || []), "div", "iframe"],
 };
 
-// Componenti custom per gli elementi markdown
-const MarkdownComponents = {
-  // Headings con stili personalizzati e ID automatici
-  h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
+// Funzione per creare componenti con gradiente
+const createMarkdownComponents = (projectColor?: string) => {
+  const getHeadingClass = (
+    baseSize: string,
+    marginTop: string,
+    marginBottom: string
+  ) => {
+    const baseClass = `${baseSize} font-bold mt-${marginTop} mb-${marginBottom} scroll-mt-20`;
 
-    return (
-      <h1
-        id={id}
-        className="text-3xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-20"
+    if (projectColor) {
+      return `${baseClass} bg-gradient-to-r ${projectColor} bg-clip-text text-transparent`;
+    }
+
+    return `${baseClass} text-gray-900`;
+  };
+
+  return {
+    // Headings con stili personalizzati e ID automatici
+    h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h1
+          id={id}
+          className={getHeadingClass("text-3xl", "12", "6")}
+          {...props}
+        >
+          {children}
+        </h1>
+      );
+    },
+    h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h2
+          id={id}
+          className={getHeadingClass("text-2xl", "10", "5")}
+          {...props}
+        >
+          {children}
+        </h2>
+      );
+    },
+    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h3 id={id} className={getHeadingClass("text-xl", "8", "4")} {...props}>
+          {children}
+        </h3>
+      );
+    },
+    h4: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h4 id={id} className={getHeadingClass("text-lg", "6", "3")} {...props}>
+          {children}
+        </h4>
+      );
+    },
+    h5: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h5
+          id={id}
+          className={getHeadingClass("text-base", "4", "2")}
+          {...props}
+        >
+          {children}
+        </h5>
+      );
+    },
+    h6: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = extractTextFromChildren(children);
+      const id = createSlug(text);
+
+      return (
+        <h6 id={id} className={getHeadingClass("text-sm", "4", "2")} {...props}>
+          {children}
+        </h6>
+      );
+    },
+
+    // Paragrafi
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+      <p className="mb-6 text-gray-700 leading-relaxed" {...props}>
+        {children}
+      </p>
+    ),
+
+    // Liste
+    ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+      <ul
+        className="list-disc list-inside mb-6 text-gray-700 leading-relaxed ml-4"
         {...props}
       >
         {children}
-      </h1>
-    );
-  },
-  h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
-
-    return (
-      <h2
-        id={id}
-        className="text-2xl font-bold text-gray-900 mt-10 mb-5 scroll-mt-20"
+      </ul>
+    ),
+    ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
+      <ol
+        className="list-decimal list-inside mb-6 text-gray-700 leading-relaxed ml-4"
         {...props}
       >
         {children}
-      </h2>
-    );
-  },
-  h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
+      </ol>
+    ),
+    li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
+      <li className="mb-2" {...props}>
+        {children}
+      </li>
+    ),
 
-    return (
-      <h3
-        id={id}
-        className="text-xl font-bold text-gray-900 mt-8 mb-4 scroll-mt-20"
+    // Immagini responsive con caption visibile
+    img: ({
+      src,
+      alt,
+      className,
+      ...props
+    }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+      <figure className={`my-0 ${className || ""}`}>
+        <img
+          src={src}
+          alt={alt}
+          className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200"
+          loading="lazy"
+          {...props}
+        />
+        {alt && (
+          <figcaption className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
+            {alt}
+          </figcaption>
+        )}
+      </figure>
+    ),
+
+    // Div con supporto per grid e classi custom
+    div: ({
+      children,
+      className,
+      ...props
+    }: React.HTMLAttributes<HTMLDivElement>) => {
+      // Mappatura di classi comuni
+      const classMap: Record<string, string> = {
+        "my-8 grid grid-cols-2 gap-4":
+          "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
+        "my-8 grid grid-cols-3 gap-4":
+          "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+        "my-8 grid grid-cols-4 gap-4":
+          "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
+        "img-grid-2": "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
+        "img-grid-3":
+          "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+        "img-grid-4":
+          "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
+        "img-full": "my-8 w-full",
+        "img-center": "my-8 mx-auto max-w-4xl",
+      };
+
+      const mappedClassName = className ? classMap[className] || className : "";
+
+      return (
+        <div className={mappedClassName} {...props}>
+          {children}
+        </div>
+      );
+    },
+
+    // Strong/Bold con gradiente opzionale
+    strong: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => {
+      const strongClass = projectColor
+        ? `font-semiboldt text-gray-900`
+        : "font-semibold text-gray-900";
+
+      return (
+        <strong className={strongClass} {...props}>
+          {children}
+        </strong>
+      );
+    },
+
+    // Emphasis/Italic
+    em: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
+      <em className="italic text-gray-800" {...props}>
+        {children}
+      </em>
+    ),
+
+    // Code inline
+    code: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
+      <code
+        className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono"
         {...props}
       >
         {children}
-      </h3>
-    );
-  },
-  h4: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
+      </code>
+    ),
 
-    return (
-      <h4
-        id={id}
-        className="text-lg font-bold text-gray-900 mt-6 mb-3 scroll-mt-20"
+    // Code blocks
+    pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
+      <pre
+        className="bg-gray-50 p-4 rounded-xl overflow-x-auto mb-6 text-sm"
         {...props}
       >
         {children}
-      </h4>
-    );
-  },
-  h5: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
+      </pre>
+    ),
 
-    return (
-      <h5
-        id={id}
-        className="text-base font-bold text-gray-900 mt-4 mb-2 scroll-mt-20"
-        {...props}
-      >
-        {children}
-      </h5>
-    );
-  },
-  h6: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    const text = extractTextFromChildren(children);
-    const id = createSlug(text);
+    // Blockquotes con accent color
+    blockquote: ({
+      children,
+      ...props
+    }: React.HTMLAttributes<HTMLQuoteElement>) => {
+      const borderClass = projectColor
+        ? `border-l-4 bg-gradient-to-r ${projectColor} border-transparent bg-clip-border`
+        : "border-l-4 border-blue-500";
 
-    return (
-      <h6
-        id={id}
-        className="text-sm font-bold text-gray-900 mt-4 mb-2 scroll-mt-20"
-        {...props}
-      >
-        {children}
-      </h6>
-    );
-  },
+      return (
+        <blockquote
+          className={`${borderClass} pl-4 my-6 text-gray-600 italic`}
+          style={
+            projectColor
+              ? {
+                  borderLeftColor: "transparent",
+                  borderImage: `linear-gradient(to bottom, var(--tw-gradient-stops)) 1`,
+                }
+              : undefined
+          }
+          {...props}
+        >
+          {children}
+        </blockquote>
+      );
+    },
 
-  // Paragrafi
-  p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="mb-6 text-gray-700 leading-relaxed" {...props}>
-      {children}
-    </p>
-  ),
+    // Links con colore del progetto
+    a: ({
+      href,
+      children,
+      ...props
+    }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+      const linkClass = projectColor
+        ? `bg-gradient-to-r ${projectColor} bg-clip-text text-transparent hover:underline font-medium`
+        : "text-blue-600 hover:text-blue-700 underline font-medium";
 
-  // Liste
-  ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul
-      className="list-disc list-inside mb-6 text-gray-700 leading-relaxed ml-4"
-      {...props}
-    >
-      {children}
-    </ul>
-  ),
-  ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol
-      className="list-decimal list-inside mb-6 text-gray-700 leading-relaxed ml-4"
-      {...props}
-    >
-      {children}
-    </ol>
-  ),
-  li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
-    <li className="mb-2" {...props}>
-      {children}
-    </li>
-  ),
+      return (
+        <a
+          href={href}
+          className={linkClass}
+          target={href?.startsWith("http") ? "_blank" : undefined}
+          rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    },
 
-  // Immagini responsive con caption visibile
-  img: ({
-    src,
-    alt,
-    className,
-    ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <figure className={`my-8 ${className || ""}`}>
-      <img
-        src={src}
-        alt={alt}
-        className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200"
-        loading="lazy"
-        {...props}
-      />
-      {alt && (
-        <figcaption className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
-          {alt}
-        </figcaption>
-      )}
-    </figure>
-  ),
+    // Divisori
+    hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
+      <hr className="my-8 border-gray-200" {...props} />
+    ),
 
-  // Div con supporto per grid e classi custom
-  div: ({
-    children,
-    className,
-    ...props
-  }: React.HTMLAttributes<HTMLDivElement>) => {
-    // Mappatura di classi comuni
-    const classMap: Record<string, string> = {
-      "my-8 grid grid-cols-2 gap-4":
-        "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
-      "my-8 grid grid-cols-3 gap-4":
-        "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
-      "my-8 grid grid-cols-4 gap-4":
-        "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
-      "img-grid-2": "my-8 grid grid-cols-1 md:grid-cols-2 gap-4",
-      "img-grid-3": "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
-      "img-grid-4": "my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4",
-      "img-full": "my-8 w-full",
-      "img-center": "my-8 mx-auto max-w-4xl",
-    };
-
-    const mappedClassName = className ? classMap[className] || className : "";
-
-    return (
-      <div className={mappedClassName} {...props}>
-        {children}
+    // Iframe per video e embed
+    iframe: ({
+      src,
+      width,
+      height,
+      title,
+      className,
+      ...props
+    }: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
+      <div className="my-8">
+        <iframe
+          src={src}
+          width={width}
+          height={height}
+          title={title}
+          className={`w-full rounded-lg ${className || ""}`}
+          style={{
+            aspectRatio: width && height ? `${width}/${height}` : "16/9",
+          }}
+          allowFullScreen
+          {...props}
+        />
       </div>
-    );
-  },
+    ),
 
-  // Strong/Bold
-  strong: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <strong className="font-semibold text-gray-900" {...props}>
-      {children}
-    </strong>
-  ),
-
-  // Emphasis/Italic
-  em: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <em className="italic text-gray-800" {...props}>
-      {children}
-    </em>
-  ),
-
-  // Code inline
-  code: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code
-      className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono"
-      {...props}
-    >
-      {children}
-    </code>
-  ),
-
-  // Code blocks
-  pre: ({ children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-    <pre
-      className="bg-gray-50 p-4 rounded-xl overflow-x-auto mb-6 text-sm"
-      {...props}
-    >
-      {children}
-    </pre>
-  ),
-
-  // Blockquotes
-  blockquote: ({
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote
-      className="border-l-4 border-blue-500 pl-4 my-6 text-gray-600 italic"
-      {...props}
-    >
-      {children}
-    </blockquote>
-  ),
-
-  // Links
-  a: ({
-    href,
-    children,
-    ...props
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      href={href}
-      className="text-blue-600 hover:text-blue-700 underline font-medium"
-      target={href?.startsWith("http") ? "_blank" : undefined}
-      rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
-      {...props}
-    >
-      {children}
-    </a>
-  ),
-
-  // Divisori
-  hr: (props: React.HTMLAttributes<HTMLHRElement>) => (
-    <hr className="my-8 border-gray-200" {...props} />
-  ),
-
-  // Iframe per video e embed
-  iframe: ({
-    src,
-    width,
-    height,
-    title,
-    className,
-    ...props
-  }: React.IframeHTMLAttributes<HTMLIFrameElement>) => (
-    <div className="my-8">
-      <iframe
-        src={src}
-        width={width}
-        height={height}
-        title={title}
-        className={`w-full rounded-lg ${className || ""}`}
-        style={{ aspectRatio: width && height ? `${width}/${height}` : "16/9" }}
-        allowFullScreen
-        {...props}
-      />
-    </div>
-  ),
-
-  // Tabelle (se usi remark-gfm)
-  table: ({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className="overflow-x-auto my-6">
-      <table className="min-w-full divide-y divide-gray-200" {...props}>
+    // Tabelle (se usi remark-gfm)
+    table: ({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+      <div className="overflow-x-auto my-6">
+        <table className="min-w-full divide-y divide-gray-200" {...props}>
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({
+      children,
+      ...props
+    }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+      <thead className="bg-gray-50" {...props}>
         {children}
-      </table>
-    </div>
-  ),
-  thead: ({
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLTableSectionElement>) => (
-    <thead className="bg-gray-50" {...props}>
-      {children}
-    </thead>
-  ),
-  tbody: ({
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLTableSectionElement>) => (
-    <tbody className="bg-white divide-y divide-gray-200" {...props}>
-      {children}
-    </tbody>
-  ),
-  th: ({ children, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <th
-      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-      {...props}
-    >
-      {children}
-    </th>
-  ),
-  td: ({ children, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
-    <td
-      className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
-      {...props}
-    >
-      {children}
-    </td>
-  ),
+      </thead>
+    ),
+    tbody: ({
+      children,
+      ...props
+    }: React.HTMLAttributes<HTMLTableSectionElement>) => (
+      <tbody className="bg-white divide-y divide-gray-200" {...props}>
+        {children}
+      </tbody>
+    ),
+    th: ({
+      children,
+      ...props
+    }: React.HTMLAttributes<HTMLTableCellElement>) => (
+      <th
+        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        {...props}
+      >
+        {children}
+      </th>
+    ),
+    td: ({
+      children,
+      ...props
+    }: React.HTMLAttributes<HTMLTableCellElement>) => (
+      <td
+        className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+        {...props}
+      >
+        {children}
+      </td>
+    ),
+  };
 };
 
 // Hook principale per renderizzare markdown
-export const useMarkdownContent = (content: string | undefined) => {
+export const useMarkdownContent = (
+  content: string | undefined,
+  projectColor?: string
+) => {
   if (!content) return null;
 
   // Pre-process del contenuto per gestire commenti e convertire class in className
@@ -357,6 +400,8 @@ export const useMarkdownContent = (content: string | undefined) => {
     // Converti class in className per React
     .replace(/class="/g, 'className="')
     .replace(/class='/g, "className='");
+
+  const MarkdownComponents = createMarkdownComponents(projectColor);
 
   return (
     <div className="prose prose-lg max-w-none">
@@ -372,7 +417,10 @@ export const useMarkdownContent = (content: string | undefined) => {
 };
 
 // Hook specifico per portfolio con stili ottimizzati
-export const usePortfolioMarkdown = (content: string | undefined) => {
+export const usePortfolioMarkdown = (
+  content: string | undefined,
+  projectColor?: string
+) => {
   if (!content) return null;
 
   // Pre-process del contenuto per gestire commenti e convertire class in className
@@ -384,6 +432,8 @@ export const usePortfolioMarkdown = (content: string | undefined) => {
     // Converti class in className per React
     .replace(/class="/g, 'className="')
     .replace(/class='/g, "className='");
+
+  const MarkdownComponents = createMarkdownComponents(projectColor);
 
   return (
     <div className="prose prose-lg max-w-none">

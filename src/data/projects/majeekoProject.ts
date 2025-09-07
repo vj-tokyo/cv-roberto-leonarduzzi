@@ -20,6 +20,27 @@ Nel 2015, insieme al mio co-founder, abbiamo identificato un gap nel mercato: i 
 
 ![Majeeko Platform Overview](./images/mj/flusso.png)
 
+![Majeeko Platform Overview](./images/mj/editor.jpg)
+![Majeeko Platform Overview](./images/mj/facebook_page.jpg)
+
+<div className="my-6 grid grid-cols-2 gap-4">
+  <img src="./images/mj/facebook_page.jpg" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
+  <img src="./images/mj/editor.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+</div>
+
+<div className="my-6 grid grid-cols-4 gap-4">
+  <img src="./images/mj/Image_0013.jpg" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
+  <img src="./images/mj/Image_0014.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+  <img src="./images/mj/Image_0015.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+  <img src="./images/mj/Image_0016.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+</div>
+
+<div className="my-6 grid grid-cols-3 gap-4">
+  <img src="./images/mj/cosmote.jpg" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
+  <img src="./images/mj/italiaonline.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+  <img src="./images/mj/tim.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
+</div>
+
 ## 💡 Il Prodotto Rivoluzionario
 
 ### Funzionalità Core Innovative

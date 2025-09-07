@@ -20,14 +20,25 @@ const useSearchParamsRouter = () => {
   const navigateTo = React.useCallback((page: string) => {
     const params = new URLSearchParams(window.location.search);
 
+    // ✅ CORREZIONE: Usa nomi consistenti
+    // Mantieni 'portfolio' per consistency con gli URL esistenti
+    const pageMapping: { [key: string]: string } = {
+      curriculum: "curriculum",
+      projects: "portfolio", // Navigation chiama 'projects', ma URL usa 'portfolio'
+      portfolio: "portfolio", // Supporta anche 'portfolio' diretto
+    };
+
+    const mappedPage = pageMapping[page] || page;
+
     // Imposta sempre il parametro page
-    params.set("page", page);
+    params.set("page", mappedPage);
 
     // Pulisci parametri specifici quando cambi pagina
-    if (page === "curriculum") {
+    if (mappedPage === "curriculum") {
       params.delete("project"); // Rimuovi project se vai a curriculum
-    } else if (page === "projects") {
-      params.delete("project"); // Pulisci eventuali progetti quando vai alla lista
+    } else if (mappedPage === "portfolio") {
+      // Mantieni project se esiste quando vai a portfolio
+      // params.delete("project"); // Non cancellare project quando vai a portfolio
     }
 
     window.history.pushState(null, "", `?${params.toString()}`);
@@ -36,7 +47,12 @@ const useSearchParamsRouter = () => {
 
   const getCurrentPage = () => {
     const params = new URLSearchParams(window.location.search);
-    return params.get("page") || "curriculum";
+    const page = params.get("page") || "curriculum";
+
+    // ✅ DEBUG: Log della pagina corrente
+    console.log("Current page from URL:", page);
+
+    return page;
   };
 
   return {
@@ -59,16 +75,22 @@ const App: React.FC = () => {
   }, [navigateTo]); // Ora navigateTo è stabile grazie a useCallback
 
   const handlePageChange = (page: string) => {
+    console.log("Navigation requested to:", page); // Debug
     navigateTo(page);
   };
 
   const renderPage = () => {
+    console.log("Rendering page:", currentPage); // Debug
+
     switch (currentPage) {
       case "curriculum":
         return <CurriculumPage />;
-      case "projects":
+      case "portfolio": // ✅ CORREZIONE: Cambiato da "projects" a "portfolio"
+        return <PortfolioPage />;
+      case "projects": // ✅ AGGIUNTO: Supporto legacy per "projects"
         return <PortfolioPage />;
       default:
+        console.warn("Unknown page:", currentPage, "defaulting to curriculum");
         return <CurriculumPage />;
     }
   };

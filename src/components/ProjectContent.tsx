@@ -1,4 +1,4 @@
-// ProjectContent.tsx - Layout a due colonne con fix immediate
+// ProjectContent.tsx - Layout a due colonne con titoli colorati
 import React from "react";
 import type { PortfolioProject } from "../types/portfolio";
 import { usePortfolioMarkdown } from "../hooks/useMarkdownContent";
@@ -13,9 +13,23 @@ interface ProjectContentProps {
 
 const ProjectContent: React.FC<ProjectContentProps> = ({
   project,
-  onClose,
+  // onClose,
 }) => {
-  const markdownContent = usePortfolioMarkdown(project.extendedDescription);
+  const markdownContent = usePortfolioMarkdown(
+    project.extendedDescription,
+    project.color
+  );
+
+  // Utility per creare la classe del titolo con il colore del progetto
+  const getTitleClass = (size: "xl" | "lg" | "base" = "lg") => {
+    const sizeClasses = {
+      xl: "text-3xl",
+      lg: "text-2xl",
+      base: "text-xl",
+    };
+
+    return `${sizeClasses[size]} font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent mb-4`;
+  };
 
   // Prepara il contenuto per la Table of Contents
   const tocContent =
@@ -40,7 +54,6 @@ ${
         {/* Sidebar - Table of Contents */}
         <div className="hidden lg:block w-80 xl:w-96 border-r border-gray-200 bg-gray-50/50">
           <div className="sticky top-0 h-full">
-            {/* ✅ AGGIUNTO scrollContainerId */}
             <TableOfContents
               content={tocContent}
               className="h-full"
@@ -49,8 +62,7 @@ ${
           </div>
         </div>
 
-        {/* Mobile TOC Toggle - Fuori dalla sidebar per desktop */}
-        {/* ✅ AGGIUNTO scrollContainerId */}
+        {/* Mobile TOC Toggle */}
         <TableOfContents
           content={tocContent}
           className="lg:hidden"
@@ -58,7 +70,6 @@ ${
         />
 
         {/* Main Content - Scrollabile */}
-        {/* ✅ AGGIUNTO ID main-content */}
         <div id="main-content" className="flex-1 overflow-y-auto">
           {/* Header con gradient */}
           <header
@@ -96,9 +107,7 @@ ${
 
             {/* Description */}
             <section className="mb-8" id="panoramica-del-progetto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Panoramica del Progetto
-              </h2>
+              <h2 className={getTitleClass("lg")}>Panoramica del Progetto</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
                 {project.description}
               </p>
@@ -107,9 +116,12 @@ ${
             {/* Role Badge */}
             {project.role && (
               <section className="mb-8" id="ruolo">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                <h2 className={getTitleClass("lg")}>Il Mio Ruolo</h2>
+                <div
+                  className={`inline-block px-4 py-2 bg-gradient-to-r ${project.color} text-white rounded-full font-medium`}
+                >
                   {project.role}
-                </h2>
+                </div>
               </section>
             )}
 
@@ -121,9 +133,7 @@ ${
                 </div>
               ) : (
                 <>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    Dettagli del Progetto
-                  </h2>
+                  <h2 className={getTitleClass("lg")}>Dettagli del Progetto</h2>
                   <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -168,9 +178,7 @@ ${
 
             {/* Tech Stack */}
             <section className="mb-8" id="stack-tecnologico">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Stack Tecnologico
-              </h2>
+              <h2 className={getTitleClass("lg")}>Stack Tecnologico</h2>
               <div className="flex flex-wrap gap-3">
                 {project.tech.map((tech, index) => (
                   <span
@@ -186,9 +194,7 @@ ${
             {/* Project Metrics */}
             {project.metrics && (
               <section className="mb-8" id="risultati-e-metriche">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Risultati e Metriche
-                </h2>
+                <h2 className={getTitleClass("lg")}>Risultati e Metriche</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div
@@ -198,7 +204,9 @@ ${
                       <div className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
                         {key.replace(/([A-Z])/g, " $1").trim()}
                       </div>
-                      <div className="text-lg font-bold text-gray-900">
+                      <div
+                        className={`text-lg font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
+                      >
                         {value}
                       </div>
                     </div>
@@ -210,9 +218,7 @@ ${
             {/* Team Info */}
             {project.team && (
               <section className="mb-8" id="team-e-ruolo">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Team e Ruolo
-                </h2>
+                <h2 className={getTitleClass("lg")}>Team e Ruolo</h2>
                 <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
@@ -241,9 +247,7 @@ ${
             {/* Gallery */}
             {project.gallery && project.gallery.length > 0 && (
               <section className="mb-8" id="gallery-del-progetto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Gallery del Progetto
-                </h2>
+                <h2 className={getTitleClass("lg")}>Gallery del Progetto</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.gallery.map((image, index) => (
                     <img
@@ -287,7 +291,7 @@ ${
                 </a>
               )}
 
-              {onClose && (
+              {/* {onClose && (
                 <button
                   onClick={onClose}
                   className="flex-1 py-3 px-6 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center transform hover:-translate-y-0.5"
@@ -307,7 +311,7 @@ ${
                   </svg>
                   Chiudi
                 </button>
-              )}
+              )} */}
             </section>
           </main>
         </div>

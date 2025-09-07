@@ -10,7 +10,7 @@ export const quantabrainProject: PortfolioProject = {
 
   extendedDescription: `
 
-# AI Neuroimaging Analysis Platform
+// # AI Neuroimaging Analysis Platform
 
 As **Frontend Developer & UX Designer**, I was responsible for designing and implementing the complete front-end service of the platform, creating an interface that transformed how neuroscientists interact with fMRI data.
 
@@ -18,61 +18,84 @@ As **Frontend Developer & UX Designer**, I was responsible for designing and imp
 
 Enable neuroscientists to upload, analyze, and visualize fMRI data through a clear, minimal, and functional web interface, optimized for scientific workflows, without requiring advanced technical background.
 
-## Human-Centered UX Design Approach
+## The Challenge
+
+- Progettare e costruire un primo MVP in 6 mesi e gradualmente implementare le feature secondarie
+- Capire il neuroimagin
+- Collaborare con sconosciuti
+- Cambiare città
+
+## Solution
+
+### Human-Centered UX Design Approach
 
 My working method is based on continuous collaboration with stakeholders, through co-design sessions that foster discussion and alignment of objectives. Through an iterative prototyping process, interfaces are tested and validated directly, ensuring concrete and effective solutions. This translates into a key principle: simplicity first. Technical complexity is hidden behind clear and intuitive interfaces, capable of ensuring immediate use even in high-pressure situations.
 
 ### User-Centered Design Strategy:
 
-1. **Co-design Sessions**: collaborative workshops with medical stakeholders
+1. **Co-design Sessions**: collaborative workshops with stakeholders
 2. **Iterative Prototyping**: tested in real clinical context with continuous feedback
 3. **Simplicity-First**: hide technical complexity behind intuitive interfaces
 4. **Performance-First**: every millisecond counts in emergency situations
 5. **Accessibility**: WCAG standards for users with different abilities
 
-## Target Users
+### Target Users
 
 The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. Each user category requires optimized workflows and specific solutions for their operational context.
 
-<div className="my-6 grid grid-cols-3 gap-4">
+<div className="my-4 grid grid-cols-3 gap-4">
   <img src="./images/qb/personas/Radiologist.jpg" alt="Radiologist | Professional specialized in complex diagnoses and rapid decisions - Primary platform user" />
   <img src="./images/qb/personas/Psychiatrist.jpg" alt="Psychiatrist | Specialist in clinical research and quantitative analysis - Focus on behavioral analysis" />
-  <img src="./images/qb/personas/Patient.jpg" alt="Patient | Final beneficiary of improved diagnostic process - Indirect but fundamental stakeholder" />
+  <img src="./images/qb/personas/Patient.jpg" alt="Reesearcher | Improved diagnostic process - Indirect but fundamental stakeholder" />
 </div>
 
-## Main Features
+### Main Features
 
-- Analysis Dashboard: Brain analysis listing and management
--	File Upload: Support for .nii, .gz, .zip files
--	Real-time Notifications: WebSocket-based analysis updates
--	Quota System: Daily/monthly limits per user
--	Admin Panel: User and permissions granular management
+- **Analysis Dashboard**: Brain analysis listing and management
+-	**File Upload**: Support for .nii, .gz, .zip files
+-	**Real-time Notifications**: Notify analysis updates
+-	**Quota System**: Daily/monthly limits per user
+-	**Admin Panel**: User and permissions granular management
 
-## UI Design and Prototyping
+### UI Design and Prototyping
 
 Design of the main application views with focus on usability, performance, and cognitive load reduction.
 
-<div className="my-6 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-2 gap-4">
   <img src="./images/qb/analises.png" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
   <img src="./images/qb/mokup.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
   <img src="./images/qb/modal_table.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
   <img src="./images/qb/modal_upload.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
 </div>
 
-![Complete Figma Prototype | Interactive wireframe with all connected navigation flows for complete UX validation](./images/qb/inversa.png)
+![Dark mode| Dark mode ui mockup](./images/qb/inversa.png)
 
 
-## Interactive Prototype Validation
+### Interactive Prototype Validation
 
 After validating individual screens through usability testing with real users, I created a complete interactive prototype to validate end-to-end user flows and the overall scientific workflow experience.
 
 ![Complete Figma Prototype | Interactive wireframe with all connected navigation flows for complete UX validation](./images/qb/figma_full.png)
 
-## Main Views
+## Devellopment
+
+### Optimized Technology Stack:
+
+- **Next.js 14** with App Router for performance and SSR
+- **TypeScript** for type safety and scalable development
+- **React + Hooks** modular component architecture
+- **WebGL + Three.js** real-time 3D neuroimaging rendering
+- **Framer Motion** for fluid animations and transitions
+- **SWR** for intelligent data fetching and caching
+- **WebSocket** for real-time notifications and updates
+- **Tailwind CSS + ShadCN** consistent design system
+- **Storybook** for components prototyping
+
+### Main Views
 
 The interface presents a very minimal design with two main states. We are evaluating my suggestion to eliminate the upload area on the left while maintaining the drag and drop upload functionality directly on the list.
 
-<div className="my-6 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-2 gap-4">
   <img src="./images/qb/dashboard.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -87,7 +110,7 @@ The header contains main navigation elements, real-time WebSocket-based notifica
 
 The upload system supports single files and multiple folders with automatic validation. It can be activated via click on the header button or direct drag-and-drop into the upload area. File validation (.nii, .gz, .zip) is performed client-side before upload to ensure compatibility and reduce errors.
 
-<div className="my-6 grid grid-cols-4 gap-4">
+<div className="my-4 grid grid-cols-4 gap-4">
   <img src="./images/qb/upload_1_1.png" alt="Step 1 Upload | File upload interface with drag-and-drop and automatic validation" />
   <img src="./images/qb/upload_2.png" alt="Step 2 Parameters | Analysis parameter configuration with intelligent presets and real-time validation" />
   <img src="./images/qb/upload_3.png" alt="Step 3 Processing | Processing interface with real-time progress bar and WebSocket updates" />
@@ -106,12 +129,12 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
 
 #### Visualization Modes:
 
-- Tabular visualization with CSV/Excel export
-- Aggregated graphical visualization with interactive charts (future roadmap)
+// - Tabular visualization with CSV/Excel export
+// - Aggregated graphical visualization with interactive charts (future roadmap)
 
-<div className="my-6 grid grid-cols-2 gap-4">
-  <img src="./images/qb/detail.png" alt="Previous Workflow View | Complex traditional manual process with multiple applications and fragmented workflow" />
-  <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | New unified AI-assisted process with clear steps and continuous feedback" />
+<div className="my-4 grid grid-cols-2 gap-4">
+  <img src="./images/qb/detail.png" alt="Previous Workflow View | Tabular visualization with CSV/Excel export" />
+  <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | Aggregated graphical visualization with interactive charts (future roadmap)" />
 </div>
 
 #### Analysis Detail Actions
@@ -144,7 +167,7 @@ The detail interface offers a complete set of actions for each analysis:
 
 The guide accessible from the header icon opens as a right sidebar to remain usable without leaving the platform. It's possible to navigate the guide through a navigable index and directional arrows.
 
-<div className="my-6 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-2 gap-4">
   <img src="./images/qb/dasbboard_guide.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail_guide.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -153,18 +176,27 @@ The guide accessible from the header icon opens as a right sidebar to remain usa
 
 The application preferences interface allows granular management of:
 
-- User access data and profile settings
-- Graphical interface preferences and themes
-- Privacy preferences and data handling
-- Notification settings and sound preferences
+// - User access data and profile settings
+// - Graphical interface preferences and themes
+// - Privacy preferences and data handling
+// - Notification settings and sound preferences
+
+
+<div className="my-4 grid grid-cols-4 gap-4">
+  <img src="./images/qb/settings_general.png" alt="settings_general | User access data and profile settings" />
+  <img src="./images/qb/settings_interface.png" alt="settings_interface | Graphical interface preferences and themes" />
+    <img src="./images/qb/settings_privacy.png" alt="Previous Workflow View |  Privacy preferences and data handling" />
+  <img src="./images/qb/settings_security_email.png" alt="settings_privacy| Notification settings and sound preferences" />
+</div>
 
 ## Admin Panel
 
 Il pannello di amministrazione consente la creazione ed il management dei permessi degli utenti.
 
-<div className="my-6 grid grid-cols-2 gap-4">
-  <img src="./images/qb/users-list.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
-  <img src="./images/qb/add-user.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
+<div className="my-4 grid grid-cols-3 gap-4">
+  <img src="./images/qb/users-list.png" alt="Users list | Visualiza users list with filters" />
+  <img src="./images/qb/add-user.png" alt="Create user | Create new user" />
+  <img src="./images/qb/edit-user.png" alt="Edit user | Edit user info and permissions" />
 </div>
 
 ## Demo Video
@@ -174,17 +206,6 @@ Demonstration video of the platform's main functionalities in real environment.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHhLKhxdOfU?si=A1vxoF6E06qdWUTQ" title="QuantaBrain Platform Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Advanced Technical Architecture
-
-### Optimized Technology Stack:
-
-- **Next.js 14** with App Router for performance and SSR
-- **TypeScript** for type safety and scalable development
-- **React + Hooks** modular component architecture
-- **WebGL + Three.js** real-time 3D neuroimaging rendering
-- **Framer Motion** for fluid animations and transitions
-- **SWR** for intelligent data fetching and caching
-- **WebSocket** for real-time notifications and updates
-- **Tailwind CSS + ShadCN** consistent design system
 
 // ### Core Features:
 
