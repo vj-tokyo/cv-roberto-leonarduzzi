@@ -167,4 +167,16 @@ export const portfolioProjects = [
     color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
     cover: "./images/forma/cover.png",
   },
+  {
+    title: "Spettacolo teatrale per bambini",
+    company: "Css Teatro Stabile d'Innovazione FVG",
+    year: "2012",
+    description: "Progettazione scenografia interattiva con video mapping",
+    role: "Graphic designer",
+    // extendedDescription: majeekoProject.extendedDescription,
+    tech: ["Adobe creative suite", "Google drive"],
+    icon: "🏍️",
+    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    cover: "./images/topochef/cover.png",
+  },
 ];

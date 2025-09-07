@@ -114,7 +114,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
       className={`min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16 ${className}`}
     >
       {/* Page Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             My Projects
@@ -125,7 +125,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
             transformations.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Featured Projects Section */}
       {projectsWithDetails.length > 0 && (
