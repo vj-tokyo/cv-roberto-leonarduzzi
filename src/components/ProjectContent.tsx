@@ -106,12 +106,12 @@ ${
             )}
 
             {/* Description */}
-            <section className="mb-8" id="panoramica-del-progetto">
+            {/* <section className="mb-8" id="panoramica-del-progetto">
               <h2 className={getTitleClass("lg")}>Panoramica del Progetto</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
                 {project.description}
               </p>
-            </section>
+            </section> */}
 
             {/* Role Badge */}
             {project.role && (

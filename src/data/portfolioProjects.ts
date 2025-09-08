@@ -3,6 +3,7 @@ import { quantabrainProject } from "./projects/quantabrainProject";
 import { majeekoProject } from "./projects/majeekoProject";
 import { ibmProject } from "./projects/ibmProject";
 import { citynewsProject } from "./projects/citynewsProject";
+// import { topochefProject } from "./projects/topochefProject";
 
 export const portfolioProjects = [
   {
@@ -173,7 +174,7 @@ export const portfolioProjects = [
     year: "2012",
     description: "Progettazione scenografia interattiva con video mapping",
     role: "Graphic designer",
-    // extendedDescription: majeekoProject.extendedDescription,
+    // extendedDescription: topochefProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏍️",
     color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots

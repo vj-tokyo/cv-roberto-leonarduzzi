@@ -12,7 +12,7 @@ interface ClientsSectionProps {
 
 const ClientsSection: React.FC<ClientsSectionProps> = ({ clients }) => {
   return (
-    <Section title="Clients & Partners" variant="card">
+    <Section title="Clients I worked with" variant="card">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
         {clients.map((client, index) => (
           <div
@@ -30,9 +30,9 @@ const ClientsSection: React.FC<ClientsSectionProps> = ({ clients }) => {
             </div>
 
             {/* Nome Cliente */}
-            <h4 className="text-xs font-medium text-gray-600 text-center group-hover:text-gray-800 transition-colors duration-300 mt-auto">
+            {/* <h4 className="text-xs font-medium text-gray-600 text-center group-hover:text-gray-800 transition-colors duration-300 mt-auto">
               {client.title}
-            </h4>
+            </h4> */}
 
             {/* Decorative gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>

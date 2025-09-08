@@ -130,17 +130,31 @@ const createMarkdownComponents = (projectColor?: string) => {
       );
     },
 
-    // Paragrafi
-    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p className="mb-6 text-gray-700 leading-relaxed" {...props}>
-        {children}
-      </p>
-    ),
+    // Paragrafi - modificato per gestire le immagini
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
+      // Controlla se il paragrafo contiene solo un'immagine
+      const isImageOnly =
+        React.Children.count(children) === 1 &&
+        React.Children.toArray(children).every(
+          (child) => React.isValidElement(child) && child.type === "img"
+        );
+
+      // Se contiene solo un'immagine, non wrappare in <p>
+      if (isImageOnly) {
+        return <>{children}</>;
+      }
+
+      return (
+        <p className="mb-6 text-gray-700 leading-relaxed" {...props}>
+          {children}
+        </p>
+      );
+    },
 
     // Liste
     ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
       <ul
-        className="list-disc list-inside mb-6 text-gray-700 leading-relaxed ml-4"
+        className="list-disc list-inside mb-6 text-gray-700 leading-relaxed"
         {...props}
       >
         {children}
@@ -148,26 +162,50 @@ const createMarkdownComponents = (projectColor?: string) => {
     ),
     ol: ({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
       <ol
-        className="list-decimal list-inside mb-6 text-gray-700 leading-relaxed ml-4"
+        className="list-decimal list-inside mb-6 text-gray-700 leading-relaxed"
         {...props}
       >
         {children}
       </ol>
     ),
     li: ({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
-      <li className="mb-2" {...props}>
+      <li className="mb-0" {...props}>
         {children}
       </li>
     ),
 
-    // Immagini responsive con caption visibile
+    // Immagini responsive con caption - Senza div wrapper per evitare nesting in <p>
+    // img: ({
+    //   src,
+    //   alt,
+    //   className,
+    //   ...props
+    // }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    //   <>
+    //     <img
+    //       src={src}
+    //       alt={alt}
+    //       className={`w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 my-8 ${
+    //         className || ""
+    //       }`}
+    //       loading="lazy"
+    //       {...props}
+    //     />
+    //     {alt && (
+    //       <span className="block mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
+    //         {alt}
+    //       </span>
+    //     )}
+    //   </>
+    // ),
+
     img: ({
       src,
       alt,
       className,
       ...props
     }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      <figure className={`my-0 ${className || ""}`}>
+      <div className={`my-8 ${className || ""}`}>
         <img
           src={src}
           alt={alt}
@@ -176,11 +214,11 @@ const createMarkdownComponents = (projectColor?: string) => {
           {...props}
         />
         {alt && (
-          <figcaption className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
+          <div className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
             {alt}
-          </figcaption>
+          </div>
         )}
-      </figure>
+      </div>
     ),
 
     // Div con supporto per grid e classi custom
@@ -218,7 +256,7 @@ const createMarkdownComponents = (projectColor?: string) => {
     // Strong/Bold con gradiente opzionale
     strong: ({ children, ...props }: React.HTMLAttributes<HTMLElement>) => {
       const strongClass = projectColor
-        ? `font-semiboldt text-gray-900`
+        ? `font-semibold text-gray-900`
         : "font-semibold text-gray-900";
 
       return (

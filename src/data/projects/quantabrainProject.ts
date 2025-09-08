@@ -188,7 +188,7 @@ The application preferences interface allows granular management of:
 <div className="my-4 grid grid-cols-4 gap-4">
   <img src="./images/qb/settings_general.png" alt="settings_general | User access data and profile settings" />
   <img src="./images/qb/settings_interface.png" alt="settings_interface | Graphical interface preferences and themes" />
-    <img src="./images/qb/settings_privacy.png" alt="Previous Workflow View |  Privacy preferences and data handling" />
+  <img src="./images/qb/settings_privacy.png" alt="Previous Workflow View |  Privacy preferences and data handling" />
   <img src="./images/qb/settings_security_email.png" alt="settings_privacy| Notification settings and sound preferences" />
 </div>
 
@@ -247,13 +247,13 @@ Demonstration video of the platform's main functionalities in real environment.
 
 // ## Security and Compliance
 
-### Medical Standards:
+// ### Medical Standards:
 
-- **OAuth2 Integration**: secure and scalable authentication
-- **GDPR Compliance**: guaranteed patient privacy
-- **Token Management**: automatic refresh with retry logic
-- **Middleware Protection**: protected routes and validation layers
-- **Security Headers**: CSRF protection and policy-based access
+// - **OAuth2 Integration**: secure and scalable authentication
+// - **GDPR Compliance**: guaranteed patient privacy
+// - **Token Management**: automatic refresh with retry logic
+// - **Middleware Protection**: protected routes and validation layers
+// - **Security Headers**: CSRF protection and policy-based access
 
 ## Technology Stack
 

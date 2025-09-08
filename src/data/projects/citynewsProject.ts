@@ -66,14 +66,14 @@ Identification of intervention areas for modifications to characterize a new pos
 
 For the subscription system, a checkout cart and a customizable dynamic paywall system for A/B testing and a landing page with price table and call to action were designed.
 
-<div class="my-4 grid grid-cols-2 gap-4">
+<div class="my-4 grid grid-cols-3 gap-4">
   <img src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 
   <img src="./images/cn/paywall_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
   <img src="./images/cn/checkout_dossier_romatoday.jpg" alt="Figma dashboard mockup" />
 </div>
 
 ### Smart Paywall
-Intelligent subscription system based on user behavior
+The paywall is designed for A/B testing with multiple variants
 
 <div class="my-4 grid grid-cols-1 gap-4">
   <img src="./images/cn/article_dossier_romatoday.jpg" alt="Figma dashboard mockup" /> 

@@ -3,9 +3,9 @@ import { cvData } from "../data/cvData";
 // import ProfileSection from "../components/ProfileSection";
 // import EducationSection from "../components/EducationSection";
 // import SkillsSection from "../components/SkillsSection";
-// import AwardsSection from "../components/AwardsSection";
+import AwardsSection from "../components/AwardsSection";
 // import LanguagesSection from "../components/LanguagesSection";
-// import ExperienceSection from "../components/ExperienceSection_copy";
+import ExperienceSection from "../components/ExperienceSection_copy";
 import HeroSection from "../components/HeroSection";
 import ClientsSection from "../components/ClientsSection";
 
@@ -31,19 +31,19 @@ const CurriculumPage: React.FC = () => {
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-8">
           {/* Left Column - Main Content */}
-          {/* <div className="lg:col-span-2 xl:col-span-3 space-y-8">
-            <ProfileSection profile={cvData.profile} approch={cvData.approch} />
+          <div className="lg:col-span-2 xl:col-span-3 space-y-8">
+            {/* <ProfileSection profile={cvData.profile} approch={cvData.approch} /> */}
             <ExperienceSection experiences={cvData.experience} />
-          </div> */}
+          </div>
 
           {/* Right Column - Sidebar */}
           <div className="lg:col-span-1 xl:col-span-2 space-y-6">
             {/* <SkillsSection skills={cvData.skills} /> */}
             {/* <EducationSection education={cvData.education} /> */}
-            {/* <div className="space-y-6">
+            <div className="space-y-6">
               <AwardsSection awards={cvData.awards} />
-              <LanguagesSection languages={cvData.languages} />
-            </div> */}
+              {/* <LanguagesSection languages={cvData.languages} /> */}
+            </div>
           </div>
         </div>
       </div>
