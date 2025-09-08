@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import { defaultSchema } from "hast-util-sanitize";
 import { createSlug, extractTextFromChildren } from "../utils/textUtils";
+// import ImageLightbox from "../components/ImageLightbox";
+import ImageLightboxGallery from "../components/ImageLightbox";
 
 // Schema personalizzato per rehypeSanitize che permette attributi class e id
 const sanitizeSchema = {
@@ -39,8 +41,11 @@ const sanitizeSchema = {
   tagNames: [...(defaultSchema.tagNames || []), "div", "iframe"],
 };
 
-// Funzione per creare componenti con gradiente
-const createMarkdownComponents = (projectColor?: string) => {
+// Funzione per creare componenti con gradiente e lightbox
+const createMarkdownComponents = (
+  projectColor?: string,
+  onImageClick?: (src: string, alt?: string) => void
+) => {
   const getHeadingClass = (
     baseSize: string,
     marginTop: string,
@@ -174,31 +179,7 @@ const createMarkdownComponents = (projectColor?: string) => {
       </li>
     ),
 
-    // Immagini responsive con caption - Senza div wrapper per evitare nesting in <p>
-    // img: ({
-    //   src,
-    //   alt,
-    //   className,
-    //   ...props
-    // }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    //   <>
-    //     <img
-    //       src={src}
-    //       alt={alt}
-    //       className={`w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 my-8 ${
-    //         className || ""
-    //       }`}
-    //       loading="lazy"
-    //       {...props}
-    //     />
-    //     {alt && (
-    //       <span className="block mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
-    //         {alt}
-    //       </span>
-    //     )}
-    //   </>
-    // ),
-
+    // Immagini responsive con lightbox
     img: ({
       src,
       alt,
@@ -209,8 +190,9 @@ const createMarkdownComponents = (projectColor?: string) => {
         <img
           src={src}
           alt={alt}
-          className="w-full rounded-sm shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200"
+          className="w-full rounded-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer hover:scale-[1.02] hover:opacity-95"
           loading="lazy"
+          onClick={() => onImageClick && onImageClick(src || "", alt)}
           {...props}
         />
         {alt && (
@@ -422,11 +404,16 @@ const createMarkdownComponents = (projectColor?: string) => {
   };
 };
 
-// Hook principale per renderizzare markdown
+// Hook principale per renderizzare markdown con lightbox
 export const useMarkdownContent = (
   content: string | undefined,
   projectColor?: string
 ) => {
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    alt?: string;
+  } | null>(null);
+
   if (!content) return null;
 
   // Pre-process del contenuto per gestire commenti e convertire class in className
@@ -439,26 +426,54 @@ export const useMarkdownContent = (
     .replace(/class="/g, 'className="')
     .replace(/class='/g, "className='");
 
-  const MarkdownComponents = createMarkdownComponents(projectColor);
+  const handleImageClick = (src: string, alt?: string) => {
+    setLightboxImage({ src, alt });
+  };
+
+  const MarkdownComponents = createMarkdownComponents(
+    projectColor,
+    handleImageClick
+  );
 
   return (
-    <div className="prose prose-lg max-w-none">
-      <ReactMarkdown
-        components={MarkdownComponents}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
-      >
-        {processedContent}
-      </ReactMarkdown>
-    </div>
+    <>
+      <div className="prose prose-lg max-w-none">
+        <ReactMarkdown
+          components={MarkdownComponents}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+        >
+          {processedContent}
+        </ReactMarkdown>
+      </div>
+
+      {/* Lightbox Component */}
+      {/* <ImageLightbox
+        src={lightboxImage?.src || ""}
+        alt={lightboxImage?.alt}
+        isOpen={!!lightboxImage}
+        onClose={() => setLightboxImage(null)}
+      /> */}
+      <ImageLightboxGallery
+        images={lightboxImage ? [lightboxImage] : []}
+        initialIndex={0}
+        isOpen={!!lightboxImage}
+        onClose={() => setLightboxImage(null)}
+      />
+    </>
   );
 };
 
-// Hook specifico per portfolio con stili ottimizzati
+// Hook specifico per portfolio con stili ottimizzati e lightbox
 export const usePortfolioMarkdown = (
   content: string | undefined,
   projectColor?: string
 ) => {
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    alt?: string;
+  } | null>(null);
+
   if (!content) return null;
 
   // Pre-process del contenuto per gestire commenti e convertire class in className
@@ -471,17 +486,40 @@ export const usePortfolioMarkdown = (
     .replace(/class="/g, 'className="')
     .replace(/class='/g, "className='");
 
-  const MarkdownComponents = createMarkdownComponents(projectColor);
+  const handleImageClick = (src: string, alt?: string) => {
+    setLightboxImage({ src, alt });
+  };
+
+  const MarkdownComponents = createMarkdownComponents(
+    projectColor,
+    handleImageClick
+  );
 
   return (
-    <div className="prose prose-lg max-w-none">
-      <ReactMarkdown
-        components={MarkdownComponents}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
-      >
-        {processedContent}
-      </ReactMarkdown>
-    </div>
+    <>
+      <div className="prose prose-lg max-w-none">
+        <ReactMarkdown
+          components={MarkdownComponents}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+        >
+          {processedContent}
+        </ReactMarkdown>
+      </div>
+
+      {/* Lightbox Component */}
+      {/* <ImageLightbox
+        src={lightboxImage?.src || ""}
+        alt={lightboxImage?.alt}
+        isOpen={!!lightboxImage}
+        onClose={() => setLightboxImage(null)}
+      /> */}
+      <ImageLightboxGallery
+        images={lightboxImage ? [lightboxImage] : []}
+        initialIndex={0}
+        isOpen={!!lightboxImage}
+        onClose={() => setLightboxImage(null)}
+      />
+    </>
   );
 };
