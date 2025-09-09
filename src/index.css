@@ -35,4 +35,28 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Animazione carosello infinito */
+  .animate-infinite-scroll {
+    animation: infinite-scroll 60s linear infinite;
+  }
+
+  .animation-paused {
+    animation-play-state: paused;
+  }
+}
+
+.prose :where(img):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Keyframes per il carosello */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

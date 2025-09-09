@@ -1,7 +1,7 @@
 // Import only the extendedDescription from existing files
 import { quantabrainProject } from "./projects/quantabrainProject";
-import { majeekoProject } from "./projects/majeekoProject";
-import { ibmProject } from "./projects/ibmProject";
+// import { majeekoProject } from "./projects/majeekoProject";
+// import { ibmProject } from "./projects/ibmProject";
 import { citynewsProject } from "./projects/citynewsProject";
 // import { topochefProject } from "./projects/topochefProject";
 
@@ -39,7 +39,7 @@ export const portfolioProjects = [
     description:
       "Business intelligence platform for monitoring and analyzing enterprise metrics.",
     role: "Senior UX/UI Designer & Frontend Lead",
-    extendedDescription: ibmProject.extendedDescription,
+    // extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "📊",
     color: "from-[#1E3A8A] to-[#3B82F6]", // Blu IBM
@@ -47,12 +47,12 @@ export const portfolioProjects = [
   },
   {
     title: "Social-First Site Builder",
-    company: "Editrice romana",
+    company: "Majeeko",
     year: "2015-2018",
     description:
       "World's first website builder with real-time social media synchronization.",
     role: "Co-founder & Head of UX/UI",
-    extendedDescription: majeekoProject.extendedDescription,
+    // extendedDescription: majeekoProject.extendedDescription,
     tech: [
       "Node.js",
       "Express",

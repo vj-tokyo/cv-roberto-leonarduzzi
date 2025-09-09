@@ -13,7 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { id: "curriculum", label: "Curriculum", icon: "📄" },
+    // { id: "curriculum", label: "Curriculum", icon: "📄" },
     { id: "projects", label: "Projects", icon: "🎨" },
   ];
 
