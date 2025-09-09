@@ -64,9 +64,9 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
         )}
 
         {/* Compact Description */}
-        <p className="text-sm text-gray-600 leading-relaxed mb-3 group-hover:text-gray-500 transition-colors line-clamp-2">
+        {/* <p className="text-sm text-gray-600 leading-relaxed mb-3 group-hover:text-gray-500 transition-colors line-clamp-2">
           {project.description}
-        </p>
+        </p> */}
 
         {/* Role Badge */}
         <div className="flex items-center justify-between">

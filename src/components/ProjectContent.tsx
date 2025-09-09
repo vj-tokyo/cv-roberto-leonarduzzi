@@ -81,7 +81,7 @@ ${
                 {project.icon}
               </div> */}
               <div className="flex-1">
-                <h1 className="text-3xl font-bold">{project.title}</h1>
+                <h1 className="text-3xl font-bold mr-10">{project.title}</h1>
                 <div className="flex items-center text-white/80 text-lg mb-2">
                   <span className="font-medium">{project.company}</span>
                   <span className="mx-3">•</span>
@@ -114,7 +114,7 @@ ${
             </section> */}
 
             {/* Role Badge */}
-            {project.role && (
+            {/* {project.role && (
               <section className="mb-8" id="ruolo">
                 <h2 className={getTitleClass("lg")}>Il Mio Ruolo</h2>
                 <div
@@ -123,7 +123,7 @@ ${
                   {project.role}
                 </div>
               </section>
-            )}
+            )} */}
 
             {/* Extended Description - con React-Markdown */}
             <section className="mb-8" id="dettagli-del-progetto">
@@ -177,7 +177,7 @@ ${
             </section>
 
             {/* Tech Stack */}
-            <section className="mb-8" id="stack-tecnologico">
+            {/* <section className="mb-8" id="stack-tecnologico">
               <h2 className={getTitleClass("lg")}>Stack Tecnologico</h2>
               <div className="flex flex-wrap gap-3">
                 {project.tech.map((tech, index) => (
@@ -189,10 +189,10 @@ ${
                   </span>
                 ))}
               </div>
-            </section>
+            </section> */}
 
             {/* Project Metrics */}
-            {project.metrics && (
+            {/* {project.metrics && (
               <section className="mb-8" id="risultati-e-metriche">
                 <h2 className={getTitleClass("lg")}>Risultati e Metriche</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -213,10 +213,10 @@ ${
                   ))}
                 </div>
               </section>
-            )}
+            )} */}
 
             {/* Team Info */}
-            {project.team && (
+            {/* {project.team && (
               <section className="mb-8" id="team-e-ruolo">
                 <h2 className={getTitleClass("lg")}>Team e Ruolo</h2>
                 <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
@@ -242,10 +242,10 @@ ${
                   </div>
                 </div>
               </section>
-            )}
+            )} */}
 
             {/* Gallery */}
-            {project.gallery && project.gallery.length > 0 && (
+            {/* {project.gallery && project.gallery.length > 0 && (
               <section className="mb-8" id="gallery-del-progetto">
                 <h2 className={getTitleClass("lg")}>Gallery del Progetto</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -260,7 +260,7 @@ ${
                   ))}
                 </div>
               </section>
-            )}
+            )} */}
 
             {/* Call To Action */}
             <ProjectCTA project={project} />

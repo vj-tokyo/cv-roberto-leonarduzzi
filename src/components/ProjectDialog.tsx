@@ -115,7 +115,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
       onClick={handleBackdropClick}
     >
       <div
-        className={`relative w-full max-w-7xl h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ease-out transform ${
+        className={`relative w-full max-w-7xl h-[90vh] bg-white/85 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 ease-out transform ${
           isAnimating
             ? "opacity-100 scale-100 translate-y-0"
             : "opacity-0 scale-90 translate-y-8"

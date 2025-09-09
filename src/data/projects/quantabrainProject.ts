@@ -197,7 +197,7 @@ The application preferences interface allows granular management of:
 
 Il pannello di amministrazione consente la creazione ed il management dei permessi degli utenti.
 
-<div className="my-4 grid grid-cols-3 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-3 gap-4">
   <img src="./images/qb/users-list.png" alt="Users list | Visualiza users list with filters" />
   <img src="./images/qb/add-user.png" alt="Create user | Create new user" />
   <img src="./images/qb/edit-user.png" alt="Edit user | Edit user info and permissions" />

@@ -36,14 +36,25 @@ const Section: React.FC<SectionProps> = ({
   const sectionIcon = icon || getDefaultIcon(title);
 
   // Varianti di stile
+  // const getVariantClasses = () => {
+  //   switch (variant) {
+  //     case "card":
+  //       return "bg-white/60 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]";
+  //     case "minimal":
+  //       return "border-l-4 border-gradient-to-b from-purple-500 to-blue-500 pl-6";
+  //     default:
+  //       return "bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-sm border border-white/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/80";
+  //   }
+  // };
+
   const getVariantClasses = () => {
     switch (variant) {
       case "card":
-        return "bg-white/60 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]";
+        return "bg-white/60 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg transition-all duration-300 ";
       case "minimal":
         return "border-l-4 border-gradient-to-b from-purple-500 to-blue-500 pl-6";
       default:
-        return "bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-sm border border-white/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/80";
+        return "bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-sm border border-white/30 rounded-2xl p-6 shadow-lg  transition-all duration-300 ";
     }
   };
 
@@ -66,7 +77,7 @@ const Section: React.FC<SectionProps> = ({
       <div className="relative">{children}</div>
 
       {/* Decorative elements */}
-      <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-blue-400/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      {/* <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-purple-400/10 to-blue-400/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div> */}
     </section>
   );
 };
