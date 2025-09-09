@@ -164,9 +164,9 @@ Grazie,
           </button>
         </div>
 
-        {variant !== "minimal" && (
+        {/* {variant !== "minimal" && (
           <p className={styles.footer}>Risposta garantita entro 24 ore</p>
-        )}
+        )} */}
       </div>
     </div>
   );

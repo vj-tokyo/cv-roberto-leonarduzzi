@@ -88,6 +88,7 @@ After validating individual screens through usability testing with real users, I
 - **Framer Motion** for fluid animations and transitions
 - **SWR** for intelligent data fetching and caching
 - **WebSocket** for real-time notifications and updates
+- **PWA support** for offline functionality (only existent previsions)
 - **Tailwind CSS + ShadCN** consistent design system
 - **Storybook** for components prototyping
 
@@ -255,15 +256,15 @@ Demonstration video of the platform's main functionalities in real environment.
 // - **Middleware Protection**: protected routes and validation layers
 // - **Security Headers**: CSRF protection and policy-based access
 
-## Technology Stack
+// ## Technology Stack
 
-- Next.js 14 with App Router
-- TypeScript for type safety
-- Tailwind CSS for styling
-- Framer Motion for fluid animations
-- SWR for data fetching and caching
-- WebSocket for real-time notifications
-- PWA support for offline functionality
+// - Next.js 14 with App Router
+// - TypeScript for type safety
+// - Tailwind CSS for styling
+// - Framer Motion for fluid animations
+// - SWR for data fetching and caching
+// - WebSocket for real-time notifications
+// - PWA support for offline functionality
 
 ## Key Results
 

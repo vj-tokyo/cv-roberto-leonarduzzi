@@ -118,15 +118,15 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
 
   // Calcola l'indice attivo
   const activeIndex = headings.findIndex((h) => h.id === activeId);
-  const progressPercentage =
-    headings.length > 0 ? ((activeIndex + 1) / headings.length) * 100 : 0;
+  // const progressPercentage =
+  //   headings.length > 0 ? ((activeIndex + 1) / headings.length) * 100 : 0;
 
   if (headings.length === 0) return null;
 
   return (
     <>
       {/* Mobile Toggle Button */}
-      <button
+      {/* <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-20 right-4 z-50 group"
         aria-label="Toggle table of contents"
@@ -149,7 +149,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
               />
             </svg>
           </div>
-          {/* Progress ring */}
           <svg
             className="absolute inset-0 w-12 h-12 -rotate-90"
             viewBox="0 0 48 48"
@@ -177,7 +176,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             />
           </svg>
         </div>
-      </button>
+      </button> */}
 
       {/* Table of Contents - Sidebar per desktop, overlay per mobile */}
       <div
@@ -187,15 +186,15 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
             className.includes("lg:hidden")
               ? `${
                   isOpen ? "translate-x-0" : "translate-x-full"
-                } lg:translate-x-0 fixed top-4 right-4 w-80 max-h-[calc(100vh-2rem)] z-40 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-2xl transition-all duration-500 ease-out overflow-hidden`
-              : "h-full bg-white border-r border-gray-200 flex flex-col"
+                } lg:translate-x-0 fixed top-4 right-0 w-80 max-h-[calc(100vh-2rem)] z-40 bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-2xl transition-all duration-500 ease-out overflow-hidden`
+              : "h-full bg-white/50 border-r border-gray-200 flex flex-col"
           }
         `}
       >
         {/* Header */}
         <div className="px-5 py-4 border-b border-gray-200/50 bg-gradient-to-r from-gray-50/80 to-blue-50/40 flex-shrink-0">
           {/* Reading stats */}
-          <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
+          <div className="flex items-center justify-between mt-1 text-xs text-gray-500">
             <span className="flex items-center">
               <svg
                 className="w-3 h-3 mr-1"
@@ -232,7 +231,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
                       focus:outline-none focus:ring-2 focus:ring-blue-500/20
                       ${
                         isActive
-                          ? "bg-blue-100 text-blue-800 border-l-4 border-blue-500 shadow-sm"
+                          ? "bg-blue-100 text-blue-800 shadow-sm"
                           : isCurrentOrPast
                           ? "text-gray-700 hover:text-gray-900"
                           : "text-gray-500 hover:text-gray-700"

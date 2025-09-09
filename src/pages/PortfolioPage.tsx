@@ -3,6 +3,7 @@ import { portfolioProjects } from "../data/portfolioProjects";
 import PortfolioItem from "../components/PortfolioItem";
 import ProjectDialog from "../components/ProjectDialog";
 import type { PortfolioProject } from "../types/portfolio";
+import ProjectCTA from "../components/ProjectCTA";
 
 // Props interface corretta per la pagina portfolio
 interface PortfolioPageProps {
@@ -179,6 +180,9 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
           </div>
         </div>
       )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <ProjectCTA />
+      </div>
 
       {/* Project Dialog */}
       <ProjectDialog

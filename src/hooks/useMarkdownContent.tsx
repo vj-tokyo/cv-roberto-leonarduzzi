@@ -69,7 +69,11 @@ const createMarkdownComponents = (
       return (
         <h1
           id={id}
-          className={getHeadingClass("text-3xl", "12", "6")}
+          className={getHeadingClass(
+            "text-3xl border-b border-gray-500 pb-2",
+            "12",
+            "6"
+          )}
           {...props}
         >
           {children}
@@ -83,7 +87,11 @@ const createMarkdownComponents = (
       return (
         <h2
           id={id}
-          className={getHeadingClass("text-2xl", "10", "5")}
+          className={getHeadingClass(
+            "text-2xl border-b border-gray-500 pb-2",
+            "10",
+            "6"
+          )}
           {...props}
         >
           {children}
@@ -95,7 +103,15 @@ const createMarkdownComponents = (
       const id = createSlug(text);
 
       return (
-        <h3 id={id} className={getHeadingClass("text-xl", "8", "4")} {...props}>
+        <h3
+          id={id}
+          className={getHeadingClass(
+            "text-xl border-b border-gray-500 pb-2",
+            "8",
+            "6"
+          )}
+          {...props}
+        >
           {children}
         </h3>
       );
@@ -105,7 +121,15 @@ const createMarkdownComponents = (
       const id = createSlug(text);
 
       return (
-        <h4 id={id} className={getHeadingClass("text-lg", "6", "3")} {...props}>
+        <h4
+          id={id}
+          className={getHeadingClass(
+            "text-lg border-b border-gray-500 pb-2",
+            "6",
+            "6"
+          )}
+          {...props}
+        >
           {children}
         </h4>
       );
@@ -117,7 +141,11 @@ const createMarkdownComponents = (
       return (
         <h5
           id={id}
-          className={getHeadingClass("text-base", "4", "2")}
+          className={getHeadingClass(
+            "text-base border-b border-gray-500 pb-2",
+            "4",
+            "6"
+          )}
           {...props}
         >
           {children}
@@ -129,7 +157,15 @@ const createMarkdownComponents = (
       const id = createSlug(text);
 
       return (
-        <h6 id={id} className={getHeadingClass("text-sm", "4", "2")} {...props}>
+        <h6
+          id={id}
+          className={getHeadingClass(
+            "text-sm border-b border-gray-500 pb-2",
+            "4",
+            "6"
+          )}
+          {...props}
+        >
           {children}
         </h6>
       );
@@ -183,20 +219,21 @@ const createMarkdownComponents = (
     img: ({
       src,
       alt,
-      className,
+      // className,
       ...props
     }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      <div className={`my-8 ${className || ""}`}>
+      // <div className={` ${className || ""}`}>
+      <div>
         <img
           src={src}
           alt={alt}
-          className="w-full rounded-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer hover:scale-[1.02] hover:opacity-95"
+          className="w-full rounded-sm shadow-lg hover:shadow-xl transition-all duration-300 border-gray-200 cursor-pointer hover:scale-[1.02] hover:opacity-95"
           loading="lazy"
           onClick={() => onImageClick && onImageClick(src || "", alt)}
           {...props}
         />
         {alt && (
-          <div className="mt-3 text-sm text-gray-600 text-center italic leading-relaxed">
+          <div className="mt-2 text-sm text-gray-600 text-center italic leading-relaxed">
             {alt}
           </div>
         )}

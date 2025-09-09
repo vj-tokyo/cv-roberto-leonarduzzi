@@ -8,6 +8,7 @@ import AwardsSection from "../components/AwardsSection";
 import ExperienceSection from "../components/ExperienceSection_copy";
 import HeroSection from "../components/HeroSection";
 import ClientsSection from "../components/ClientsSection";
+import ProjectCTA from "../components/ProjectCTA";
 
 const CurriculumPage: React.FC = () => {
   return (
@@ -46,6 +47,7 @@ const CurriculumPage: React.FC = () => {
             </div>
           </div>
         </div>
+        <ProjectCTA />
       </div>
     </>
   );

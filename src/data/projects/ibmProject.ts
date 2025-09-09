@@ -8,7 +8,7 @@ export const ibmProject: PortfolioProject = {
     "Progettazione e sviluppo di una piattaforma enterprise per il monitoraggio e l'analisi di KPI aziendali. Sistema complesso per la gestione di metriche business, reportistica avanzata e dashboard interattive per ACI Informatica.",
 
   extendedDescription: `
-# 📊 Enterprise KPI Dashboard - IBM
+# Enterprise KPI Dashboard - IBM
 
 ## Il Contesto Enterprise
 
@@ -16,14 +16,14 @@ Come consultant per IBM presso ACI Informatica, ho lavorato su una sfida comples
 
 ![Dashboard principale - Overview completa dei KPI aziendali](./images/ibm/dashboard-main.png)
 
-## 🎯 La Sfida Tecnica
+## La Sfida Tecnica
 
 - **Integrazione Multi-Sistema**: Connessione di database legacy IBM con sistemi moderni COAN e WT
 - **Real-Time Analytics**: Processamento di migliaia di record in tempo reale con aggiornamenti automatici
 - **Compliance Governativa**: Rispetto delle normative AGID per la Pubblica Amministrazione
 - **Scalabilità Enterprise**: Sistema progettato per gestire 500+ progetti simultanei
 
-## 🏗️ Architettura della Soluzione
+## Architettura della Soluzione
 
 La dashboard è stata progettata con un'architettura modulare che permette diversi livelli di dettaglio:
 
@@ -37,7 +37,7 @@ La dashboard è stata progettata con un'architettura modulare che permette diver
 - **Dashboard Modulari**: Interfacce configurabili per Project Manager, Delivery Manager e Office staff
 - **Reporting Avanzato**: Sistema di export avanzato per PDF, Excel e presentazioni executive
 
-## 🧭 Navigazione Multi-Livello
+## Navigazione Multi-Livello
 
 Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
@@ -47,7 +47,7 @@ Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
 ![Other Costs - Costi extra e pianificazione budget](./images/ibm/other-costs.png)
 
-## 🔍 Funzionalità di Drill-Down Avanzate
+## Funzionalità di Drill-Down Avanzate
 
 - **Project Detail Views**: Accesso completo ai dettagli di ogni singolo progetto con navigazione breadcrumb
 - **Cost Analysis**: Separazione tra vendor costs, internal costs e other costs per analisi granulare
@@ -55,7 +55,7 @@ Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
 ![Dettaglio Progetto - Vista completa di un singolo progetto](./images/ibm/project-detail.png)
 
-## 📋 Sistema di Reporting Enterprise
+## Sistema di Reporting Enterprise
 
 ### Export e Condivisione
 - **Export Multipli**: Funzioni di export in PDF, Excel con template customizzabili per ogni stakeholder
@@ -66,7 +66,7 @@ Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
 ![Stampa Avanzata - Opzioni di stampa personalizzabili](./images/ibm/print-dialog.png)
 
-## ⚙️ Gestione Operativa Avanzata
+## Gestione Operativa Avanzata
 
 ### Interface Components
 - **Modal Interfaces**: Modali specializzati per editing di costi vendor, internal e extra con validazione real-time
@@ -77,7 +77,7 @@ Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
 ![Modal Vendor - Gestione ordini e fatturazione fornitori](./images/ibm/vendor-detail-modal.png)
 
-## 🎛️ Configurazione e Personalizzazione
+## Configurazione e Personalizzazione
 
 - **Table Settings**: Controlli avanzati per configurare colonne, range temporali e visualizzazioni
 - **Filter System**: Sistema di filtri incrementali per Client, Contract, State, Project Manager, ecc.
@@ -85,7 +85,7 @@ Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
 
 ![Configurazione Tabelle - Personalizzazione avanzata](./images/ibm/table-settings.png)
 
-## 📈 Impatto Business Misurabile
+## Impatto Business Misurabile
 
 Il sistema ha trasformato radicalmente il modo in cui ACI Informatica monitora i propri progetti:
 
@@ -101,7 +101,7 @@ Il sistema ha trasformato radicalmente il modo in cui ACI Informatica monitora i
 - **Dashboard real-time** per decision-making rapido
 - **Compliance AGID** garantita per PA
 
-## 🛠️ Stack Tecnologico Enterprise
+## Stack Tecnologico Enterprise
 
 ### Frontend Architecture
 - **React** con architettura component-based scalabile
@@ -115,7 +115,7 @@ Il sistema ha trasformato radicalmente il modo in cui ACI Informatica monitora i
 - **Docker & Kubernetes** per deployment scalabile
 - **AGID Compliance** per standard governativi
 
-## 🏆 Recognition & Legacy
+## Recognition & Legacy
 
 Questo progetto è diventato il gold standard per dashboard enterprise in ACI Informatica, dimostrando come design thoughtful e architettura scalabile possano trasformare processi business consolidati.
 

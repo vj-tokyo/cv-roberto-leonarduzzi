@@ -51,7 +51,7 @@ export const portfolioProjects = [
     year: "2015-2018",
     description:
       "World's first website builder with real-time social media synchronization.",
-    role: "Co-founder & Head of Design",
+    role: "Co-founder & Head of UX/UI",
     extendedDescription: majeekoProject.extendedDescription,
     tech: [
       "Node.js",
@@ -72,7 +72,7 @@ export const portfolioProjects = [
     year: "2018-2021",
     description:
       "Business intelligence platform for monitoring and analyzing enterprise metrics.",
-    role: "Senior UX/UI Designer & Frontend Lead",
+    role: "Frontend Developer & UX Designer",
     // extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "🏎️",
@@ -98,7 +98,7 @@ export const portfolioProjects = [
     year: "2024",
     description:
       "Immagine coordinata aziendale comprensiva di logo, flyers, packaging, sito web con ecommerce.",
-    role: "Graphic designer",
+    role: "Frontend Developer & UX Designer & Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🥓",
@@ -122,7 +122,7 @@ export const portfolioProjects = [
     company: "Marine Lions Yachting",
     year: "2024",
     description: "Catalogo per rivendita imbarcazioni di lusso",
-    role: "Graphic designer",
+    role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "⛵",
@@ -135,7 +135,7 @@ export const portfolioProjects = [
     year: "2024",
     description:
       "Progettazione sito web e immagine coordinata per studio legale",
-    role: "Graphic designer",
+    role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "⚖️",
@@ -148,7 +148,7 @@ export const portfolioProjects = [
     year: "2024",
     description:
       "Progettazione ecommerce e brand identity per occhiali artigianali di lusso",
-    role: "Graphic designer",
+    role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🕶️",
@@ -161,7 +161,7 @@ export const portfolioProjects = [
     year: "2024",
     description:
       "Progettazione ecommerce per calzature tecniche da motociclismo ad alte prestazioni",
-    role: "Graphic designer",
+    role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏍️",
@@ -173,7 +173,7 @@ export const portfolioProjects = [
     company: "Css Teatro Stabile d'Innovazione FVG",
     year: "2012",
     description: "Progettazione scenografia interattiva con video mapping",
-    role: "Graphic designer",
+    role: "Stage designer & UX Designer",
     // extendedDescription: topochefProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏍️",
