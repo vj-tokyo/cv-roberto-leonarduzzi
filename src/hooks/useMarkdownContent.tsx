@@ -5,8 +5,8 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import { defaultSchema } from "hast-util-sanitize";
 import { createSlug, extractTextFromChildren } from "../utils/textUtils";
-// import ImageLightbox from "../components/ImageLightbox";
 import ImageLightboxGallery from "../components/ImageLightbox";
+import LightboxPortal from "../components/LightboxPortal";
 
 // Schema personalizzato per rehypeSanitize che permette attributi class e id
 const sanitizeSchema = {
@@ -219,10 +219,8 @@ const createMarkdownComponents = (
     img: ({
       src,
       alt,
-      // className,
       ...props
     }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      // <div className={` ${className || ""}`}>
       <div>
         <img
           src={src}
@@ -484,19 +482,15 @@ export const useMarkdownContent = (
         </ReactMarkdown>
       </div>
 
-      {/* Lightbox Component */}
-      {/* <ImageLightbox
-        src={lightboxImage?.src || ""}
-        alt={lightboxImage?.alt}
-        isOpen={!!lightboxImage}
-        onClose={() => setLightboxImage(null)}
-      /> */}
-      <ImageLightboxGallery
-        images={lightboxImage ? [lightboxImage] : []}
-        initialIndex={0}
-        isOpen={!!lightboxImage}
-        onClose={() => setLightboxImage(null)}
-      />
+      {/* Lightbox Component with Portal - Isolato dai CSS di prose */}
+      <LightboxPortal isOpen={!!lightboxImage}>
+        <ImageLightboxGallery
+          images={lightboxImage ? [lightboxImage] : []}
+          initialIndex={0}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      </LightboxPortal>
     </>
   );
 };
@@ -544,19 +538,15 @@ export const usePortfolioMarkdown = (
         </ReactMarkdown>
       </div>
 
-      {/* Lightbox Component */}
-      {/* <ImageLightbox
-        src={lightboxImage?.src || ""}
-        alt={lightboxImage?.alt}
-        isOpen={!!lightboxImage}
-        onClose={() => setLightboxImage(null)}
-      /> */}
-      <ImageLightboxGallery
-        images={lightboxImage ? [lightboxImage] : []}
-        initialIndex={0}
-        isOpen={!!lightboxImage}
-        onClose={() => setLightboxImage(null)}
-      />
+      {/* Lightbox Component with Portal - Isolato dai CSS di prose */}
+      <LightboxPortal isOpen={!!lightboxImage}>
+        <ImageLightboxGallery
+          images={lightboxImage ? [lightboxImage] : []}
+          initialIndex={0}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      </LightboxPortal>
     </>
   );
 };
