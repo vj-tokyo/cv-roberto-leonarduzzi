@@ -16,6 +16,11 @@ Come consultant per IBM presso ACI Informatica, ho lavorato su una sfida comples
 
 ![Dashboard principale - Overview completa dei KPI aziendali](./images/ibm/dashboard-main.png)
 
+
+## Breif
+
+https://docs.google.com/document/d/1YD0pAcwZhNZGxozTUfyEwFpbD_aRbQp-3xoMP00PzMk/edit?usp=sharing
+
 ## La Sfida Tecnica
 
 - **Integrazione Multi-Sistema**: Connessione di database legacy IBM con sistemi moderni COAN e WT

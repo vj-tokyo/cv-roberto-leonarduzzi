@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
+// import { cvData } from "../data/cvData";
 import { portfolioProjects } from "../data/portfolioProjects";
 import PortfolioItem from "../components/PortfolioItem";
 import ProjectDialog from "../components/ProjectDialog";
 import type { PortfolioProject } from "../types/portfolio";
 import ProjectCTA from "../components/ProjectCTA";
+// import HeroSection from "../components/HeroSection";
 
 // import SectionHeader from "../components/SectionHeader";
 
@@ -113,11 +115,19 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
   );
 
   return (
-    <div
-      className={`min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16 ${className}`}
-    >
-      {/* Page Header */}
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <>
+      {/* <HeroSection
+        name={cvData.personal_info.name}
+        title={cvData.personal_info.title}
+        email={cvData.personal_info.contact.email}
+        mobile={cvData.personal_info.contact.mobile}
+        approach={cvData.profile}
+      /> */}
+      <div
+        className={`min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 pt-16 ${className}`}
+      >
+        {/* Page Header */}
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             My Projects
@@ -130,81 +140,85 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
         </div>
       </div> */}
 
-      {/* Featured Projects Section */}
-      {projectsWithDetails.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
-              Featured Projects
-            </h2>
-            <p className="text-gray-600">
-              Comprehensive case studies with detailed insights and outcomes.
-            </p>
-          </div>
-          {/* <SectionHeader
+        {/* Featured Projects Section */}
+        {projectsWithDetails.length > 0 && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
+                Featured Projects
+              </h2>
+              <p className="text-gray-600">
+                Comprehensive case studies with detailed insights and outcomes.
+              </p>
+            </div>
+            {/* <SectionHeader
             title={"Featured Projects"}
             icon={
               "Comprehensive case studies with detailed insights and outcomes."
             }
           /> */}
-          <div className="grid grid-cols-12 gap-8">
-            {projectsWithDetails.map((project, index) => (
-              <div
-                key={`featured-${index}`}
-                className="col-span-12 md:col-span-6"
-              >
-                <PortfolioItem
-                  // variant="compact"
-                  project={project}
-                  onExploreClick={handleExploreProject}
-                />
-              </div>
-            ))}
+            <div className="grid grid-cols-12 gap-8">
+              {projectsWithDetails.map((project, index) => (
+                <div
+                  key={`featured-${index}`}
+                  className="col-span-12 md:col-span-6"
+                >
+                  <PortfolioItem
+                    // variant="compact"
+                    project={project}
+                    onExploreClick={handleExploreProject}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Other Projects Section */}
-      {projectsWithoutDetails.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
-              Other Projects
-            </h2>
-            <p className="text-gray-600">
-              Additional projects and collaborations.
-            </p>
-          </div>
-          {/* <SectionHeader
+        {/* Other Projects Section */}
+        {projectsWithoutDetails.length > 0 && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
+                Other Projects
+              </h2>
+              <p className="text-gray-600">
+                Additional projects and collaborations.
+              </p>
+            </div>
+            {/* <SectionHeader
             title={"Other Projects"}
             icon={"Additional projects and collaborations."}
           /> */}
-          <div className="grid grid-cols-12 gap-8">
-            {projectsWithoutDetails.map((project, index) => (
-              <div key={`other-${index}`} className="col-span-12 md:col-span-4">
-                <PortfolioItem
-                  variant="compact"
-                  project={project}
-                  onExploreClick={handleExploreProject}
-                />
-              </div>
-            ))}
+            <div className="grid grid-cols-12 gap-8">
+              {projectsWithoutDetails.map((project, index) => (
+                <div
+                  key={`other-${index}`}
+                  className="col-span-12 md:col-span-4"
+                >
+                  <PortfolioItem
+                    variant="compact"
+                    project={project}
+                    onExploreClick={handleExploreProject}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
+        )}
+
+        {/* CTA */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <ProjectCTA />
         </div>
-      )}
 
-      {/* CTA */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <ProjectCTA />
+        {/* Project Dialog */}
+        <ProjectDialog
+          project={selectedProject}
+          isOpen={isDialogOpen}
+          onClose={handleCloseDialog}
+        />
       </div>
-
-      {/* Project Dialog */}
-      <ProjectDialog
-        project={selectedProject}
-        isOpen={isDialogOpen}
-        onClose={handleCloseDialog}
-      />
-    </div>
+    </>
   );
 };
 

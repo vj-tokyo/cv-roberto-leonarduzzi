@@ -24,25 +24,25 @@ const ProjectCTA: React.FC<ProjectCTAProps> = ({
 
   const handleEmailClick = () => {
     const subject = project
-      ? `Interessato al progetto: ${project.title}`
-      : `Richiesta di collaborazione - Portfolio Roberto Leonarduzzi`;
+      ? `Interested in the project: ${project.title}`
+      : `Collaboration Request - Roberto Leonarduzzi Portfolio`;
 
     const body = project
-      ? `Ciao Roberto,
+      ? `Hi Roberto,
 
-Ho visto il tuo progetto "${project.title}" per ${project.company} e sono interessato a discutere di una possibile collaborazione.
+I saw your project "${project.title}" for ${project.company} and I'm interested in discussing a possible collaboration.
 
-Potresti contattarmi per parlare del mio progetto?
+Could you contact me to talk about my project?
 
-Grazie,
+Thank you,
 `
-      : `Ciao Roberto,
+      : `Hi Roberto,
 
-Ho visto il tuo portfolio e sono interessato a discutere di una possibile collaborazione.
+I've seen your portfolio and I'm interested in discussing a possible collaboration.
 
-Potresti contattarmi per parlare del mio progetto?
+Could you contact me to talk about my project?
 
-Grazie,
+Thank you,
 `;
     window.location.href = `mailto:${
       cvData.personal_info.contact.email
@@ -116,16 +116,16 @@ Grazie,
           </div>
         </div>
 
-        <h3 className={styles.title}>Interessato a collaborare?</h3>
+        <h3 className={styles.title}>Interested in collaborating?</h3>
 
         <p className={styles.description}>
           {variant === "minimal"
             ? project
-              ? `Contattami per discutere del progetto ${project.title}`
-              : `Contattami per discutere del tuo progetto`
+              ? `Contact me to discuss the ${project.title} project`
+              : `Contact me to discuss your project`
             : variant === "compact"
-            ? `Se questo progetto ti interessa, sarò felice di discutere delle tue idee.`
-            : `Se questo progetto ti ha colpito e stai cercando un designer e sviluppatore esperto per il tuo prossimo progetto, sarò felice di discutere delle tue idee.`}
+            ? `If this project interests you, I'll be happy to discuss your ideas.`
+            : `If this project caught your attention and you're looking for an experienced designer and developer for your next project, I'll be happy to discuss your ideas.`}
         </p>
 
         <div className={styles.buttonContainer}>
@@ -143,7 +143,7 @@ Grazie,
                 d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
-            Scrivimi
+            Email Me
           </button>
 
           <button onClick={handlePhoneClick} className={styles.secondaryButton}>
@@ -160,12 +160,12 @@ Grazie,
                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
-            Chiamami
+            Call Me
           </button>
         </div>
 
         {/* {variant !== "minimal" && (
-          <p className={styles.footer}>Risposta garantita entro 24 ore</p>
+          <p className={styles.footer}>Response guaranteed within 24 hours</p>
         )} */}
       </div>
     </div>

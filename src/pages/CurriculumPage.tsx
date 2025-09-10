@@ -18,7 +18,7 @@ const CurriculumPage: React.FC = () => {
         title={cvData.personal_info.title}
         email={cvData.personal_info.contact.email}
         mobile={cvData.personal_info.contact.mobile}
-        approch={cvData.approch}
+        approach={cvData.profile}
       />
 
       {/* Clients Section */}

@@ -1,4 +1,4 @@
-// ProjectContent.tsx - Layout a due colonne con titoli colorati
+// ProjectContent.tsx - Two-column layout with colored titles
 import React from "react";
 import type { PortfolioProject } from "../types/portfolio";
 import { usePortfolioMarkdown } from "../hooks/useMarkdownContent";
@@ -20,7 +20,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
     project.color
   );
 
-  // Utility per creare la classe del titolo con il colore del progetto
+  // Utility to create title class with project color
   const getTitleClass = (size: "xl" | "lg" | "base" = "lg") => {
     const sizeClasses = {
       xl: "text-3xl",
@@ -31,21 +31,19 @@ const ProjectContent: React.FC<ProjectContentProps> = ({
     return `${sizeClasses[size]} font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent mb-4`;
   };
 
-  // Prepara il contenuto per la Table of Contents
+  // Prepare content for Table of Contents
   const tocContent =
     project.extendedDescription ||
     `
-# Panoramica del Progetto
+# Project Overview
 ${project.description}
 
-## Stack Tecnologico
+## Technology Stack
 ${project.tech.join(", ")}
 
-${project.metrics ? "## Risultati e Metriche" : ""}
-${project.team ? "## Team e Ruolo" : ""}
-${
-  project.gallery && project.gallery.length > 0 ? "## Gallery del Progetto" : ""
-}
+${project.metrics ? "## Results and Metrics" : ""}
+${project.team ? "## Team and Role" : ""}
+${project.gallery && project.gallery.length > 0 ? "## Project Gallery" : ""}
   `.trim();
 
   return (
@@ -69,9 +67,9 @@ ${
           scrollContainerId="main-content"
         />
 
-        {/* Main Content - Scrollabile */}
+        {/* Main Content - Scrollable */}
         <div id="main-content" className="flex-1 overflow-y-auto">
-          {/* Header con gradient */}
+          {/* Header with gradient */}
           <header
             className={`bg-gradient-to-r ${project.color} p-8 text-white`}
             id="header"
@@ -106,8 +104,8 @@ ${
             )}
 
             {/* Description */}
-            {/* <section className="mb-8" id="panoramica-del-progetto">
-              <h2 className={getTitleClass("lg")}>Panoramica del Progetto</h2>
+            {/* <section className="mb-8" id="project-overview">
+              <h2 className={getTitleClass("lg")}>Project Overview</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
                 {project.description}
               </p>
@@ -115,8 +113,8 @@ ${
 
             {/* Role Badge */}
             {/* {project.role && (
-              <section className="mb-8" id="ruolo">
-                <h2 className={getTitleClass("lg")}>Il Mio Ruolo</h2>
+              <section className="mb-8" id="role">
+                <h2 className={getTitleClass("lg")}>My Role</h2>
                 <div
                   className={`inline-block px-4 py-2 bg-gradient-to-r ${project.color} text-white rounded-full font-medium`}
                 >
@@ -125,33 +123,33 @@ ${
               </section>
             )} */}
 
-            {/* Extended Description - con React-Markdown */}
-            <section className="mb-8" id="dettagli-del-progetto">
+            {/* Extended Description - with React-Markdown */}
+            <section className="mb-8" id="project-details">
               {project.extendedDescription ? (
                 <div className="prose prose-lg max-w-none">
                   {markdownContent}
                 </div>
               ) : (
                 <>
-                  <h2 className={getTitleClass("lg")}>Dettagli del Progetto</h2>
+                  <h2 className={getTitleClass("lg")}>Project Details</h2>
                   <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          Anno
+                          Year
                         </h3>
                         <p className="text-gray-600">{project.year}</p>
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          Azienda
+                          Company
                         </h3>
                         <p className="text-gray-600">{project.company}</p>
                       </div>
                       {project.role && (
                         <div>
                           <h3 className="font-semibold text-gray-800 mb-2">
-                            Il Mio Ruolo
+                            My Role
                           </h3>
                           <p className="text-gray-600">{project.role}</p>
                         </div>
@@ -159,16 +157,16 @@ ${
                       {project.category && (
                         <div>
                           <h3 className="font-semibold text-gray-800 mb-2">
-                            Categoria
+                            Category
                           </h3>
                           <p className="text-gray-600">{project.category}</p>
                         </div>
                       )}
                       <div>
                         <h3 className="font-semibold text-gray-800 mb-2">
-                          Stato
+                          Status
                         </h3>
-                        <p className="text-gray-600">Completato</p>
+                        <p className="text-gray-600">Completed</p>
                       </div>
                     </div>
                   </div>
@@ -177,8 +175,8 @@ ${
             </section>
 
             {/* Tech Stack */}
-            {/* <section className="mb-8" id="stack-tecnologico">
-              <h2 className={getTitleClass("lg")}>Stack Tecnologico</h2>
+            {/* <section className="mb-8" id="technology-stack">
+              <h2 className={getTitleClass("lg")}>Technology Stack</h2>
               <div className="flex flex-wrap gap-3">
                 {project.tech.map((tech, index) => (
                   <span
@@ -193,8 +191,8 @@ ${
 
             {/* Project Metrics */}
             {/* {project.metrics && (
-              <section className="mb-8" id="risultati-e-metriche">
-                <h2 className={getTitleClass("lg")}>Risultati e Metriche</h2>
+              <section className="mb-8" id="results-and-metrics">
+                <h2 className={getTitleClass("lg")}>Results and Metrics</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {Object.entries(project.metrics).map(([key, value]) => (
                     <div
@@ -217,13 +215,13 @@ ${
 
             {/* Team Info */}
             {/* {project.team && (
-              <section className="mb-8" id="team-e-ruolo">
-                <h2 className={getTitleClass("lg")}>Team e Ruolo</h2>
+              <section className="mb-8" id="team-and-role">
+                <h2 className={getTitleClass("lg")}>Team and Role</h2>
                 <div className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors duration-300">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                       <h3 className="font-semibold text-gray-800 mb-2">
-                        {project.role ? "Ruolo Dettagliato" : "Il Mio Ruolo"}
+                        {project.role ? "Detailed Role" : "My Role"}
                       </h3>
                       <p className="text-gray-600">{project.team.role}</p>
                     </div>
@@ -235,7 +233,7 @@ ${
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-800 mb-2">
-                        Durata
+                        Duration
                       </h3>
                       <p className="text-gray-600">{project.team.duration}</p>
                     </div>
@@ -246,8 +244,8 @@ ${
 
             {/* Gallery */}
             {/* {project.gallery && project.gallery.length > 0 && (
-              <section className="mb-8" id="gallery-del-progetto">
-                <h2 className={getTitleClass("lg")}>Gallery del Progetto</h2>
+              <section className="mb-8" id="project-gallery">
+                <h2 className={getTitleClass("lg")}>Project Gallery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.gallery.map((image, index) => (
                     <img
@@ -287,7 +285,7 @@ ${
                       d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
-                  Visualizza Live
+                  View Live
                 </a>
               )} */}
 
@@ -309,7 +307,7 @@ ${
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  Chiudi
+                  Close
                 </button>
               )} */}
             </section>

@@ -5,7 +5,7 @@ interface HeroSectionProps {
   title: string;
   email: string;
   mobile: string;
-  approch: string;
+  approach: string;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -13,7 +13,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   email,
   // mobile,
-  approch,
+  approach,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -102,7 +102,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {approch}
+          {approach}
         </p>
 
         {/* Skills Tags */}
