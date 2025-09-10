@@ -143,6 +143,18 @@ export const portfolioProjects = [
     cover: "./images/sc/cover.png",
   },
   {
+    title: "Leasing marketplace for business",
+    company: "BNP Paribas - Leasing Solutions",
+    year: "2012",
+    description: "Progettazione scenografia interattiva con video mapping",
+    role: "Stage designer & UX Designer",
+    // extendedDescription: topochefProject.extendedDescription,
+    tech: ["Vue", "Google drive", "Trello"],
+    icon: "🏍️",
+    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    cover: "./images/topochef/cover.png",
+  },
+  {
     title: "Ecommerce occhiali artigianali",
     company: "Pugnale Eyewear",
     year: "2024",

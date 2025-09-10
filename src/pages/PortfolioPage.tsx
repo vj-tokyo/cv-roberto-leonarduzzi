@@ -5,6 +5,8 @@ import ProjectDialog from "../components/ProjectDialog";
 import type { PortfolioProject } from "../types/portfolio";
 import ProjectCTA from "../components/ProjectCTA";
 
+// import SectionHeader from "../components/SectionHeader";
+
 // Props interface corretta per la pagina portfolio
 interface PortfolioPageProps {
   // La pagina portfolio non ha bisogno di props specifici
@@ -132,13 +134,19 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
       {projectsWithDetails.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
               Featured Projects
             </h2>
             <p className="text-gray-600">
               Comprehensive case studies with detailed insights and outcomes.
             </p>
           </div>
+          {/* <SectionHeader
+            title={"Featured Projects"}
+            icon={
+              "Comprehensive case studies with detailed insights and outcomes."
+            }
+          /> */}
           <div className="grid grid-cols-12 gap-8">
             {projectsWithDetails.map((project, index) => (
               <div
@@ -160,13 +168,17 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
       {projectsWithoutDetails.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-2">
               Other Projects
             </h2>
             <p className="text-gray-600">
               Additional projects and collaborations.
             </p>
           </div>
+          {/* <SectionHeader
+            title={"Other Projects"}
+            icon={"Additional projects and collaborations."}
+          /> */}
           <div className="grid grid-cols-12 gap-8">
             {projectsWithoutDetails.map((project, index) => (
               <div key={`other-${index}`} className="col-span-12 md:col-span-4">
@@ -180,6 +192,8 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({ className }) => {
           </div>
         </div>
       )}
+
+      {/* CTA */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <ProjectCTA />
       </div>

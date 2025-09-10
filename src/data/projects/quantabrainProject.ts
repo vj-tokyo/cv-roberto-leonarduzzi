@@ -39,17 +39,17 @@ My working method is based on continuous collaboration with stakeholders, throug
 4. **Performance-First**: every millisecond counts in emergency situations
 5. **Accessibility**: WCAG standards for users with different abilities
 
-#### Target Users
+#### Understand Target Users
 
-The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. Each user category requires optimized workflows and specific solutions for their operational context.
+The interface design was guided by analyzing the needs of different professional profiles who daily interact with complex data and advanced neuroimaging tools. Each user category requires optimized workflows and specific solutions for their operational context. For first we focus on reesearchers
 
-<div className="my-4 grid grid-cols-3 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-3 gap-4">
   <img src="./images/qb/personas/Radiologist.jpg" alt="Radiologist | Professional specialized in complex diagnoses and rapid decisions - Primary platform user" />
   <img src="./images/qb/personas/Psychiatrist.jpg" alt="Psychiatrist | Specialist in clinical research and quantitative analysis - Focus on behavioral analysis" />
   <img src="./images/qb/personas/Patient.jpg" alt="Reesearcher | Improved diagnostic process - Indirect but fundamental stakeholder" />
 </div>
 
-#### Main Features
+#### Define Main Features
 
 - **Analysis Dashboard**: Brain analysis listing and management
 -	**File Upload**: Support for .nii, .gz, .zip files
@@ -57,16 +57,26 @@ The interface design was guided by analyzing the needs of different professional
 -	**Quota System**: Daily/monthly limits per user
 -	**Admin Panel**: User and permissions granular management
 
-### UI Design and Prototyping
+### Start UI Design and Prototyping
 
-Design of the main application views with focus on usability, performance, and cognitive load reduction.
+Design of the main application views with focus on usability, performance, and cognitive load reduction. Per mezzo di sessioni di  co-design con gli stackholders si validano le proposte individuando limiti e opportunità delle soluzioni testate.
 
-<div className="my-4 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/analises.png" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
   <img src="./images/qb/mokup.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
   <img src="./images/qb/modal_table.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
   <img src="./images/qb/modal_upload.png" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
 </div>
+
+#### Dark mode
+
+Tutto il design sistem prevede la versione light e dark dell'interfaccia utilizzando color tokens custom
+
+![Dark mode| Dark mode ui mockup](./images/qb/inversa.png)
+
+#### Mobile support
+
+Tutto il design sistem prevede la versione light e dark dell'interfaccia utilizzando color tokens custom
 
 ![Dark mode| Dark mode ui mockup](./images/qb/inversa.png)
 
@@ -84,7 +94,7 @@ After validating individual screens through usability testing with real users, I
 - **Next.js 14** with App Router for performance and SSR
 - **TypeScript** for type safety and scalable development
 - **React + Hooks** modular component architecture
-- **WebGL + Three.js** real-time 3D neuroimaging rendering
+// - **WebGL + Three.js** real-time 3D neuroimaging rendering
 - **Framer Motion** for fluid animations and transitions
 - **SWR** for intelligent data fetching and caching
 - **WebSocket** for real-time notifications and updates
@@ -92,11 +102,11 @@ After validating individual screens through usability testing with real users, I
 - **Tailwind CSS + ShadCN** consistent design system
 - **Storybook** for components prototyping
 
-### UI Architecture
+### Define UI Architecture
 
 The interface presents a very minimal design with two main states. We are evaluating my suggestion to eliminate the upload area on the left while maintaining the drag and drop upload functionality directly on the list.
 
-<div className="my-4 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/dashboard.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -111,7 +121,7 @@ The header contains main navigation elements, real-time WebSocket-based notifica
 
 The upload system supports single files and multiple folders with automatic validation. It can be activated via click on the header button or direct drag-and-drop into the upload area. File validation (.nii, .gz, .zip) is performed client-side before upload to ensure compatibility and reduce errors.
 
-<div className="my-4 grid grid-cols-4 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-4 gap-4">
   <img src="./images/qb/upload_1_1.png" alt="Step 1 Upload | File upload interface with drag-and-drop and automatic validation" />
   <img src="./images/qb/upload_2.png" alt="Step 2 Parameters | Analysis parameter configuration with intelligent presets and real-time validation" />
   <img src="./images/qb/upload_3.png" alt="Step 3 Processing | Processing interface with real-time progress bar and WebSocket updates" />
@@ -133,7 +143,7 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
 // - Tabular visualization with CSV/Excel export
 // - Aggregated graphical visualization with interactive charts (future roadmap)
 
-<div className="my-4 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/detail.png" alt="Previous Workflow View | Tabular visualization with CSV/Excel export" />
   <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | Aggregated graphical visualization with interactive charts (future roadmap)" />
 </div>
@@ -171,7 +181,7 @@ The detail interface offers a complete set of actions for each analysis:
 
 The guide accessible from the header icon opens as a right sidebar to remain usable without leaving the platform. It's possible to navigate the guide through a navigable index and directional arrows.
 
-<div className="my-4 grid grid-cols-2 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/dasbboard_guide.png" alt="Dashboard Guide | Contextual help system opened on dashboard with step-by-step instructions" />
   <img src="./images/qb/detail_guide.png" alt="Detail Guide | Analysis detail help system with feature explanations and tooltips" />
 </div>
@@ -186,7 +196,7 @@ The application preferences interface allows granular management of:
 // - Notification settings and sound preferences
 
 
-<div className="my-4 grid grid-cols-4 gap-4">
+<div className="my-4 grid grid-cols-1 md:grid-cols-4 gap-4">
   <img src="./images/qb/settings_general.png" alt="settings_general | User access data and profile settings" />
   <img src="./images/qb/settings_interface.png" alt="settings_interface | Graphical interface preferences and themes" />
   <img src="./images/qb/settings_privacy.png" alt="Previous Workflow View |  Privacy preferences and data handling" />

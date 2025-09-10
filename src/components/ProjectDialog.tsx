@@ -106,7 +106,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
   console.log("ProjectDialog rendering - isAnimating:", isAnimating); // Debug
 
   return (
-    <dialog
+    <div
       className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-300 ease-out ${
         isAnimating
           ? "bg-black/60 backdrop-blur-sm opacity-100"
@@ -144,7 +144,7 @@ const ProjectDialog: React.FC<ProjectDialogProps> = ({
         {/* Project Content con Layout a Due Colonne */}
         <ProjectContent project={project} onClose={onClose} />
       </div>
-    </dialog>
+    </div>
   );
 };
 
