@@ -1,14 +1,17 @@
 import React from "react";
+import SimpleImage from "./SimpleImage";
 import type { PortfolioItemProps } from "../types/portfolio";
 
 interface ExtendedPortfolioItemProps extends PortfolioItemProps {
   variant?: "featured" | "compact";
+  priority?: boolean; // Per le immagini above-the-fold
 }
 
 const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
   project,
   onExploreClick,
   variant = "featured",
+  priority = false,
 }) => {
   const handleCardClick = () => {
     if (onExploreClick) {
@@ -34,12 +37,6 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
       >
         {/* Compact Header */}
         <div className="flex items-center mb-4">
-          {/* <div
-            className={`w-12 h-12 bg-gradient-to-r ${project.color} rounded-xl flex items-center justify-center text-lg text-white mr-3 shadow-md group-hover:scale-110 transition-transform duration-200`}
-          >
-            {project.icon}
-          </div> */}
-
           <div className="flex-1 min-w-0">
             <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors truncate">
               {project.title}
@@ -55,18 +52,15 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
         {/* Compact Cover Image */}
         {project.cover && (
           <div className="mb-4 overflow-hidden rounded-lg">
-            <img
+            <SimpleImage
               src={project.cover}
               alt={`${project.title} preview`}
-              className="w-full h-auto object-cover shadow-sm group-hover:scale-105 transition-transform duration-300"
+              className="group-hover:scale-105 transition-transform duration-300"
+              aspectRatio="16/10"
+              priority={priority}
             />
           </div>
         )}
-
-        {/* Compact Description */}
-        {/* <p className="text-sm text-gray-600 leading-relaxed mb-3 group-hover:text-gray-500 transition-colors line-clamp-2">
-          {project.description}
-        </p> */}
 
         {/* Role Badge */}
         <div className="flex items-center justify-between">
@@ -128,12 +122,6 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
     >
       {/* Project Header */}
       <div className="flex items-center mb-6">
-        {/* <div
-          className={`w-16 h-16 bg-gradient-to-r ${project.color} rounded-2xl flex items-center justify-center text-2xl text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-200`}
-        >
-          {project.icon}
-        </div> */}
-
         <div className="flex-1">
           <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
             {project.title}
@@ -171,10 +159,12 @@ const PortfolioItem: React.FC<ExtendedPortfolioItemProps> = ({
       {/* Project Cover Image */}
       {project.cover && (
         <div className="mb-8 overflow-hidden rounded-xl">
-          <img
+          <SimpleImage
             src={project.cover}
             alt={`${project.title} preview`}
-            className="w-full h-auto object-cover shadow-lg group-hover:scale-105 transition-transform duration-300"
+            className="group-hover:scale-105 transition-transform duration-300"
+            aspectRatio="16/9"
+            priority={priority}
           />
         </div>
       )}
