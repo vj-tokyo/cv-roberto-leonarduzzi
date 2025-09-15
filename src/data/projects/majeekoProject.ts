@@ -5,7 +5,7 @@ export const majeekoProject: PortfolioProject = {
   company: "Majeeko Startup",
   year: "2015-2018",
   description:
-    "Co-fondazione e sviluppo di una startup innovativa: il primo website builder al mondo con sincronizzazione real-time dei social media. La piattaforma permetteva agli utenti di creare siti web che si aggiornavano automaticamente con i contenuti dai loro profili social.",
+    "Co-founded and developed an innovative startup: the world's first website builder with real-time social media synchronization. The platform allowed users to create websites that automatically updated with content from their social profiles.",
 
   extendedDescription: `
 # 🚀 Social-First Site Builder - Majeeko
@@ -14,9 +14,9 @@ export const majeekoProject: PortfolioProject = {
 ## 🎥 Demo video
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aSrKm0t9XJY?si=72LEzelRpDHYioiL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## La Vision Pioneering
+## The Pioneering Vision
 
-Nel 2015, insieme al mio co-founder, abbiamo identificato un gap nel mercato: i piccoli business spendevano troppo tempo a gestire separatamente siti web e social media. Abbiamo immaginato una soluzione che unificasse tutto in un'unica piattaforma intelligente.
+In 2015, together with my co-founder, we identified a market gap: small businesses spent too much time separately managing websites and social media. We envisioned a solution that unified everything into a single intelligent platform.
 
 ![Majeeko Platform Overview](./images/mj/flusso.png)
 
@@ -41,134 +41,134 @@ Nel 2015, insieme al mio co-founder, abbiamo identificato un gap nel mercato: i 
   <img src="./images/mj/tim.jpg" alt="Detail View | Figma mockup of results visualization screen with AI overlay and confidence scoring" />
 </div>
 
-## 💡 Il Prodotto Rivoluzionario
+## 💡 The Revolutionary Product
 
-### Funzionalità Core Innovative
-- **Sincronizzazione Real-Time**: Prima piattaforma mondiale a sincronizzare automaticamente Instagram, Facebook e Twitter con il sito web
-- **Website Builder Intuitivo**: Drag-and-drop builder ottimizzato per piccole imprese senza competenze tecniche
-- **Template Social-Ready**: Temi progettati specificamente per mostrare contenuti social in modo elegante
-- **Analytics Unificati**: Dashboard che combinava metriche web e social in un'unica vista comprensiva
+### Innovative Core Features
+- **Real-Time Synchronization**: First platform worldwide to automatically sync Instagram, Facebook and Twitter with websites
+- **Intuitive Website Builder**: Drag-and-drop builder optimized for small businesses without technical skills
+- **Social-Ready Templates**: Themes specifically designed to elegantly display social content
+- **Unified Analytics**: Dashboard that combined web and social metrics in a single comprehensive view
 
 ![Website Builder Interface - Drag and drop con preview real-time](./images/mj/builder.png)
 
 ![Social Sync Dashboard - Gestione automatica contenuti social](./images/mj/social-sync.png)
 
-## 🎯 Journey Imprenditoriale
+## 🎯 Entrepreneurial Journey
 
-### Fasi di Sviluppo Startup
-- **Pre-Seed (2015)**: Validazione dell'idea con 100+ interviste a piccoli imprenditori e PMI
-- **MVP Development**: Sviluppo del prodotto minimo in 6 mesi con team lean di 3 persone
-- **Product-Market Fit**: Scaling rapido a 5000+ utenti attivi in 18 mesi
-- **Partnership Strategiche**: Accordi con Libero, TIM, Cosmote per prodotti white-label
-- **Exit (2018)**: Vendita tecnologia e team dopo validazione mercato
+### Startup Development Phases
+- **Pre-Seed (2015)**: Idea validation with 100+ interviews with small entrepreneurs and SMEs
+- **MVP Development**: Minimum viable product development in 6 months with lean team of 3 people
+- **Product-Market Fit**: Rapid scaling to 5000+ active users in 18 months
+- **Strategic Partnerships**: Agreements with Libero, TIM, Cosmote for white-label products
+- **Exit (2018)**: Technology and team sale after market validation
 
 ![Analytics Dashboard - Metriche unificate web e social](./images/mj/dashboard.png)
 
-## 👨‍💼 Il Mio Ruolo da Co-founder
+## 👨‍💼 My Role as Co-founder
 
-Come Head of Design e Co-founder, ho gestito multiple responsabilità:
+As Head of Design and Co-founder, I managed multiple responsibilities:
 
 ### Design & Product
-- **Product Design** e User Experience per piattaforma completa
-- **Frontend Architecture** e Development con tecnologie all'avanguardia
-- **Design System** scalabile per white-label partnerships
+- **Product Design** and User Experience for complete platform
+- **Frontend Architecture** and Development with cutting-edge technologies
+- **Design System** scalable for white-label partnerships
 
 ### Business & Leadership
-- **Team Management** fino a 12 persone multidisciplinari
-- **Business Development** e Partnership strategiche
-- **Fundraising** e Investor Relations per crescita sostenibile
+- **Team Management** up to 12 multidisciplinary people
+- **Business Development** and Strategic Partnerships
+- **Fundraising** and Investor Relations for sustainable growth
 
-## ⚡ Tecnologie Pionieristiche
+## ⚡ Pioneering Technologies
 
-Nel 2015 abbiamo utilizzato tecnologie all'avanguardia quando erano ancora emergenti:
+In 2015 we used cutting-edge technologies when they were still emerging:
 
 ### Frontend Innovation
-- **React** (quando era ancora in beta) per UI modulare e performante
-- **ES6/ES7** features per JavaScript moderno
+- **React** (when it was still in beta) for modular and performant UI
+- **ES6/ES7** features for modern JavaScript
 - **Responsive Design** mobile-first approach
 
 ### Backend Architecture
-- **Node.js** per real-time synchronization con social APIs
-- **MongoDB** per gestire dati social eterogenei e flessibili
-- **Redis** per caching avanzato e performance optimization
-- **Socket.io** per aggiornamenti real-time cross-browser
+- **Node.js** for real-time synchronization with social APIs
+- **MongoDB** to handle heterogeneous and flexible social data
+- **Redis** for advanced caching and performance optimization
+- **Socket.io** for real-time cross-browser updates
 
 ### Social Integration
-- **Instagram API** per sync automatica photo feed
-- **Facebook Graph API** per posts e page management
-- **Twitter API** per tweet integration
-- **OAuth 2.0** per authentication sicura
+- **Instagram API** for automatic photo feed sync
+- **Facebook Graph API** for posts and page management
+- **Twitter API** for tweet integration
+- **OAuth 2.0** for secure authentication
 
 ### Infrastructure
-- **AWS** per scalabilità cloud-native
-- **Docker** per deployment consistency
-- **CDN** per performance globale
+- **AWS** for cloud-native scalability
+- **Docker** for deployment consistency
+- **CDN** for global performance
 
-## 📈 Risultati e Metriche
+## 📈 Results and Metrics
 
-### Crescita Utenti e Engagement
-- **5000+ utenti attivi** sulla piattaforma al momento dell'exit
-- **400% crescita** anno su anno per 2 anni consecutivi
-- **78% monthly retention** rate superiore alla media settore
-- **3 partnership strategiche** con major telco italiane
+### User Growth and Engagement
+- **5000+ active users** on the platform at exit time
+- **400% growth** year over year for 2 consecutive years
+- **78% monthly retention** rate above industry average
+- **3 strategic partnerships** with major Italian telcos
 
-### Impact Business
-- **95% riduzione** tempo gestione presenza online per PMI
-- **White-label integration** con 3 major provider italiani
-- **Technology validation** che ha anticipato trend mercato di 3+ anni
+### Business Impact
+- **95% reduction** in online presence management time for SMEs
+- **White-label integration** with 3 major Italian providers
+- **Technology validation** that anticipated market trends by 3+ years
 
-### Recognition Settore
-- **Prima piattaforma mondiale** con social sync real-time
-- **Case study** per integrazione social commerce
-- **Tecnologia acquisita** da player enterprise del settore
+### Industry Recognition
+- **First global platform** with real-time social sync
+- **Case study** for social commerce integration
+- **Technology acquired** by enterprise sector player
 
-## 🎯 Innovazioni Introdotte
+## 🎯 Innovations Introduced
 
 ### Social-First Approach
-- **Automatic Content Sync**: primi ad automatizzare sync bidirezionale social→web
-- **One-Click Site Generation**: creazione istantanea con branding automatico
-- **Smart Color Extraction**: palette automatica da logo/immagine profilo  
-- **Content Auto-Mapping**: popolamento intelligente sezioni da Facebook API
-- **Template Engine**: temi nativamente progettati per contenuti social
-- **Unified Analytics**: metriche social e web in dashboard unica
-- **Remarketing Dinamico**: targeting personalizzato basato su user behavior
+- **Automatic Content Sync**: first to automate bidirectional social→web sync
+- **One-Click Site Generation**: instant creation with automatic branding
+- **Smart Color Extraction**: automatic palette from logo/profile image
+- **Content Auto-Mapping**: intelligent section population from Facebook API
+- **Template Engine**: themes natively designed for social content
+- **Unified Analytics**: social and web metrics in single dashboard
+- **Dynamic Remarketing**: personalized targeting based on user behavior
 
 ### Business Model Innovation
-- **Reseller Network**: piattaforma dedicata per agenzie e professionisti
-- **White-Label Solutions**: partnership con major telco (TIM, Italiaonline, Cosmote)
-- **Catalogue Advertising**: sistema di remarketing avanzato per ogni sito generato
-- **Margini Ottimizzati**: pricing structure che consente profitti significativi ai reseller
+- **Reseller Network**: dedicated platform for agencies and professionals
+- **White-Label Solutions**: partnerships with major telcos (TIM, Italiaonline, Cosmote)
+- **Catalogue Advertising**: advanced remarketing system for every generated site
+- **Optimized Margins**: pricing structure enabling significant reseller profits
 
 ### UX Pioneering
-- **Drag-and-Drop Builder**: interfaccia intuitiva per non-tecnici
-- **Live Preview**: preview real-time durante editing
-- **Mobile-First Design**: responsive by default quando non era standard
+- **Drag-and-Drop Builder**: intuitive interface for non-technical users
+- **Live Preview**: real-time preview during editing
+- **Mobile-First Design**: responsive by default when it wasn't standard
 
 ### Technical Innovation
-- **Real-Time Architecture**: sincronizzazione instant cross-platform
-- **API Aggregation**: normalizzazione dati da social network diversi
-- **Performance Optimization**: loading times <2s anche con sync social
+- **Real-Time Architecture**: instant cross-platform synchronization
+- **API Aggregation**: data normalization from different social networks
+- **Performance Optimization**: loading times <2s even with social sync
 
-## 🏆 L'Exit e il Legacy
+## 🏆 The Exit and Legacy
 
-### Risultato Imprenditoriale
-Dopo 3 anni intensi, abbiamo venduto la tecnologia e il team a una azienda più grande, dimostrando la validità della nostra vision che oggi è diventata standard nel settore.
+### Entrepreneurial Result
+After 3 intense years, we sold the technology and team to a larger company, demonstrating the validity of our vision that has now become industry standard.
 
-### Impact Duraturo
-- **Technology Integration**: le nostre soluzioni continuano ad essere utilizzate nei prodotti dell'acquirente
-- **Team Integration**: il 90% del team è stato assorbito con ruoli senior
-- **Market Validation**: abbiamo anticipato il trend social commerce di anni
+### Lasting Impact
+- **Technology Integration**: our solutions continue to be used in the acquirer's products
+- **Team Integration**: 90% of the team was absorbed with senior roles
+- **Market Validation**: we anticipated the social commerce trend by years
 
 ### Lessons Learned
-- **Timing del mercato**: essere troppo early adopter può essere challenging ma rewarding
-- **Partnership strategiche**: essential per scaling rapido in mercati competitivi
-- **Team building**: hiring delle persone giuste è 80% del successo startup
+- **Market timing**: being too early adopter can be challenging but rewarding
+- **Strategic partnerships**: essential for rapid scaling in competitive markets
+- **Team building**: hiring the right people is 80% of startup success
 
-## 🚀 Vision Realizzata
+## 🚀 Vision Realized
 
-Majeeko ha dimostrato che **innovation, execution e market timing** possono creare value duraturo. La nostra vision di unificare presenza web e social è oggi diventata standard, validando la bontà dell'intuizione originale.
+Majeeko demonstrated that **innovation, execution and market timing** can create lasting value. Our vision of unifying web and social presence has now become standard, validating the quality of the original intuition.
 
-Questo progetto rappresenta il perfetto esempio di come **design thinking, technical innovation e business acumen** possano convergere per creare soluzioni che anticipano i bisogni del mercato.
+This project represents the perfect example of how **design thinking, technical innovation and business acumen** can converge to create solutions that anticipate market needs.
 
 ### Team
 // - Roberto Leonarduzzi
@@ -211,44 +211,44 @@ Questo progetto rappresenta il perfetto esempio di come **design thinking, techn
   ],
 
   metrics: {
-    users: "5000+ utenti attivi",
-    growth: "400% crescita anno su anno",
+    users: "5000+ active users",
+    growth: "400% year-over-year growth",
     retention: "78% monthly retention",
-    partners: "3 partnership strategiche",
-    efficiency: "95% riduzione tempo gestione",
+    partners: "3 strategic partnerships",
+    efficiency: "95% management time reduction",
     exit: "Successful technology acquisition",
   },
 
   team: {
-    size: "12 persone (al picco)",
+    size: "12 people (at peak)",
     role: "Co-founder & Head of Design",
-    duration: "3 anni (2015-2018)",
+    duration: "3 years (2015-2018)",
   },
 
   industry: "Social Commerce / Website Builder",
 
   challenges: [
-    "Essere first-to-market con sincronizzazione social real-time",
-    "Gestire API instabili di social networks in evoluzione",
-    "Scalare architettura per 5000+ utenti concorrenti",
-    "Educare mercato su value proposition innovativo",
-    "Competere con incumbent WordPress e Wix",
+    "Being first-to-market with real-time social synchronization",
+    "Managing unstable APIs of evolving social networks",
+    "Scaling architecture for 5000+ concurrent users",
+    "Educating market on innovative value proposition",
+    "Competing with incumbent WordPress and Wix",
   ],
 
   solutions: [
-    "Architettura real-time con Node.js e Socket.io",
-    "API abstraction layer per gestire social network changes",
-    "MongoDB + Redis per performance e scalabilità",
-    "Partnership white-label per accelerare adoption",
-    "Focus su UX intuitiva per differenziazione",
+    "Real-time architecture with Node.js and Socket.io",
+    "API abstraction layer to handle social network changes",
+    "MongoDB + Redis for performance and scalability",
+    "White-label partnerships to accelerate adoption",
+    "Focus on intuitive UX for differentiation",
   ],
 
   results: [
-    "5000+ utenti attivi raggiunti in 18 mesi",
-    "400% crescita anno su anno sostenuta",
-    "78% monthly retention superiore a competitors",
-    "3 partnership strategiche con major telco",
-    "Successful exit con technology acquisition",
-    "95% riduzione tempo gestione online per PMI",
+    "5000+ active users reached in 18 months",
+    "400% sustained year-over-year growth",
+    "78% monthly retention superior to competitors",
+    "3 strategic partnerships with major telcos",
+    "Successful exit with technology acquisition",
+    "95% reduction in online management time for SMEs",
   ],
 };

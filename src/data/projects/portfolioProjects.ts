@@ -14,7 +14,7 @@ export const portfolioProjects: PortfolioProject[] = [
   citynewsProject,
 ];
 
-// Utility functions per gestire i progetti
+// Utility functions to manage projects
 export const getFeaturedProjects = (): PortfolioProject[] => {
   return portfolioProjects.filter((project) => project.featured);
 };
@@ -29,7 +29,7 @@ export const getProjectBySlug = (
   return portfolioProjects.find((project) => project.slug === slug);
 };
 
-// Estrai tutte le categorie disponibili
+// Extract all available categories
 export const getAvailableCategories = (): string[] => {
   const categories = portfolioProjects
     .map((project) => project.category)

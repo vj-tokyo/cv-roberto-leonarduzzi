@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +8,7 @@ import { defaultSchema } from "hast-util-sanitize";
 import ImageLightboxGallery from "../components/ImageLightbox";
 import LightboxPortal from "../components/LightboxPortal";
 import { createMarkdownComponentsConfig } from "../utils/markdownComponentsConfig";
+import { rehypeWrapSections } from "../utils/rehype-wrap-sections";
 
 // Schema personalizzato per rehypeSanitize che permette attributi class e id
 const sanitizeSchema = {
@@ -41,10 +43,15 @@ const sanitizeSchema = {
   tagNames: [...(defaultSchema.tagNames || []), "div", "iframe"],
 };
 
-// Hook principale per renderizzare markdown con lightbox
+// Hook principale per renderizzare markdown con lightbox e section wrapping
 export const useMarkdownContent = (
   content: string | undefined,
-  projectColor?: string
+  projectColor?: string,
+  sectionWrapperOptions?: {
+    wrapperTagName?: string;
+    wrapperClassName?: string;
+    hierarchical?: boolean;
+  }
 ) => {
   const [lightboxImage, setLightboxImage] = useState<{
     src: string;
@@ -72,13 +79,21 @@ export const useMarkdownContent = (
     handleImageClick
   );
 
+  // Costruzione sicura dei plugin con tipizzazione esplicita
+  const remarkPlugins: any[] = [remarkGfm];
+  const rehypePlugins: any[] = [
+    rehypeRaw,
+    [rehypeSanitize, sanitizeSchema],
+    [rehypeWrapSections, sectionWrapperOptions || {}],
+  ];
+
   return (
     <>
       <div className="prose prose-lg max-w-none">
         <ReactMarkdown
           components={MarkdownComponents}
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+          remarkPlugins={remarkPlugins}
+          rehypePlugins={rehypePlugins}
         >
           {processedContent}
         </ReactMarkdown>
@@ -100,7 +115,12 @@ export const useMarkdownContent = (
 // Hook specifico per portfolio con stili ottimizzati e lightbox
 export const usePortfolioMarkdown = (
   content: string | undefined,
-  projectColor?: string
+  projectColor?: string,
+  sectionWrapperOptions?: {
+    wrapperTagName?: string;
+    wrapperClassName?: string;
+    hierarchical?: boolean;
+  }
 ) => {
   const [lightboxImage, setLightboxImage] = useState<{
     src: string;
@@ -128,13 +148,27 @@ export const usePortfolioMarkdown = (
     handleImageClick
   );
 
+  // Costruzione sicura dei plugin per portfolio
+  const remarkPlugins: any[] = [remarkGfm];
+  const rehypePlugins: any[] = [
+    rehypeRaw,
+    [rehypeSanitize, sanitizeSchema],
+    [
+      rehypeWrapSections,
+      sectionWrapperOptions || {
+        // wrapperClassName: "portfolio-section bg-white rounded-2xl p-4",
+        wrapperClassName: "portfolio-section",
+      },
+    ],
+  ];
+
   return (
     <>
       <div className="prose prose-lg max-w-none">
         <ReactMarkdown
           components={MarkdownComponents}
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw, [rehypeSanitize, sanitizeSchema]]}
+          remarkPlugins={remarkPlugins}
+          rehypePlugins={rehypePlugins}
         >
           {processedContent}
         </ReactMarkdown>

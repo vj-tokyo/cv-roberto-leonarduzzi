@@ -5,126 +5,126 @@ export const ibmProject: PortfolioProject = {
   company: "IBM - Sistemi Informativi",
   year: "2020-2021",
   description:
-    "Progettazione e sviluppo di una piattaforma enterprise per il monitoraggio e l'analisi di KPI aziendali. Sistema complesso per la gestione di metriche business, reportistica avanzata e dashboard interattive per ACI Informatica.",
+    "Design and development of an enterprise platform for monitoring and analyzing business KPIs. Complex system for managing business metrics, advanced reporting and interactive dashboards for ACI Informatica.",
 
   extendedDescription: `
 # Enterprise KPI Dashboard - IBM
 
-## Il Contesto Enterprise
+## The Enterprise Context
 
-Come consultant per IBM presso ACI Informatica, ho lavorato su una sfida complessa: trasformare montagne di dati aziendali in insights actionable per il management e i project manager.
+As a consultant for IBM at ACI Informatica, I worked on a complex challenge: transforming mountains of corporate data into actionable insights for management and project managers.
 
-![Dashboard principale - Overview completa dei KPI aziendali](./images/ibm/dashboard-main.png)
+![Main Dashboard - Complete overview of business KPIs](./images/ibm/dashboard-main.png)
 
 
-## Breif
+## Brief
 
 https://docs.google.com/document/d/1YD0pAcwZhNZGxozTUfyEwFpbD_aRbQp-3xoMP00PzMk/edit?usp=sharing
 
-## La Sfida Tecnica
+## The Technical Challenge
 
-- **Integrazione Multi-Sistema**: Connessione di database legacy IBM con sistemi moderni COAN e WT
-- **Real-Time Analytics**: Processamento di migliaia di record in tempo reale con aggiornamenti automatici
-- **Compliance Governativa**: Rispetto delle normative AGID per la Pubblica Amministrazione
-- **Scalabilità Enterprise**: Sistema progettato per gestire 500+ progetti simultanei
+- **Multi-System Integration**: Connection of legacy IBM databases with modern COAN and WT systems
+- **Real-Time Analytics**: Processing thousands of records in real time with automatic updates
+- **Government Compliance**: Compliance with AGID regulations for Public Administration
+- **Enterprise Scalability**: System designed to handle 500+ simultaneous projects
 
-## Architettura della Soluzione
+## Solution Architecture
 
-La dashboard è stata progettata con un'architettura modulare che permette diversi livelli di dettaglio:
+The dashboard was designed with a modular architecture that allows different levels of detail:
 
-![Vista Summary - KPI consolidati con codifica colore](./images/ibm/summary-view.png)
+![Summary View - Consolidated KPIs with color coding](./images/ibm/summary-view.png)
 
-![Vista Dettagli - Drill-down completo sui singoli progetti](./images/ibm/details-view.png)
+![Details View - Complete drill-down on individual projects](./images/ibm/details-view.png)
 
-### Componenti Core
-- **Design System IBM Carbon**: Implementazione nativa del design system enterprise IBM per consistenza
-- **Data Pipeline Ottimizzato**: ETL process per sincronizzazione tra database COAN e WT
-- **Dashboard Modulari**: Interfacce configurabili per Project Manager, Delivery Manager e Office staff
-- **Reporting Avanzato**: Sistema di export avanzato per PDF, Excel e presentazioni executive
+### Core Components
+- **IBM Carbon Design System**: Native implementation of IBM enterprise design system for consistency
+- **Optimized Data Pipeline**: ETL process for synchronization between COAN and WT databases
+- **Modular Dashboards**: Configurable interfaces for Project Manager, Delivery Manager and Office staff
+- **Advanced Reporting**: Advanced export system for PDF, Excel and executive presentations
 
-## Navigazione Multi-Livello
+## Multi-Level Navigation
 
-Il sistema offre diversi livelli di navigazione per soddisfare esigenze diverse:
+The system offers different navigation levels to satisfy diverse needs:
 
-![Gestione Vendor Costs - Monitoraggio fornitori e ordini](./images/ibm/vendor-costs.png)
+![Vendor Costs Management - Vendor and order monitoring](./images/ibm/vendor-costs.png)
 
-![Internal Costs - Tracking risorse interne e ore lavorate](./images/ibm/internal-costs.png)
+![Internal Costs - Internal resource tracking and hours worked](./images/ibm/internal-costs.png)
 
-![Other Costs - Costi extra e pianificazione budget](./images/ibm/other-costs.png)
+![Other Costs - Extra costs and budget planning](./images/ibm/other-costs.png)
 
-## Funzionalità di Drill-Down Avanzate
+## Advanced Drill-Down Features
 
-- **Project Detail Views**: Accesso completo ai dettagli di ogni singolo progetto con navigazione breadcrumb
-- **Cost Analysis**: Separazione tra vendor costs, internal costs e other costs per analisi granulare
-- **Planning & Forecasting**: Strumenti per pianificare costi futuri e comparare con dati storici
+- **Project Detail Views**: Complete access to details of each individual project with breadcrumb navigation
+- **Cost Analysis**: Separation between vendor costs, internal costs and other costs for granular analysis
+- **Planning & Forecasting**: Tools to plan future costs and compare with historical data
 
-![Dettaglio Progetto - Vista completa di un singolo progetto](./images/ibm/project-detail.png)
+![Project Detail - Complete view of a single project](./images/ibm/project-detail.png)
 
-## Sistema di Reporting Enterprise
+## Enterprise Reporting System
 
-### Export e Condivisione
-- **Export Multipli**: Funzioni di export in PDF, Excel con template customizzabili per ogni stakeholder
-- **Email Integration**: Sistema di invio automatico report via email con schedulazione
-- **Print Optimization**: Layout ottimizzati per stampa con configurazioni avanzate
+### Export and Sharing
+- **Multiple Exports**: Export functions in PDF, Excel with customizable templates for each stakeholder
+- **Email Integration**: Automatic report sending system via email with scheduling
+- **Print Optimization**: Print-optimized layouts with advanced configurations
 
-![Invio Email - Sistema di condivisione report via email](./images/ibm/email-modal.png)
+![Email Sending - Report sharing system via email](./images/ibm/email-modal.png)
 
-![Stampa Avanzata - Opzioni di stampa personalizzabili](./images/ibm/print-dialog.png)
+![Advanced Printing - Customizable print options](./images/ibm/print-dialog.png)
 
-## Gestione Operativa Avanzata
+## Advanced Operational Management
 
 ### Interface Components
-- **Modal Interfaces**: Modali specializzati per editing di costi vendor, internal e extra con validazione real-time
-- **Data Tables**: Tabelle complesse con sorting, filtering e paginazione per gestire migliaia di record
-- **Settings Panel**: Configurazioni avanzate per personalizzare viste e range temporali
+- **Modal Interfaces**: Specialized modals for editing vendor, internal and extra costs with real-time validation
+- **Data Tables**: Complex tables with sorting, filtering and pagination to handle thousands of records
+- **Settings Panel**: Advanced configurations to customize views and time ranges
 
-![Modal Internal Costs - Dettaglio ore e costi per singola risorsa](./images/ibm/internal-detail-modal.png)
+![Internal Costs Modal - Hours and costs detail for single resource](./images/ibm/internal-detail-modal.png)
 
-![Modal Vendor - Gestione ordini e fatturazione fornitori](./images/ibm/vendor-detail-modal.png)
+![Vendor Modal - Order management and vendor billing](./images/ibm/vendor-detail-modal.png)
 
-## Configurazione e Personalizzazione
+## Configuration and Customization
 
-- **Table Settings**: Controlli avanzati per configurare colonne, range temporali e visualizzazioni
-- **Filter System**: Sistema di filtri incrementali per Client, Contract, State, Project Manager, ecc.
-- **Role-Based Views**: Interfacce ottimizzate per diversi ruoli aziendali con permessi granulari
+- **Table Settings**: Advanced controls to configure columns, time ranges and visualizations
+- **Filter System**: Incremental filter system for Client, Contract, State, Project Manager, etc.
+- **Role-Based Views**: Interfaces optimized for different business roles with granular permissions
 
-![Configurazione Tabelle - Personalizzazione avanzata](./images/ibm/table-settings.png)
+![Table Configuration - Advanced customization](./images/ibm/table-settings.png)
 
-## Impatto Business Misurabile
+## Measurable Business Impact
 
-Il sistema ha trasformato radicalmente il modo in cui ACI Informatica monitora i propri progetti:
+The system radically transformed how ACI Informatica monitors its projects:
 
-- **60% miglioramento** nei tempi di decision-making
-- **99.2% accuratezza** dei dati processati
-- **500+ progetti** monitorati simultaneamente
-- **50+ utenti** enterprise attivi quotidianamente
-- **Real-time insights** sostituiscono report mensili statici
+- **60% improvement** in decision-making times
+- **99.2% accuracy** of processed data
+- **500+ projects** monitored simultaneously
+- **50+ enterprise users** active daily
+- **Real-time insights** replace static monthly reports
 
-### Risultati Operativi
-- **Eliminazione** report manuali mensili
-- **Drill-down granulare** per analisi dettagliate
-- **Dashboard real-time** per decision-making rapido
-- **Compliance AGID** garantita per PA
+### Operational Results
+- **Elimination** of monthly manual reports
+- **Granular drill-down** for detailed analysis
+- **Real-time dashboard** for rapid decision-making
+- **AGID compliance** guaranteed for PA
 
-## Stack Tecnologico Enterprise
+## Enterprise Technology Stack
 
 ### Frontend Architecture
-- **React** con architettura component-based scalabile
-- **IBM Carbon Design System** per consistenza enterprise
-- **D3.js** per data visualization avanzata
-- **Responsive Design** per utilizzo multi-device
+- **React** with scalable component-based architecture
+- **IBM Carbon Design System** for enterprise consistency
+- **D3.js** for advanced data visualization
+- **Responsive Design** for multi-device usage
 
 ### Backend & Infrastructure
-- **Python** per data processing e ETL pipelines
-- **PostgreSQL** per storage dati strutturati
-- **Docker & Kubernetes** per deployment scalabile
-- **AGID Compliance** per standard governativi
+- **Python** for data processing and ETL pipelines
+- **PostgreSQL** for structured data storage
+- **Docker & Kubernetes** for scalable deployment
+- **AGID Compliance** for government standards
 
 ## Recognition & Legacy
 
-Questo progetto è diventato il gold standard per dashboard enterprise in ACI Informatica, dimostrando come design thoughtful e architettura scalabile possano trasformare processi business consolidati.
+This project became the gold standard for enterprise dashboards at ACI Informatica, demonstrating how thoughtful design and scalable architecture can transform consolidated business processes.
 
-La piattaforma continua ad essere utilizzata quotidianamente da 50+ utenti per monitorare centinaia di progetti, stabilendo un nuovo paradigma per business intelligence nell'organizzazione.
+The platform continues to be used daily by 50+ users to monitor hundreds of projects, establishing a new paradigm for business intelligence in the organization.
 
 ### Team
 // - Roberto Leonarduzzi
@@ -171,43 +171,43 @@ La piattaforma continua ad essere utilizzata quotidianamente da 50+ utenti per m
   ],
 
   metrics: {
-    projects: "500+ progetti monitorati",
-    performance: "60% riduzione tempo reporting",
-    users: "50+ utenti enterprise",
+    projects: "500+ projects monitored",
+    performance: "60% reporting time reduction",
+    users: "50+ enterprise users",
     accuracy: "99.2% data accuracy",
-    efficiency: "100% eliminazione report manuali",
+    efficiency: "100% manual reports elimination",
   },
 
   team: {
-    size: "6 persone multidisciplinari",
+    size: "6 multidisciplinary people",
     role: "Senior UX/UI Designer & Frontend Lead",
-    duration: "14 mesi",
+    duration: "14 months",
   },
 
   status: "completed",
   industry: "Enterprise Software / Government",
 
   challenges: [
-    "Integrazione database legacy IBM con sistemi moderni",
-    "Real-time processing di migliaia di record",
-    "Compliance AGID per Pubblica Amministrazione",
-    "Scalabilità per 500+ progetti simultanei",
-    "UX enterprise per diversi ruoli aziendali",
+    "Integration of legacy IBM databases with modern systems",
+    "Real-time processing of thousands of records",
+    "AGID compliance for Public Administration",
+    "Scalability for 500+ simultaneous projects",
+    "Enterprise UX for different business roles",
   ],
 
   solutions: [
-    "Architettura modulare con IBM Carbon Design System",
-    "ETL pipelines ottimizzati per real-time sync",
-    "Role-based interfaces con permessi granulari",
-    "Dashboard drill-down con export avanzati",
-    "Docker/Kubernetes per scalabilità enterprise",
+    "Modular architecture with IBM Carbon Design System",
+    "Optimized ETL pipelines for real-time sync",
+    "Role-based interfaces with granular permissions",
+    "Drill-down dashboards with advanced exports",
+    "Docker/Kubernetes for enterprise scalability",
   ],
 
   results: [
-    "60% miglioramento tempi decision-making",
-    "99.2% accuratezza dati processati",
-    "500+ progetti monitorati simultaneamente",
-    "50+ utenti enterprise attivi quotidianamente",
-    "100% eliminazione report manuali mensili",
+    "60% improvement in decision-making times",
+    "99.2% accuracy of processed data",
+    "500+ projects monitored simultaneously",
+    "50+ enterprise users active daily",
+    "100% elimination of monthly manual reports",
   ],
 };

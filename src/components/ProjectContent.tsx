@@ -79,7 +79,9 @@ ${project.gallery && project.gallery.length > 0 ? "## Project Gallery" : ""}
                 {project.icon}
               </div> */}
               <div className="flex-1">
-                <h1 className="text-3xl font-bold mr-10">{project.title}</h1>
+                <h1 className="text-xl md:text-3xl font-bold mr-10">
+                  {project.title}
+                </h1>
                 <div className="flex items-center text-white/80 text-lg mb-2">
                   <span className="font-medium">{project.company}</span>
                   <span className="mx-3">•</span>
@@ -126,7 +128,7 @@ ${project.gallery && project.gallery.length > 0 ? "## Project Gallery" : ""}
             {/* Extended Description - with React-Markdown */}
             <section className="mb-8" id="project-details">
               {project.extendedDescription ? (
-                <div className="prose prose-lg max-w-none">
+                <div className="prose prose-xs md:prose-lg max-w-none">
                   {markdownContent}
                 </div>
               ) : (

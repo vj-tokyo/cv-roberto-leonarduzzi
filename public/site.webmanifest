@@ -1,0 +1,32 @@
+{
+  "name": "Roberto Leonarduzzi CV",
+  "short_name": "CV Roberto",
+  "description": "CV online di Roberto Leonarduzzi - UX/UI Designer & Digital Project Manager",
+  "start_url": "/cv-roberto-leonarduzzi/",
+  "scope": "/cv-roberto-leonarduzzi/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "business"],
+  "lang": "it",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/cv-roberto-leonarduzzi/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/cv-roberto-leonarduzzi/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/cv-roberto-leonarduzzi/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}

@@ -16,7 +16,7 @@ export const portfolioProjects = [
     extendedDescription: quantabrainProject.extendedDescription,
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",
-    color: "from-[#1E3A8A] to-[#3B82F6]", // Blu scuro QuantaBrain
+    color: "from-[#1E3A8A] to-[#3B82F6]", // Dark blue QuantaBrain
     cover: "./images/qb/cover.png",
   },
   {
@@ -29,7 +29,7 @@ export const portfolioProjects = [
     extendedDescription: citynewsProject.extendedDescription,
     tech: ["html5", "css3", "Vanilla js", "Figma"],
     icon: "📰",
-    color: "from-[#1E40AF] to-[#F97316]", // Blu e arancione Citynews
+    color: "from-[#1E40AF] to-[#F97316]", // Blue and orange Citynews
     cover: "./images/cn/cover.png",
   },
   {
@@ -42,7 +42,7 @@ export const portfolioProjects = [
     // extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "📊",
-    color: "from-[#1E3A8A] to-[#3B82F6]", // Blu IBM
+    color: "from-[#1E3A8A] to-[#3B82F6]", // Blue IBM
     cover: "./images/ibm/cover.png",
   },
   {
@@ -63,133 +63,132 @@ export const portfolioProjects = [
       "Sketch",
     ],
     icon: "🚀",
-    color: "from-[#475569] to-[#64748B]", // Grigio-blu Majeeko
+    color: "from-[#475569] to-[#64748B]", // Gray-blue Majeeko
     cover: "./images/mj/cover.png",
   },
   {
-    title: "Sistema di loyalty per Automobile Club d'Italia",
+    title: "Loyalty System for Italian Automobile Club",
     company: "IBM",
     year: "2018-2021",
     description:
-      "Business intelligence platform for monitoring and analyzing enterprise metrics.",
+      "Loyalty and rewards platform for Automobile Club d'Italia members with integrated services and benefits management.",
     role: "Frontend Developer & UX Designer",
     // extendedDescription: ibmProject.extendedDescription,
     tech: ["IBM Carbon", "Figma"],
     icon: "🏎️",
-    color: "from-[#6B7280] to-[#9CA3AF]", // Grigio argento ACI
+    color: "from-[#6B7280] to-[#9CA3AF]", // Silver gray ACI
     cover: "./images/aci/cover.png",
   },
   {
-    title: "Edizione borghi più belli d'Italia",
+    title: "Italy's Most Beautiful Villages Editorial",
     company: "Majeeko Startup",
     year: "2024",
-    description: "Prodotto editoriale ingegnerizzato",
+    description: "Engineered editorial product showcasing Italy's most beautiful villages with comprehensive design and layout solutions.",
     role: "Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏛️",
-    color: "from-[#EC4899] to-[#F472B6]", // Rosa Le Babe
+    color: "from-[#EC4899] to-[#F472B6]", // Pink theme
     cover: "./images/borghi/cover.png",
   },
   {
-    title:
-      "Immagine integrata per un prosciuttificio artigianale del consorzio di San Daniele",
+    title: "Integrated Brand Identity for San Daniele Ham Producer",
     company: "La glacere",
     year: "2024",
     description:
-      "Immagine coordinata aziendale comprensiva di logo, flyers, packaging, sito web con ecommerce.",
+      "Complete corporate identity including logo, flyers, packaging, and e-commerce website for artisanal ham producer from San Daniele consortium.",
     role: "Frontend Developer & UX Designer & Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🥓",
-    color: "from-[#DC2626] to-[#EF4444]", // Rosso La Glacere
+    color: "from-[#DC2626] to-[#EF4444]", // Red La Glacere
     cover: "./images/glacere/cover.png",
   },
   {
-    title: "Packaging kit birra fai da te Mr Malt",
+    title: "DIY Beer Kit Packaging Design",
     company: "Mr Malt",
     year: "2024",
-    description: "Progettazione grafica packaging per kit birra artigianale",
+    description: "Graphic design for craft beer DIY kit packaging with complete visual identity and product presentation.",
     role: "Graphic designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🍺",
-    color: "from-[#EAB308] to-[#FCD34D]", // Giallo Poste Italiane
+    color: "from-[#EAB308] to-[#FCD34D]", // Yellow theme
     cover: "./images/mr-malt/cover.png",
   },
   {
-    title: "Catalogo rivendita imbarcazioni",
+    title: "Luxury Yacht Sales Catalog",
     company: "Marine Lions Yachting",
     year: "2024",
-    description: "Catalogo per rivendita imbarcazioni di lusso",
+    description: "Comprehensive catalog design for luxury yacht resale business with detailed specifications and premium presentation.",
     role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "⛵",
-    color: "from-[#1E40AF] to-[#3B82F6]", // Blu marino Marine Lions
+    color: "from-[#1E40AF] to-[#3B82F6]", // Marine blue Marine Lions
     cover: "./images/ly/cover.png",
   },
   {
-    title: "Sito web per studio legale",
+    title: "Law Firm Website & Brand Identity",
     company: "Studio Cannizzaro",
     year: "2024",
     description:
-      "Progettazione sito web e immagine coordinata per studio legale",
+      "Website design and corporate identity development for professional law firm with modern, trustworthy visual approach.",
     role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "⚖️",
-    color: "from-[#D97706] to-[#F59E0B]", // Oro Studio Cannizzaro
+    color: "from-[#D97706] to-[#F59E0B]", // Gold Studio Cannizzaro
     cover: "./images/sc/cover.png",
   },
   {
     title: "Leasing marketplace for business",
     company: "BNP Paribas - Leasing Solutions",
     year: "2012",
-    description: "Progettazione scenografia interattiva con video mapping",
+    description: "Interactive leasing marketplace platform for business equipment and vehicle financing solutions.",
     role: "Stage designer & UX Designer",
     // extendedDescription: topochefProject.extendedDescription,
     tech: ["Vue", "Google drive", "Trello"],
     icon: "🏍️",
-    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    color: "from-[#1F2937] to-[#DC2626]", // Black and red theme
     cover: "./images/topochef/cover.png",
   },
   {
-    title: "Ecommerce occhiali artigianali",
+    title: "Luxury Artisanal Eyewear E-commerce",
     company: "Pugnale Eyewear",
     year: "2024",
     description:
-      "Progettazione ecommerce e brand identity per occhiali artigianali di lusso",
+      "E-commerce design and brand identity for luxury handcrafted eyewear with premium user experience and visual storytelling.",
     role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🕶️",
-    color: "from-[#1F2937] to-[#374151]", // Nero/grigio scuro Pugnale
+    color: "from-[#1F2937] to-[#374151]", // Dark black/gray Pugnale
     cover: "./images/pugnale/cover.png",
   },
   {
-    title: "Ecommerce calzature sportive per motociclisti",
+    title: "High-Performance Motorcycle Boots E-commerce",
     company: "Forma Boots",
     year: "2024",
     description:
-      "Progettazione ecommerce per calzature tecniche da motociclismo ad alte prestazioni",
+      "E-commerce platform design for high-performance technical motorcycle footwear with detailed product specifications and safety features.",
     role: "Frontend Developer & UX Designer",
     // extendedDescription: majeekoProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏍️",
-    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    color: "from-[#1F2937] to-[#DC2626]", // Black and red Forma Boots
     cover: "./images/forma/cover.png",
   },
   {
-    title: "Spettacolo teatrale per bambini",
+    title: "Interactive Children's Theater Show",
     company: "Css Teatro Stabile d'Innovazione FVG",
     year: "2012",
-    description: "Progettazione scenografia interattiva con video mapping",
+    description: "Interactive stage design with video mapping technology for innovative children's theater experience.",
     role: "Stage designer & UX Designer",
     // extendedDescription: topochefProject.extendedDescription,
     tech: ["Adobe creative suite", "Google drive"],
-    icon: "🏍️",
-    color: "from-[#1F2937] to-[#DC2626]", // Nero e rosso Forma Boots
+    icon: "🎭",
+    color: "from-[#8B5CF6] to-[#A78BFA]", // Purple theater theme
     cover: "./images/topochef/cover.png",
   },
 ];

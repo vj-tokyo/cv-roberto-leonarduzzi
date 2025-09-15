@@ -43,8 +43,8 @@ The project was co-financed by Google within the editorial digital transformatio
 // ![Mobile homepage - Optimized responsive design](./images/cn/homepage-mobile.png)
 
 ### Component Library
-Mantenimento e migrazione component lybrary condivisa da Sketch a figma per permettere l'utilizzo di features collaborative.
-Mantenimento e ampliamento repo 
+Maintenance and migration of shared component library from Sketch to Figma to enable collaborative features.
+Repository maintenance and expansion for scalable design system. 
 
 ![Article layout - Typography and structure optimized for reading](./images/cn/article-layout.png)
 
@@ -53,8 +53,8 @@ Mantenimento e ampliamento repo
 - Color guides
 - Typography guides
 
-I### ntervention Areas
-Identification of intervention areas for modifications to characterize a new post and design of article detail views, specialized channel containing all articles of the section and insertion of a preview area of the new format on the homepage and in the standard article news feed.
+### Intervention Areas
+Identification of intervention areas for modifications to characterize a new post format and design of article detail views, specialized channel containing all articles of the section and insertion of a preview area of the new format on the homepage and in the standard article news feed.
 
 <div class="my-4 grid grid-cols-3 gap-4">
   <img src="./images/cn/channel_dossier.jpg" alt="Figma dashboard mockup" />

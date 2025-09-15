@@ -59,7 +59,7 @@ The interface design was guided by analyzing the needs of different professional
 
 ### Start UI Design and Prototyping
 
-Design of the main application views with focus on usability, performance, and cognitive load reduction. Per mezzo di sessioni di  co-design con gli stackholders si validano le proposte individuando limiti e opportunità delle soluzioni testate.
+Design of the main application views with focus on usability, performance, and cognitive load reduction. Through co-design sessions with stakeholders, proposals are validated by identifying limits and opportunities of tested solutions.
 
 <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/analises.png" alt="Main Dashboard | Figma mockup of analysis management interface with core functionality overview" />
@@ -70,13 +70,13 @@ Design of the main application views with focus on usability, performance, and c
 
 #### Dark mode
 
-Tutto il design sistem prevede la versione light e dark dell'interfaccia utilizzando color tokens custom
+The entire design system includes both light and dark interface versions using custom color tokens
 
 ![Dark mode| Dark mode ui mockup](./images/qb/inversa.png)
 
 #### Mobile support
 
-Tutto il design sistem prevede la versione light e dark dell'interfaccia utilizzando color tokens custom
+The entire design system provides responsive mobile optimization with adaptive layouts and touch-friendly interactions
 
 ![Dark mode| Dark mode ui mockup](./images/qb/inversa.png)
 
@@ -140,16 +140,17 @@ The analysis detail opens with a click on any analysis in the main dashboard. Th
 
 #### Visualization Modes:
 
-// - Tabular visualization with CSV/Excel export
-// - Aggregated graphical visualization with interactive charts (future roadmap)
+- Tabular visualization with CSV/Excel export
+- Aggregated graphical visualization with interactive charts (future roadmap)
 
 <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   <img src="./images/qb/detail.png" alt="Previous Workflow View | Tabular visualization with CSV/Excel export" />
   <img src="./images/qb/detail_analysis.png" alt="Optimized Workflow View | Aggregated graphical visualization with interactive charts (future roadmap)" />
 </div>
 
-![Data table | Real-time dropdown list with analysis status, progress tracking, and configurable audio notifications](./images/qb/table.png)
+#### Data table
 
+![Data table | Real-time dropdown list with analysis status, progress tracking, and configurable audio notifications](./images/qb/table.png)
 
 #### Analysis Detail Actions
 
@@ -205,7 +206,7 @@ The application preferences interface allows granular management of:
 
 ## Admin Panel
 
-Il pannello di amministrazione consente la creazione ed il management dei permessi degli utenti.
+The administration panel allows user creation and permission management with granular access control.
 
 <div className="my-4 grid grid-cols-1 md:grid-cols-3 gap-4">
   <img src="./images/qb/users-list.png" alt="Users list | Visualiza users list with filters" />
