@@ -6,6 +6,7 @@ interface SimpleImageProps {
   className?: string;
   aspectRatio?: "16/9" | "16/10" | "4/3" | "1/1" | "3/2";
   priority?: boolean;
+  enableWebP?: boolean;
 }
 
 const SimpleImage: React.FC<SimpleImageProps> = ({
@@ -14,9 +15,18 @@ const SimpleImage: React.FC<SimpleImageProps> = ({
   className = "",
   aspectRatio = "16/10",
   priority = false,
+  enableWebP = true,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+
+  // Generate WebP version path
+  const getWebPSrc = (originalSrc: string) => {
+    if (!enableWebP) return null;
+    return originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  };
+
+  const webpSrc = getWebPSrc(src);
 
   const getAspectRatioClass = (ratio: string) => {
     switch (ratio) {
@@ -96,18 +106,35 @@ const SimpleImage: React.FC<SimpleImageProps> = ({
         </div>
       )}
 
-      {/* Main image */}
-      <img
-        src={src}
-        alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-        loading={priority ? "eager" : "lazy"}
-        onLoad={handleLoad}
-        onError={handleError}
-        decoding="async"
-      />
+      {/* Main image with WebP support */}
+      {webpSrc ? (
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          <img
+            src={src}
+            alt={alt}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            loading={priority ? "eager" : "lazy"}
+            onLoad={handleLoad}
+            onError={handleError}
+            decoding="async"
+          />
+        </picture>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          loading={priority ? "eager" : "lazy"}
+          onLoad={handleLoad}
+          onError={handleError}
+          decoding="async"
+        />
+      )}
     </div>
   );
 };

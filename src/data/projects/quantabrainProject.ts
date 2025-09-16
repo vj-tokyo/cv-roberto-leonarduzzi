@@ -319,7 +319,7 @@ The platform represents a perfect example of how **performance, usability, and i
   ],
   icon: "🧠",
   color: "from-purple-500 to-purple-600",
-  cover: "./images/qb/dashboard-main.png",
+  cover: "./images/qb/cover.webp",
 
   category: "HealthTech",
   featured: true,

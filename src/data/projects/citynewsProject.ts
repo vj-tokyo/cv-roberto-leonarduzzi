@@ -175,20 +175,20 @@ The Citynews transformation became a case study in the Italian publishing sector
   ],
   icon: "📰",
   color: "from-pink-500 to-pink-600",
-  cover: "./images/cn/homepage-desktop.png",
+  cover: "./images/cn/cover.webp",
 
   category: "Digital Publishing",
   featured: true,
   link: "https://citynews.it",
 
   gallery: [
-    "./images/cn/homepage-desktop.png",
-    "./images/cn/article-layout.png",
-    "./images/cn/homepage-mobile.png",
-    "./images/cn/article-mobile.png",
-    "./images/cn/paywall-popup.png",
-    "./images/cn/article-grid.png",
-    "./images/cn/final-dashboard.png",
+    "./images/cn/cover.webp",
+    "./images/cn/article.webp",
+    "./images/cn/dossier_channel_inverted.webp",
+    "./images/cn/channel_dossier.webp",
+    "./images/cn/case_citynews_rl_2022_partial (1)_Page_3_Image_0001.webp",
+    "./images/cn/case_citynews_rl_2022_partial (1)_Page_2_Image_0006.webp",
+    "./images/cn/dossier_article_inverted.webp",
   ],
 
   metrics: {

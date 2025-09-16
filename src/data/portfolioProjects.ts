@@ -17,7 +17,7 @@ export const portfolioProjects = [
     tech: ["Next", "React", "TypeScript", "Tree.js", "Figma"],
     icon: "🧠",
     color: "from-[#1E3A8A] to-[#3B82F6]", // Dark blue QuantaBrain
-    cover: "./images/qb/cover.png",
+    cover: "./images/qb/cover.webp",
   },
   {
     title: "Digital Publishing Subscription UX",
@@ -30,7 +30,7 @@ export const portfolioProjects = [
     tech: ["html5", "css3", "Vanilla js", "Figma"],
     icon: "📰",
     color: "from-[#1E40AF] to-[#F97316]", // Blue and orange Citynews
-    cover: "./images/cn/cover.png",
+    cover: "./images/cn/cover.webp",
   },
   {
     title: "Enterprise KPI Dashboard",
@@ -126,7 +126,7 @@ export const portfolioProjects = [
     tech: ["Adobe creative suite", "Google drive"],
     icon: "⛵",
     color: "from-[#1E40AF] to-[#3B82F6]", // Marine blue Marine Lions
-    cover: "./images/ly/cover.png",
+    cover: "./images/ly/cover.webp",
   },
   {
     title: "Law Firm Website & Brand Identity",
@@ -177,7 +177,7 @@ export const portfolioProjects = [
     tech: ["Adobe creative suite", "Google drive"],
     icon: "🏍️",
     color: "from-[#1F2937] to-[#DC2626]", // Black and red Forma Boots
-    cover: "./images/forma/cover.png",
+    cover: "./images/forma/cover.webp",
   },
   {
     title: "Interactive Children's Theater Show",
